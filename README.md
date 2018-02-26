@@ -1,5 +1,15 @@
-# floc_app
-testing
+# Floc App
 
-hello world
-teasdas
+### Team Members:
+
+Team Lead: Shuo Han
+
+Ryan Kannanaikal
+
+Medhavi Gandhi
+
+Zhen Xiao
+
+### Goals for Spring 2018:
+We need to figure out how to set up the camera and obtain data, find OpenCV tutorials
+for code, and improve our code until we have a working app.
