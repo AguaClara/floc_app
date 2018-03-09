@@ -64,6 +64,14 @@ plt.show()'''
 
 # The next step should be the removal of particles that touched the border
 print(img_32891_closing.shape)
+
+print(img_32891_closing[959,1279])
+
+
+cv2.imshow('closing',img_32891_closing)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
 '''cv2.imshow('closing',img_32891_sobelx)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
