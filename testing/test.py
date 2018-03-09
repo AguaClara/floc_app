@@ -65,7 +65,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()'''
 
 # thresholding:
-img=cv2.imread('../images/t1.jpg')
+'''img=cv2.imread('../images/t1.jpg')
 grayscaled=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 retval,threshold=cv2.threshold(grayscaled,190,255,cv2.THRESH_BINARY)#below220: black higher:white
 #adaptive threshold
@@ -74,7 +74,7 @@ cv2.imshow('original',img)
 cv2.imshow('threshold',threshold)
 cv2.imshow('gaus',gaus)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv2.destroyAllWindows()'''
 
 '''#template matching:
 img1=cv2.imread('t1.jpg')
@@ -118,12 +118,12 @@ plt.imshow(img2)
 plt.show()'''
 
 
-'''#denoise:
-img = cv2.imread('t1.jpg')
+#denoise:
+img = cv2.imread('../images/t1.jpg')
 
 dst = cv2.fastNlMeansDenoisingColored(img,None,6,6,7,21)
-retval,threshold=cv2.threshold(dst,190,255,cv2.THRESH_BINARY)
+#retval,threshold=cv2.threshold(dst,190,255,cv2.THRESH_BINARY)
 
 plt.subplot(121),plt.imshow(img)
-plt.subplot(122),plt.imshow(threshold)
-plt.show()'''
+plt.subplot(122),plt.imshow(dst)
+plt.show()
