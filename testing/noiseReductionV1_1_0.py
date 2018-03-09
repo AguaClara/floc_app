@@ -9,30 +9,23 @@ from matplotlib import pyplot as plt
 
 img=cv2.imread('../images/t1.jpg')
 blur = cv2.GaussianBlur(img,(5,5),0)
-plt.subplot(121),plt.imshow(img),plt.title('Original')
+plt.subplot(221),plt.imshow(img),plt.title('Original')
 plt.xticks([]), plt.yticks([])
-plt.subplot(122),plt.imshow(blur),plt.title('Blurred')
+plt.subplot(222),plt.imshow(blur),plt.title('Blurred')
+plt.xticks([]), plt.yticks([])
+
+#threshold: binary
+retval,threshold =cv2.threshold(blur,140,255,cv2.THRESH_BINARY_INV)#below220: black higher:white
+plt.subplot(223),plt.imshow(threshold),plt.title('Threshold')
 plt.xticks([]), plt.yticks([])
 plt.show()
+#grayscaled=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
-
-
-
-
-
-
-
-
-
-'''#threshold: binary
-grayscaled=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-retval,threshold=cv2.threshold(grayscaled,190,255,cv2.THRESH_BINARY_INV)#below220: black higher:white
 #adaptive threshold
-gaus=cv2.adaptiveThreshold(grayscaled,255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,115,1)
-cv2.imshow('original',img)
-cv2.imshow('threshold',threshold)
-cv2.imshow('gaus',gaus)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-
-'''
+#gaus=cv2.adaptiveThreshold(grayscaled,255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,115,1)
+#plt.imshow('original',img)
+#plt.imshow('threshold',blur)
+#cv2.imshow('gaus',gaus)
+#plt.show()
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()
