@@ -120,19 +120,13 @@ plt.show()
 
 
 #denoise:
-<<<<<<< HEAD
 img = cv2.imread('../images/t1.jpg')
-=======
 img = cv2.imread('t1.jpg')
->>>>>>> d9010363f9a20404cba150c7d4a56c6d9b1e9b72
 
 dst = cv2.fastNlMeansDenoisingColored(img,None,6,6,7,21)
 #retval,threshold=cv2.threshold(dst,190,255,cv2.THRESH_BINARY)
 
 plt.subplot(121),plt.imshow(img)
-<<<<<<< HEAD
 plt.subplot(122),plt.imshow(dst)
-=======
 plt.subplot(122),plt.imshow(threshold)
->>>>>>> d9010363f9a20404cba150c7d4a56c6d9b1e9b72
 plt.show()
