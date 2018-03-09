@@ -65,7 +65,13 @@ plt.show()'''
 # The next step should be the removal of particles that touched the border
 print(img_32891_closing.shape)
 
-print(img_32891_closing[959,1279])
+print(img_32891_closing[0,1279])
+print(img_32891_closing[0,0])
+rows, cols=img_32891_closing.shape[::-1]
+
+
+
+#print(white,black)
 
 
 cv2.imshow('closing',img_32891_closing)
