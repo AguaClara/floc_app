@@ -32,7 +32,7 @@ img_32891_closing = cv2.morphologyEx(img_32891_threshold, cv2.MORPH_CLOSE, kerne
 
 plt.subplot(224), plt.imshow(img_32891_closing), plt.title('closing')
 plt.xticks([]), plt.yticks([])
-plt.show()
+#plt.show()
 
 #if using denosing instead of Gaussian filter in the first step:
 img_32891_den = cv2.fastNlMeansDenoisingColored(img_32891_orig,None,10,10,7,21)
@@ -44,18 +44,28 @@ plt.subplot(132), plt.imshow(img_32891_blur), plt.title('Blurred')
 plt.xticks([]), plt.yticks([])
 plt.subplot(133), plt.imshow(img_32891_den), plt.title('Denoised')
 plt.xticks([]), plt.yticks([])
-plt.show()
+#plt.show()
+
 # We cannot see too too much difference between Gaussian filter and normal denoising.
 # So we continue to use Gaussian filter mentioned in the article.
 
+
 # sobel filter: remove out of focus particles
-# horizonta
+# horizontal and vertical sobel filter
 img_32891_sobelx = cv2.Sobel(img_32891_blur, cv2.CV_64F,1,0,ksize=5)
 img_32891_sobely = cv2.Sobel(img_32891_blur, cv2.CV_64F,0,1,ksize=5)
 
 plt.figure()
-plt.subplot(121), plt.imshow(img_32891_sobelx, cmap='gray')
-plt.title('sobelx'), plt.xticks([]), plt.yticks([])
-plt.subplot(122), plt.imshow(img_32891_sobely, cmap='gray')
-plt.title('sobely'), plt.xticks([]), plt.yticks([])
+plt.subplot(131), plt.imshow(img_32891_sobelx,cmap = 'gray'), plt.title('sobelx')
+plt.xticks([]), plt.yticks([])
+plt.subplot(132), plt.imshow(img_32891_sobely,cmap = 'gray'), plt.title('sobely')
+plt.xticks([]), plt.yticks([])
 plt.show()
+
+'''cv2.imshow('closing',img_32891_sobelx)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+cv2.imshow('closing',img_32891_sobely)
+cv2.waitKey(0)
+cv2.destroyAllWindows()'''
