@@ -64,8 +64,8 @@ cv2.imshow('mask', mask)
 cv2.waitKey(0)
 cv2.destroyAllWindows()'''
 
-'''# thresholding:
-img=cv2.imread('t1.jpg')
+# thresholding:
+img=cv2.imread('../images/t1.jpg')
 grayscaled=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 retval,threshold=cv2.threshold(grayscaled,190,255,cv2.THRESH_BINARY)#below220: black higher:white
 #adaptive threshold
@@ -74,7 +74,7 @@ cv2.imshow('original',img)
 cv2.imshow('threshold',threshold)
 cv2.imshow('gaus',gaus)
 cv2.waitKey(0)
-cv2.destroyAllWindows()'''
+cv2.destroyAllWindows()
 
 '''#template matching:
 img1=cv2.imread('t1.jpg')
@@ -107,7 +107,7 @@ img3 = cv2.drawMatches(img1,kp1,img2,kp2,matches[:30],None, flags=2)
 plt.imshow(img3)
 plt.show()'''
 
-#SURF (Speeded-Up Robust Features):
+'''#SURF (Speeded-Up Robust Features):
 img=cv2.imread('/../images/t1.jpg')
 retval,threshold=cv2.threshold(img,180,255,cv2.THRESH_BINARY)
 surf = cv2.xfeatures2d.SURF_create(10000)
@@ -115,7 +115,7 @@ surf = cv2.xfeatures2d.SURF_create(10000)
 kp, des = surf.detectAndCompute(threshold,None)
 img2 = cv2.drawKeypoints(threshold,kp,None,(255,0,0),4)
 plt.imshow(img2)
-plt.show()
+plt.show()'''
 
 
 '''#denoise:
