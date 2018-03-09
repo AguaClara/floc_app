@@ -16,16 +16,22 @@ from matplotlib import pyplot as plt
 ##############
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 img=cv2.imread('../images/flocs/32903.jpg')
 blur = cv2.GaussianBlur(img,(5,5),0)
 plt.subplot(221),plt.imshow(img),plt.title('Original')
 =======
+=======
+>>>>>>> d9010363f9a20404cba150c7d4a56c6d9b1e9b72
 img = cv2.imread('../images/flocs/Image 32891.jpg')
 
 # Application of the Gaussian Filter
 blur = cv2.GaussianBlur(img, (5, 5), 0)
 plt.subplot(221), plt.imshow(img), plt.title('Original')
+<<<<<<< HEAD
 >>>>>>> 8fb4416e60e25837c1036c7eb33a8862adfb53be
+=======
+>>>>>>> d9010363f9a20404cba150c7d4a56c6d9b1e9b72
 plt.xticks([]), plt.yticks([])
 plt.subplot(222), plt.imshow(blur), plt.title('Blurred')
 plt.xticks([]), plt.yticks([])
@@ -34,20 +40,20 @@ plt.xticks([]), plt.yticks([])
 retval, threshold = cv2.threshold(blur, 100, 255, cv2.THRESH_BINARY_INV)
 plt.subplot(223), plt.imshow(threshold), plt.title('Threshold')
 plt.xticks([]), plt.yticks([])
+<<<<<<< HEAD
 
+=======
+>>>>>>> d9010363f9a20404cba150c7d4a56c6d9b1e9b72
 
-#adaptive threshold
-#gaus=cv2.adaptiveThreshold(grayscaled,255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,115,1)
-#plt.imshow('original',img)
-#plt.imshow('threshold',blur)
-#cv2.imshow('gaus',gaus)
-#plt.show()
-#cv2.waitKey(0)
-#cv2.destroyAllWindows()
+# remove out of focus particles: sobel filter
+#laplacian = cv2.Laplacian(blur,cv2.CV_64F)
+sobelx = cv2.Sobel(blur, cv2.CV_64F,1,0,ksize=5)
+sobely = cv2.Sobel(sobelx, cv2.CV_64F,0,1,ksize=5)
+plt.subplot(224), plt.imshow(laplacian, cmap='gray')
+plt.title('Sobel'), plt.xticks([]), plt.yticks([])
+plt.show()
 
-'''#Morphological Transformations:
-kernel = np.ones((5,5),np.uint8)
-
+<<<<<<< HEAD
 #closing:
 closing = cv2.morphologyEx(threshold, cv2.MORPH_CLOSE, kernel)
 '''
@@ -61,3 +67,12 @@ sobely = cv2.Sobel(sobelx, cv2.CV_64F,0,1,ksize=5)
 plt.subplot(224), plt.imshow(laplacian, cmap='gray')
 plt.title('Sobel'), plt.xticks([]), plt.yticks([])
 plt.show()
+=======
+# Template Matching
+w, h = img.shape[::-1]
+res = cv2.matchTemplate(img, img, cv2.TM_CCOEFF_NORMED)
+threshold = 0.3
+loc = np.where(res >= threshold)
+for pt in zip(*loc[::-1]):
+    cv2.rectangle(img1, pt, (pt[0] + w, pt[1] + h), (0, 255, 255), 2)
+>>>>>>> d9010363f9a20404cba150c7d4a56c6d9b1e9b72
