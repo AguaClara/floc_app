@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img=cv2.imread('../images/flocs/32903.jpg')
+img=cv2.imread('../images/flocs/Image 32830.jpg')
 blur = cv2.GaussianBlur(img,(5,5),0)
 plt.subplot(221),plt.imshow(img),plt.title('Original')
 plt.xticks([]), plt.yticks([])
@@ -15,7 +15,7 @@ plt.subplot(222),plt.imshow(blur),plt.title('Blurred')
 plt.xticks([]), plt.yticks([])
 
 #threshold: binary
-retval,threshold =cv2.threshold(blur,140,255,cv2.THRESH_BINARY_INV)#below220: black higher:white
+retval,threshold =cv2.threshold(blur,100,255,cv2.THRESH_BINARY_INV)#below220: black higher:white
 plt.subplot(223),plt.imshow(threshold),plt.title('Threshold')
 plt.xticks([]), plt.yticks([])
 plt.show()
@@ -35,4 +35,11 @@ kernel = np.ones((5,5),np.uint8)
 
 #closing:
 closing = cv2.morphologyEx(threshold, cv2.MORPH_CLOSE, kernel)
+'''
+
+
+
+'''# remove out of focus particles
+
+
 '''
