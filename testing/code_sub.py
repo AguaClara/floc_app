@@ -67,16 +67,29 @@ print(img_32891_closing.shape)
 
 print(img_32891_closing[0,1279])
 print(img_32891_closing[0,0])
-rows, cols=img_32891_closing.shape[::-1]
+
+# Set the color array
+white = np.array([255,255,255])
+black = np.array([0,0,0])
+
+# get the shape of the picture
+rows,cols,channels=img_32891_closing.shape
+
+# Get all the pixels in the picture
+px=img_32891_closing[0:rows,0:cols]
 
 
 
-#print(white,black)
 
 
-cv2.imshow('closing',img_32891_closing)
+
+
+
+
+
+'''cv2.imshow('closing',img_32891_closing)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv2.destroyAllWindows()'''
 
 '''cv2.imshow('closing',img_32891_sobelx)
 cv2.waitKey(0)
