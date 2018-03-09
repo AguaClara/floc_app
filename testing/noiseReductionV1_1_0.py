@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img=cv2.imread('../images/t1.jpg')
+img=cv2.imread('../images/flocs/32903.jpg')
 blur = cv2.GaussianBlur(img,(5,5),0)
 plt.subplot(221),plt.imshow(img),plt.title('Original')
 plt.xticks([]), plt.yticks([])
