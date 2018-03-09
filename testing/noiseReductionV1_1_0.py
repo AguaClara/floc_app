@@ -29,3 +29,10 @@ plt.show()
 #plt.show()
 #cv2.waitKey(0)
 #cv2.destroyAllWindows()
+
+'''#Morphological Transformations:
+kernel = np.ones((5,5),np.uint8)
+
+#closing:
+closing = cv2.morphologyEx(threshold, cv2.MORPH_CLOSE, kernel)
+'''
