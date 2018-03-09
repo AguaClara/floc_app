@@ -1,25 +1,34 @@
-#In this snippet we attempt to replicate the methods in:
-#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4752185/
-#We first start to test how the gaussian filter affects the floc images
+# In this snippet we attempt to replicate the methods in:
+# https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4752185/
+# We want to try and perform noise reduction on the floc images to separate the
+# foreground from the back ground, we also need to see how to properly deal
+# with different flocs that are in and out of focus.
 #
+# Current Implementation:
+# *We first start to test how the gaussian filter affects the floc images
+# *We are applying inverse thresholding to the images and are currently testing
+#     what values produce the best result
 
+##############
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+##############
 
-img=cv2.imread('../images/flocs/Image 32830.jpg')
-blur = cv2.GaussianBlur(img,(5,5),0)
-plt.subplot(221),plt.imshow(img),plt.title('Original')
+img = cv2.imread('../images/flocs/Image 32830.jpg')
+
+# Application of the Gaussian Filter
+blur = cv2.GaussianBlur(img, (5, 5), 0)
+plt.subplot(221), plt.imshow(img), plt.title('Original')
 plt.xticks([]), plt.yticks([])
-plt.subplot(222),plt.imshow(blur),plt.title('Blurred')
+plt.subplot(222), plt.imshow(blur), plt.title('Blurred')
 plt.xticks([]), plt.yticks([])
 
-#threshold: binary
-retval,threshold =cv2.threshold(blur,100,255,cv2.THRESH_BINARY_INV)#below220: black higher:white
-plt.subplot(223),plt.imshow(threshold),plt.title('Threshold')
+# Binary Inverse Thresholding
+retval, threshold = cv2.threshold(blur, 100, 255, cv2.THRESH_BINARY_INV)
+plt.subplot(223), plt.imshow(threshold), plt.title('Threshold')
 plt.xticks([]), plt.yticks([])
 plt.show()
-#grayscaled=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 #adaptive threshold
 #gaus=cv2.adaptiveThreshold(grayscaled,255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,115,1)
