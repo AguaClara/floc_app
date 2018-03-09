@@ -55,13 +55,15 @@ plt.xticks([]), plt.yticks([])
 img_32891_sobelx = cv2.Sobel(img_32891_blur, cv2.CV_64F,1,0,ksize=5)
 img_32891_sobely = cv2.Sobel(img_32891_blur, cv2.CV_64F,0,1,ksize=5)
 
-plt.figure()
+'''plt.figure()
 plt.subplot(131), plt.imshow(img_32891_sobelx,cmap = 'gray'), plt.title('sobelx')
 plt.xticks([]), plt.yticks([])
 plt.subplot(132), plt.imshow(img_32891_sobely,cmap = 'gray'), plt.title('sobely')
 plt.xticks([]), plt.yticks([])
-plt.show()
+plt.show()'''
 
+# The next step should be the removal of particles that touched the border
+print(img_32891_closing.shape)
 '''cv2.imshow('closing',img_32891_sobelx)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
