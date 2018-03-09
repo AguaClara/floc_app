@@ -19,12 +19,12 @@ x=[1,2,3]
 y=[2,3,4]
 plt.plot(x,y)
 plt.show()
-plt.imshow(img,cmap='gray',interpolation='bicubic')
+plt.imshow(img, cmap='gray', interpolation='bicubic')
 plt.show()
 
-#draw/write on image
+# draw/write on image
 
-#img = cv2.imread("t1.jpg", cv2.IMREAD_GRAYSCALE)
+# img = cv2.imread("t1.jpg", cv2.IMREAD_GRAYSCALE)
 draw:
 # color : BGR green(0,255,0) white(255,255,255) black(0,0,0)
 cv2.line(img,(0,0),(150,150),(255,255,255),15)# last line width

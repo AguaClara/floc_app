@@ -48,7 +48,12 @@ closing = cv2.morphologyEx(threshold, cv2.MORPH_CLOSE, kernel)
 
 
 
-'''# remove out of focus particles
+'''# remove out of focus particles: sobel filter
+laplacian = cv2.Laplacian(img,cv2.CV_64F)
+sobelx = cv2.Sobel(img,cv2.CV_64F,1,0,ksize=5)
+sobely = cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5)
 
+plt.subplot(224),plt.imshow(img,cmap = 'gray')
+plt.title('Original'), plt.xticks([]), plt.yticks([])
 
 '''
