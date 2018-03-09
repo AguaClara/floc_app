@@ -15,7 +15,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 ##############
 
-img = cv2.imread('../images/flocs/Image 32830.jpg')
+img = cv2.imread('../images/flocs/Image 32891.jpg')
 
 # Application of the Gaussian Filter
 blur = cv2.GaussianBlur(img, (5, 5), 0)
@@ -28,7 +28,7 @@ plt.xticks([]), plt.yticks([])
 retval, threshold = cv2.threshold(blur, 100, 255, cv2.THRESH_BINARY_INV)
 plt.subplot(223), plt.imshow(threshold), plt.title('Threshold')
 plt.xticks([]), plt.yticks([])
-plt.show()
+
 
 #adaptive threshold
 #gaus=cv2.adaptiveThreshold(grayscaled,255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,115,1)
@@ -48,12 +48,10 @@ closing = cv2.morphologyEx(threshold, cv2.MORPH_CLOSE, kernel)
 
 
 
-'''# remove out of focus particles: sobel filter
-laplacian = cv2.Laplacian(img,cv2.CV_64F)
-sobelx = cv2.Sobel(img,cv2.CV_64F,1,0,ksize=5)
-sobely = cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5)
-
-plt.subplot(224),plt.imshow(img,cmap = 'gray')
-plt.title('Original'), plt.xticks([]), plt.yticks([])
-
-'''
+# remove out of focus particles: sobel filter
+#laplacian = cv2.Laplacian(blur,cv2.CV_64F)
+sobelx = cv2.Sobel(blur, cv2.CV_64F,1,0,ksize=5)
+sobely = cv2.Sobel(sobelx, cv2.CV_64F,0,1,ksize=5)
+plt.subplot(224), plt.imshow(laplacian, cmap='gray')
+plt.title('Sobel'), plt.xticks([]), plt.yticks([])
+plt.show()
