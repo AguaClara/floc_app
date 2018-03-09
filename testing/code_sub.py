@@ -1,3 +1,13 @@
+# In this snippet we attempt to replicate the methods in:
+# https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4752185/
+# We want to try and perform noise reduction on the floc images to separate the
+# foreground from the back ground, we also need to see how to properly deal
+# with different flocs that are in and out of focus.
+#
+# Current Implementation:
+# *We first start to test how the gaussian filter affects the floc images
+# *We are applying inverse thresholding to the images and are currently testing
+#     what values produce the best result
 
 
 import cv2
