@@ -79,7 +79,7 @@ cv2.destroyAllWindows()'''
 '''#template matching:
 img1=cv2.imread('t1.jpg')
 img1_gray=cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
-template=cv2.imread('template.png',0)
+template=cv2.imread('template.png',0)·
 w, h = template.shape[::-1]
 res=cv2.matchTemplate(img1_gray,template,cv2.TM_CCOEFF_NORMED)
 threshold=0.3
