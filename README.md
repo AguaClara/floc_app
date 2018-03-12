@@ -15,5 +15,5 @@ We need to figure out how to set up the camera and obtain data, find OpenCV tuto
 for code, and improve our code until we have a working app.
 
 ### Symposium SP2018
-https://docs.google.com/presentation/d/179ZJ4xV3CmCaJTuzQGwk44EMOw9uHwCoV8oW-3GeamI/edit?usp=sharing
+[Symposium Presentation Slides](https://docs.google.com/presentation/d/179ZJ4xV3CmCaJTuzQGwk44EMOw9uHwCoV8oW-3GeamI/edit?usp=sharing)
 
