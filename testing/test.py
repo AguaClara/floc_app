@@ -25,7 +25,7 @@ plt.show()
 # draw/write on image
 
 # img = cv2.imread("t1.jpg", cv2.IMREAD_GRAYSCALE)
-draw:
+#draw:
 # color : BGR green(0,255,0) white(255,255,255) black(0,0,0)
 cv2.line(img,(0,0),(150,150),(255,255,255),15)# last line width
 cv2.rectangle(img,(15,25),(300,400),(0,255,0),15)
@@ -80,7 +80,7 @@ cv2.destroyAllWindows()'''
 #template matching:
 img1=cv2.imread('t1.jpg')
 img1_gray=cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
-template=cv2.imread('template.png',0)·
+template=cv2.imread('template.png',0)
 w, h = template.shape[::-1]
 res=cv2.matchTemplate(img1_gray,template,cv2.TM_CCOEFF_NORMED)
 threshold=0.3

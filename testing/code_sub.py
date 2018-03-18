@@ -29,11 +29,12 @@ img_32891_blur = cv2.GaussianBlur(img_32891_orig, (5, 5), 0)
 plt.subplot(222), plt.imshow(img_32891_blur), plt.title('Blurred')
 plt.xticks([]), plt.yticks([])
 
+
 # Binary Inverse Thresholding after filter
 retval, img_32891_threshold = cv2.threshold(img_32891_blur, 130, 255, cv2.THRESH_BINARY_INV)
 plt.subplot(223), plt.imshow(img_32891_threshold), plt.title('Threshold')
 plt.xticks([]), plt.yticks([])
-
+plt.show()
 
 # Morphological Transformations
 # closing: closing small holes inside the object
@@ -42,7 +43,7 @@ img_32891_closing = cv2.morphologyEx(img_32891_threshold, cv2.MORPH_CLOSE, kerne
 
 plt.subplot(224), plt.imshow(img_32891_closing), plt.title('closing')
 plt.xticks([]), plt.yticks([])
-#plt.show()
+
 
 #if using denosing instead of Gaussian filter in the first step:
 img_32891_den = cv2.fastNlMeansDenoisingColored(img_32891_orig,None,10,10,7,21)
@@ -54,7 +55,7 @@ plt.subplot(132), plt.imshow(img_32891_blur), plt.title('Blurred')
 plt.xticks([]), plt.yticks([])
 plt.subplot(133), plt.imshow(img_32891_den), plt.title('Denoised')
 plt.xticks([]), plt.yticks([])
-#plt.show()
+
 
 # We cannot see too too much difference between Gaussian filter and normal denoising.
 # So we continue to use Gaussian filter mentioned in the article.
@@ -93,7 +94,7 @@ px=img_32891_closing[0:rows,0:cols]
 
 
 
-
+asd
 
 
 
