@@ -94,7 +94,6 @@ px=img_32891_closing[0:rows,0:cols]
 
 
 
-asd
 
 
 
