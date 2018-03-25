@@ -34,7 +34,7 @@ plt.xticks([]), plt.yticks([])
 retval, img_32891_threshold = cv2.threshold(img_32891_blur, 130, 255, cv2.THRESH_BINARY_INV)
 plt.subplot(223), plt.imshow(img_32891_threshold), plt.title('Threshold')
 plt.xticks([]), plt.yticks([])
-plt.show()
+
 
 # Morphological Transformations
 # closing: closing small holes inside the object
@@ -43,7 +43,7 @@ img_32891_closing = cv2.morphologyEx(img_32891_threshold, cv2.MORPH_CLOSE, kerne
 
 plt.subplot(224), plt.imshow(img_32891_closing), plt.title('closing')
 plt.xticks([]), plt.yticks([])
-
+#plt.show()
 
 #if using denosing instead of Gaussian filter in the first step:
 img_32891_den = cv2.fastNlMeansDenoisingColored(img_32891_orig,None,10,10,7,21)
@@ -89,7 +89,13 @@ rows,cols,channels=img_32891_closing.shape
 # Get all the pixels in the picture
 px=img_32891_closing[0:rows,0:cols]
 
+'''contours,_ = cv2.findContours(img_32891_closing, cv2.RETR_LIST, cv2.CV_CHAIN_APPROX_NONE)
+print(contours)'''
 
+edges = cv2.Canny(img_32891_closing,100,200)
+cv2.imshow('closing',edges)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 
