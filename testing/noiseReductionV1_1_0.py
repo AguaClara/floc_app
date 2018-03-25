@@ -15,24 +15,15 @@ import numpy as np
 from matplotlib import pyplot as plt
 ##############
 
-<<<<<<< HEAD
-=======
-=======
-
 img=cv2.imread('../images/flocs/32903.jpg')
 blur = cv2.GaussianBlur(img,(5,5),0)
 plt.subplot(221),plt.imshow(img),plt.title('Original')
 
->>>>>>> 1ce925c7784dcfafea0b375753cc748b40935c21
 img = cv2.imread('../images/flocs/Image 32891.jpg')
 
 # Application of the Gaussian Filter
 blur = cv2.GaussianBlur(img, (5, 5), 0)
 plt.subplot(221), plt.imshow(img), plt.title('Original')
-<<<<<<< HEAD
-=======
-
->>>>>>> 1ce925c7784dcfafea0b375753cc748b40935c21
 plt.xticks([]), plt.yticks([])
 plt.subplot(222), plt.imshow(blur), plt.title('Blurred')
 plt.xticks([]), plt.yticks([])
@@ -50,8 +41,6 @@ plt.subplot(224), plt.imshow(laplacian, cmap='gray')
 plt.title('Sobel'), plt.xticks([]), plt.yticks([])
 plt.show()
 
-<<<<<<< HEAD
-=======
 #closing:
 closing = cv2.morphologyEx(threshold, cv2.MORPH_CLOSE, kernel)
 
@@ -63,7 +52,6 @@ plt.subplot(224), plt.imshow(laplacian, cmap='gray')
 plt.title('Sobel'), plt.xticks([]), plt.yticks([])
 plt.show()
 
->>>>>>> 1ce925c7784dcfafea0b375753cc748b40935c21
 # Template Matching
 w, h = img.shape[::-1]
 res = cv2.matchTemplate(img, img, cv2.TM_CCOEFF_NORMED)
