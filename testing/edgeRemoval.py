@@ -15,8 +15,8 @@ mask = np.zeros((h+2, w+2), np.uint8)
 
 fld_IMG = img2.copy()
 
-
-cv2.floodFill(fld_IMG, mask, (0,0), (255,255,255))
+border_point=(1::)
+cv2.floodFill(fld_IMG, mask, border_point, (255,255,255))
 #inverted_Flood = cv2.bitwise_not(fld_IMG)
 img_Out = cv2.bitwise_not(fld_IMG | img2)
 cv2.imshow('closing',img_Out)
