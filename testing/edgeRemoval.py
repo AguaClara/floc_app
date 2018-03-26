@@ -5,6 +5,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 ###### Loading image and thresholding
+
 img = cv2.imread('../images/flocs/Image 32373.jpg',0)
 
 #switch it to greyscale
@@ -18,6 +19,15 @@ retval, t2 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 t3=cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY_INV,11,2)
 
 #th3 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,11,2)
+blur = cv2.GaussianBlur(img, (5, 5), 0)
+#retval, t1 = cv2.threshold(blur, 100, 255, cv2.THRESH_BINARY_INV)
+
+
+retval, t2 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+t3=cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY_INV,11,2)
+
+#th3 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,11,2)
+
 
 thresh = t3
 ######
@@ -29,7 +39,7 @@ kernel = np.ones((5,5),np.uint8)
 closed = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel)
 #closed = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
 
->>>>>>> 0f966c653c5c41430725d9de9c2d9ff43de6d93c
+
 edges = cv2.Canny(closed, 130, 200)
 mask = np.pad(edges, pad_width=1, mode="constant", constant_values=0)
 fld_IMG = closed.copy()
@@ -40,7 +50,7 @@ inverted_Flood = cv2.bitwise_not(fld_IMG)
 img_Out = (inverted_Flood | closed)
 '''cv2.imshow('closing', closed)
 cv2.imshow('t3', t3)
->>>>>>> 0f966c653c5c41430725d9de9c2d9ff43de6d93c
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()'''
 
