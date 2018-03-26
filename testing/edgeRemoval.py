@@ -15,7 +15,7 @@ blur = cv2.GaussianBlur(img, (5, 5), 0)
 
 
 retval, t2 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
-t3=cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,11,2)
+t3=cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY_INV,11,2)
 
 #th3 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,11,2)
 
@@ -26,7 +26,8 @@ print(thresh.shape)
 
 ##### Closing
 kernel = np.ones((5,5),np.uint8)
-closed = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
+closed = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel)
+#closed = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
 
 edges = cv2.Canny(closed, 130, 200)
 mask = np.pad(edges, pad_width=1, mode="constant", constant_values=0)
@@ -49,5 +50,7 @@ plt.xticks([]), plt.yticks([])
 plt.subplot(233), plt.imshow(cv2.cvtColor(t3, cv2.COLOR_GRAY2RGB)), plt.title('gaussian thresholding')
 plt.xticks([]), plt.yticks([])
 plt.subplot(234), plt.imshow(cv2.cvtColor(closed, cv2.COLOR_GRAY2RGB)), plt.title('closed')
+plt.xticks([]), plt.yticks([])
+plt.subplot(235), plt.imshow(cv2.cvtColor(edges, cv2.COLOR_GRAY2RGB)), plt.title('edges')
 plt.xticks([]), plt.yticks([])
 plt.show()
