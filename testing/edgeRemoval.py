@@ -29,6 +29,7 @@ kernel = np.ones((5,5),np.uint8)
 closed = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel)
 #closed = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
 
+>>>>>>> 0f966c653c5c41430725d9de9c2d9ff43de6d93c
 edges = cv2.Canny(closed, 130, 200)
 mask = np.pad(edges, pad_width=1, mode="constant", constant_values=0)
 fld_IMG = closed.copy()
@@ -39,6 +40,7 @@ inverted_Flood = cv2.bitwise_not(fld_IMG)
 img_Out = (inverted_Flood | closed)
 '''cv2.imshow('closing', closed)
 cv2.imshow('t3', t3)
+>>>>>>> 0f966c653c5c41430725d9de9c2d9ff43de6d93c
 cv2.waitKey(0)
 cv2.destroyAllWindows()'''
 
