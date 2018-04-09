@@ -27,3 +27,11 @@ Raises:
 def applyTo(path, fcn):
     for file in glob.glob(os.path.join(path, "*.jpg")):
         fcn(file)
+
+'''
+Purpose:
+    - Noise Reduction
+Parameters:
+Returns:
+Raises:
+'''
