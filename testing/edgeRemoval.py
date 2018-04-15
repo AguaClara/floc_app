@@ -66,7 +66,7 @@ mask = np.zeros((height+2,width+2))
 i = 0
 while i < width:
     if output[height-1,i].all() == 255:
-        output = cv2.floodFill(output, mask, (height-1,i), [0,0,0])
+        output = cv2.floodFill(output, (height-1,i), [0,0,0], mask)
     i = i+1
 
 plt.subplot(231), plt.imshow(cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)), plt.title('Original')
