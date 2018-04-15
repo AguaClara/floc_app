@@ -2,8 +2,32 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
+'''
+height, width = img.shape()
 
-img = cv2.imread('../images/flocs/Image 32427.jpg',0)
+#Edges matrix to create mask
+edges = cv2.Canny(closed, 130, 200)
+
+mask = np.pad(edges, pad_width=1, mode="constant", constant_values=0)
+
+#Top
+for i in range width:
+    if img(0,i) == 255:
+        img_Out = cv2.floodFill(img, mask, (x,y), 0)
+
+#Bottom
+
+#Left
+
+#Right
+
+
+'''
+
+img = cv2.imread('../images/flocs/Image 32379.jpg',0)
+# on the left border
+#img = cv2.imread('../images/flocs/Image 32406.jpg',0)
+
 blur1 = cv2.bilateralFilter(img,5,10,10)
 blur2 = cv2.GaussianBlur(img, (5,5), 10)
 
@@ -29,6 +53,22 @@ kernel = np.ones((8,8),np.uint8)
 closed_1 = cv2.morphologyEx(opened_1, cv2.MORPH_CLOSE, kernel)
 closed_2 = cv2.morphologyEx(opened_2, cv2.MORPH_CLOSE, kernel)
 
+height, width = closed_2.shape
+print(height)
+print(width)
+output = closed_2.copy()
+#Edges matrix to create mask
+#edges = cv2.Canny(output, 130, 200)
+#mask = np.pad(edges, pad_width=1, mode="constant", constant_values=0)
+mask = np.zeros((height+2,width+2))
+#Top
+
+i = 0
+while i < width:
+    if output[height-1,i].all() == 255:
+        output = cv2.floodFill(output, mask, (height-1,i), [0,0,0])
+    i = i+1
+
 plt.subplot(231), plt.imshow(cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)), plt.title('Original')
 plt.xticks([]), plt.yticks([])
 # plt.subplot(232), plt.imshow(cv2.cvtColor(blur1, cv2.COLOR_GRAY2RGB)), plt.title('Bilateral')
@@ -43,10 +83,40 @@ plt.subplot(234), plt.imshow(cv2.cvtColor(closed_1, cv2.COLOR_GRAY2RGB)), plt.ti
 plt.xticks([]), plt.yticks([])
 plt.subplot(235), plt.imshow(cv2.cvtColor(closed_2, cv2.COLOR_GRAY2RGB)), plt.title('Gaussian close')
 plt.xticks([]), plt.yticks([])
-
+plt.subplot(236), plt.imshow(cv2.cvtColor(output, cv2.COLOR_GRAY2RGB)), plt.title('output')
+plt.xticks([]), plt.yticks([])
 plt.show()
 
 
+# rows,cols,channels=img.shape
+# white=255
+
+# Boundary floc removal
+# uchar white(255);
+#
+# // do top and bottom row
+# for(int y = 0; y < image.rows; y += image.rows-1)
+# {
+#     uchar* row = image.ptr<uchar>(y)
+#     for(int x = 0; x < image.cols; ++x)
+#     {
+#         if(row[x] == white)
+#         {
+#             cv::floodFill(image, cv::Point(x,y), cv::Scalar(0), (cv::Rect*)0, cv::Scalar(), cv::Scalar(200));
+#         }
+#     }
+# }
+# // fix left and right sides
+# for(int y = 0; y < image.rows; ++y)
+# {
+#     row = image.ptr<uchar>(y)
+#     for(int x = 0; x < image.cols; x += image.cols - 1)
+#     {
+#         if(row[x] == white)
+#         {
+#             cv::floodFill(image, cv::Point(x,y), cv::Scalar(0), (cv::Rect*)0, cv::Scalar(), cv::Scalar(200));
+#         }
+#     }
 
 #Old version
 # ###### Loading image and thresholding
