@@ -20,11 +20,9 @@ for i in range width:
 #Left
 
 #Right
-
-
 '''
 
-img = cv2.imread('../images/flocs/Image 32379.jpg',0)
+img = cv2.imread('../images/flocs/Image 32381.jpg',0)
 # on the left border
 #img = cv2.imread('../images/flocs/Image 32406.jpg',0)
 
