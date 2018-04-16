@@ -60,15 +60,19 @@ output = closed_2.copy()
 #Edges matrix to create mask
 #edges = cv2.Canny(output, 130, 200)
 #mask = np.pad(edges, pad_width=1, mode="constant", constant_values=0)
+
+cv2.cvtColor(output,cv2.COLOR_GRAY2RGB)
 mask = np.zeros((height+2,width+2), np.uint8)
 #Top
+diff = (6, 6, 6)
+cv2.floodFill(output, mask, (955,279), [0,0,0])
+print(output[955,279])
 
-
-i = 0
-while i < width:
-    if output[height-1,i].all() == 255:
-        output=cv2.floodFill(output, (height-1,i), [0,0,0],mask)
-    i = i+1
+# i = 0
+# while i < width:
+#     if output[height-1,i].all() == 255:
+#         output=cv2.floodFill(output, (height-1,i), 0 ,mask=null)
+#     i = i+1
 
 plt.subplot(231), plt.imshow(cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)), plt.title('Original')
 plt.xticks([]), plt.yticks([])
