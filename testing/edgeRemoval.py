@@ -91,6 +91,9 @@ plt.xticks([]), plt.yticks([])
 plt.show()
 
 
+################# Section 2
+
+
 # rows,cols,channels=img.shape
 # white=255
 
