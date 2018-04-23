@@ -78,7 +78,7 @@ plt.xticks([]), plt.yticks([])
 # plt.xticks([]), plt.yticks([])
 # plt.subplot(233), plt.imshow(cv2.cvtColor(blur2, cv2.COLOR_GRAY2RGB)), plt.title('Gaussian')
 # plt.xticks([]), plt.yticks([])
-A
+
 plt.subplot(233), plt.imshow(cv2.cvtColor(dilation_2, cv2.COLOR_GRAY2RGB)), plt.title('Gaussian dilation')
 plt.xticks([]), plt.yticks([])
 plt.subplot(234), plt.imshow(cv2.cvtColor(closed_1, cv2.COLOR_GRAY2RGB)), plt.title('Bilateral close')
