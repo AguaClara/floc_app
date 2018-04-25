@@ -1,11 +1,13 @@
-import skimage
+from skimage.measure import label, regionprops
+from skimage.segmentation import clear_border
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
 
 
-img = cv2.imread('../images/flocs/Image 32381.jpg',0)
+
+img = cv2.imread('../images/flocs/Image 32795.jpg',0)
 # on the left border
 #img = cv2.imread('../images/flocs/Image 32406.jpg',0)
 
@@ -26,8 +28,22 @@ opened = cv2.morphologyEx(dilation, cv2.MORPH_OPEN, kernel)
 kernel = np.ones((8,8),np.uint8)
 closed = cv2.morphologyEx(opened, cv2.MORPH_CLOSE, kernel)
 
-print(label(closed, connectivity = 1))
+cleared = closed.copy()
+cleared=clear_border(cleared)
 
-plt.subplot(221), plt.imshow(cv2.cvtColor(closed, cv2.COLOR_GRAY2RGB)), plt.title('closed')
+labels=label(cleared, connectivity = 1)
+
+print('regions number:',labels.max())
+# The properities of images
+for region in regionprops(labels):
+    print(region.area) #循环得到每一个连通区域属性集
+
+
+
+
+plt.subplot(121), plt.imshow(cv2.cvtColor(closed, cv2.COLOR_GRAY2RGB)), plt.title('closed')
 plt.xticks([]), plt.yticks([])
+plt.subplot(122), plt.imshow(cv2.cvtColor(cleared, cv2.COLOR_GRAY2RGB)), plt.title('cleared')
+plt.xticks([]), plt.yticks([])
+
 plt.show()
