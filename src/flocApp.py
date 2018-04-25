@@ -49,6 +49,7 @@ def flocID(img):
     kernel = np.ones((4,4),np.uint8)
     dilation = cv2.dilate(t,kernel,iterations = 2)
     opened = cv2.morphologyEx(dilation, cv2.MORPH_OPEN, kernel)
+    kernel = np.ones((8,8),np.uint8)
     closed = cv2.morphologyEx(opened, cv2.MORPH_CLOSE, kernel)
     return closed
 
@@ -60,7 +61,7 @@ Parameters
 Returns:
     - Opens a pyplot showing the two images
 Raises:
-    - 
+    -
 '''
 def compareImg(img1, img2):
     plt.subplot(121),
