@@ -3,6 +3,7 @@ from skimage.segmentation import clear_border
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+import matplotlib.patches as mpatches
 
 
 
@@ -33,10 +34,14 @@ cleared=clear_border(cleared)
 
 labels=label(cleared, connectivity = 1)
 
+area=[]
 print('regions number:',labels.max())
 # The properities of images
 for region in regionprops(labels):
-    print(region.area) #循环得到每一个连通区域属性集
+    area.append(region.area)
+
+print(area)
+
 
 
 
@@ -46,5 +51,4 @@ plt.subplot(132), plt.imshow(cv2.cvtColor(closed, cv2.COLOR_GRAY2RGB)), plt.titl
 plt.xticks([]), plt.yticks([])
 plt.subplot(133), plt.imshow(cv2.cvtColor(cleared, cv2.COLOR_GRAY2RGB)), plt.title('cleared')
 plt.xticks([]), plt.yticks([])
-
 plt.show()
