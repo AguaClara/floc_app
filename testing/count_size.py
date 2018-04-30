@@ -8,7 +8,7 @@ import matplotlib.patches as mpatches
 
 
 
-img = cv2.imread('../images/flocs/Image 32795.jpg',0)
+img = cv2.imread('../images/flocs/Image 32419.jpg',0)
 # on the left border
 #img = cv2.imread('../images/flocs/Image 32406.jpg',0)
 
