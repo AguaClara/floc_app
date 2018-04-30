@@ -40,10 +40,11 @@ for region in regionprops(labels):
 
 
 
-
-plt.subplot(121), plt.imshow(cv2.cvtColor(closed, cv2.COLOR_GRAY2RGB)), plt.title('closed')
+plt.subplot(131), plt.imshow(cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)), plt.title('img')
 plt.xticks([]), plt.yticks([])
-plt.subplot(122), plt.imshow(cv2.cvtColor(cleared, cv2.COLOR_GRAY2RGB)), plt.title('cleared')
+plt.subplot(132), plt.imshow(cv2.cvtColor(closed, cv2.COLOR_GRAY2RGB)), plt.title('closed')
+plt.xticks([]), plt.yticks([])
+plt.subplot(133), plt.imshow(cv2.cvtColor(cleared, cv2.COLOR_GRAY2RGB)), plt.title('cleared')
 plt.xticks([]), plt.yticks([])
 
 plt.show()
