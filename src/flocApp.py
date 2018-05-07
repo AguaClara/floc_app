@@ -12,6 +12,9 @@ import glob
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+import matplotlib.patches as mpatches
+from skimage.measure import label, regionprops
+from skimage.segmentation import clear_border
 # End of Imports
 
 '''
