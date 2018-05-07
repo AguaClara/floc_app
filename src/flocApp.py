@@ -54,7 +54,9 @@ def flocID(img):
     opened = cv2.morphologyEx(dilation, cv2.MORPH_OPEN, kernel)
     kernel = np.ones((8,8),np.uint8)
     closed = cv2.morphologyEx(opened, cv2.MORPH_CLOSE, kernel)
-    return closed
+    cleared = closed.copy()
+    cleared=clear_border(cleared)
+    return cleared
 
 '''
 Purpose:
