@@ -14,17 +14,16 @@ from skimage.feature import canny
 import matplotlib.pyplot as plt
 from scipy import ndimage as ndi
 from skimage.filters import sobel
-from skimage.morphology import watershed
+from skimage.segmentation import watershed
 
 img = io.imread('../images/flocs/Image 32795.jpg')
 edges = canny(img, sigma=4.)
 
 markers = np.zeros_like(img)
 markers[img < 30] = 1
-markers[img > 150] = 2
+markers[img > 200] = 2
 elevation_map = sobel(img)
-segmentation = watershed(elevation_map, markers)
-segmentation = ndi.binary_fill_holes(segmentation - 1)
+segmentation = watershed(img, markers)
 
 fig, (ax1,ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(8, 3),
 sharex=True, sharey=True)
@@ -36,7 +35,7 @@ ax2.imshow(edges, cmap=plt.cm.gray)
 ax2.axis('off')
 ax2.set_title('Edges Image', fontsize=10)
 
-ax3.imshow(elevation_map, cmap=plt.cm.gray)
+ax3.imshow(segmentation, cmap=plt.cm.gray)
 ax3.axis('off')
 ax3.set_title('Edges Image', fontsize=10)
 
