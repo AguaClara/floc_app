@@ -17,6 +17,7 @@ blur = cv2.GaussianBlur(img, (5,5), 10)
 
 t2=cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY_INV,9,7)
 
+
 kernel = np.ones((4,4),np.uint8)
 dilation = cv2.dilate(t2,kernel,iterations = 2)
 
