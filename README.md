@@ -2,11 +2,13 @@
 
 ### Team Members:
 
-Team Lead: Medhavi Gandhi
+Ryan Tang (Lead)
 
 Kelly Fam
 
-Ryan Tang
+Eldor Bekpulatov
+
+
 
 
 ### Goals for Fall 2018:
