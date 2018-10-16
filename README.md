@@ -4,8 +4,6 @@
 
 Ryan Tang (Lead)
 
-Kelly Fam
-
 Eldor Bekpulatov
 
 
