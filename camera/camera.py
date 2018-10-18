@@ -15,66 +15,91 @@ class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
 
-        self.available_cameras = QCameraInfo.availableCameras()
-        if not self.available_cameras:
-            pass #quit
+        self.setWindowTitle("Floc App")
+        self.initUI()
 
+        self.show()
+
+    def initUI(self):
+        self.init_statusBar()
+        self.init_camera()
+        self.init_cameraBar()               
+        self.init_menuBar()
+        self.show()
+
+
+    def init_statusBar(self):
         self.status = QStatusBar()
         self.setStatusBar(self.status)
 
-        self.save_path = ""
-
+    def init_camera(self):
+        self.available_cameras = QCameraInfo.availableCameras()
+        if not self.available_cameras:
+            pass
         self.viewfinder = QCameraViewfinder()
         self.viewfinder.show()
         self.setCentralWidget(self.viewfinder)
-
-        # Set the default camera.
         self.select_camera(0)
 
-
-        # Setup tools
+    def init_cameraBar(self):
         camera_toolbar = QToolBar("Camera")
         camera_toolbar.setIconSize(QSize(14, 14))
         self.addToolBar(camera_toolbar)
 
-        photo_action = QAction(QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
-        photo_action.setStatusTip("Take photo of current view")
-        photo_action.triggered.connect(self.take_photo)
-        camera_toolbar.addAction(photo_action)
+        self.init_cameraAction(camera_toolbar)
+        self.init_changeFolder(camera_toolbar)
+        self.init_cameraSelect(camera_toolbar)
+    
+    def init_cameraAction(self, c):
+        self.save_path = ""
 
+        photoAction = QAction(QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
+        photoAction.setStatusTip("Take photo of current view")
+        photoAction.triggered.connect(self.take_photo)
+        c.addAction(photoAction)
+
+    def init_changeFolder(self, c):
         change_folder_action = QAction(QIcon(os.path.join('images', 'blue-folder-horizontal-open.png')), "Change save location...", self)
         change_folder_action.setStatusTip("Change folder where photos are saved.")
         change_folder_action.triggered.connect(self.change_folder)
-        camera_toolbar.addAction(change_folder_action)
+        c.addAction(change_folder_action)
 
-
+    def init_cameraSelect(self, c):
         camera_selector = QComboBox()
         camera_selector.addItems([c.description() for c in self.available_cameras])
         camera_selector.currentIndexChanged.connect( self.select_camera )
-        camera_toolbar.addWidget(camera_selector)
+        c.addWidget(camera_selector)
 
-        self.initUI()
-        self.setWindowTitle("Image Viewer")
-        self.show()
-
-    def initUI(self):               
-        
-        # menubar
-        mainMenu = self.menuBar() 
+    def init_menuBar(self):
+        mainMenu = self.menuBar()
         mainMenu.setNativeMenuBar(False)
-        fileMenu = mainMenu.addMenu('&File')
-        editMenu = mainMenu.addMenu('Edit')
+        fileMenu = mainMenu.addMenu('File')
         viewMenu = mainMenu.addMenu('View')
-        toolsMenu = mainMenu.addMenu('Tools')
-        helpMenu = mainMenu.addMenu('Help')
- 
-        exitButton = QAction(QIcon('exit24.png'), 'Exit', self)
+        toolMenu = mainMenu.addMenu('Tools')
+
+        self.init_fileMenu(fileMenu)
+        self.init_viewMenu(viewMenu)
+        self.init_toolMenu(toolMenu)
+    
+    def init_fileMenu(self, m):
+        exitButton = QAction('Exit', self)
         exitButton.setShortcut('Ctrl+Q')
-        exitButton.setStatusTip('Exit application')
         exitButton.triggered.connect(self.close)
-        fileMenu.addAction(exitButton)
-        
-        self.show()
+        m.addAction(exitButton)
+
+    def init_viewMenu(self, m):
+        zoomButton = QAction('Zoom', self)
+        zoomButton.setShortcut('Ctrl + Shift+')
+        zoomButton.triggered.connect(self.close)
+        m.addAction(zoomButton)
+
+    def init_toolMenu(self, m):
+        filters = QAction('Black/White Filter', self)
+        filters.triggered.connect(self.close)
+        m.addAction(filters)
+
+
+
 
     def select_filter(self, i):
         self.camera = QCamera(self.available_cameras[i])
