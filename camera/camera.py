@@ -17,13 +17,18 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Floc App")
         self.initUI()
+        width = self.width()
+        height = self.height()
+        self.setGeometry(10, 10, 800, 400)
 
         self.show()
 
     def initUI(self):
         self.init_statusBar()
         self.init_camera()
-        self.init_cameraBar()               
+        self.init_cameraBar()
+        self.init_sideBar()               
+               
         self.init_menuBar()
         self.show()
 
@@ -44,7 +49,7 @@ class MainWindow(QMainWindow):
     def init_cameraBar(self):
         camera_toolbar = QToolBar("Camera")
         camera_toolbar.setIconSize(QSize(14, 14))
-        self.addToolBar(camera_toolbar)
+        self.addToolBar(Qt.BottomToolBarArea, camera_toolbar)
 
         self.init_cameraAction(camera_toolbar)
         self.init_changeFolder(camera_toolbar)
@@ -69,6 +74,15 @@ class MainWindow(QMainWindow):
         camera_selector.addItems([c.description() for c in self.available_cameras])
         camera_selector.currentIndexChanged.connect( self.select_camera )
         c.addWidget(camera_selector)
+
+    def init_sideBar(self):
+        sideBar = QToolBar("Sidebar")
+        self.addToolBar(Qt.RightToolBarArea, sideBar)
+        self.init_filterSelect(sideBar)
+
+    def init_filterSelect(self, s):
+        filter_selector = QComboBox()
+        s.addWidget(filter_selector)
 
     def init_menuBar(self):
         mainMenu = self.menuBar()
