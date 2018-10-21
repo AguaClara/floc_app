@@ -24,14 +24,25 @@ class MainWindow(QMainWindow):
         self.show()
 
     def initUI(self):
+        self.init_menuBar()
         self.init_statusBar()
         self.init_camera()
         self.init_cameraBar()
-        self.init_sideBar()               
+        self.init_filterSideBar()               
                
-        self.init_menuBar()
         self.show()
 
+
+    def init_menuBar(self):
+        mainMenu = self.menuBar()
+        mainMenu.setNativeMenuBar(False)
+        fileMenu = mainMenu.addMenu('File')
+        viewMenu = mainMenu.addMenu('View')
+        toolMenu = mainMenu.addMenu('Tools')
+
+        self.init_fileMenu(fileMenu)
+        self.init_viewMenu(viewMenu)
+        self.init_toolMenu(toolMenu)
 
     def init_statusBar(self):
         self.status = QStatusBar()
@@ -46,54 +57,72 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.viewfinder)
         self.select_camera(0)
 
+# Initialize Camera bar
     def init_cameraBar(self):
         camera_toolbar = QToolBar("Camera")
-        camera_toolbar.setIconSize(QSize(14, 14))
+        camera_toolbar.setIconSize(QSize(45,45))
+        camera_toolbar.setMovable(False)
         self.addToolBar(Qt.BottomToolBarArea, camera_toolbar)
 
-        self.init_cameraAction(camera_toolbar)
-        self.init_changeFolder(camera_toolbar)
-        self.init_cameraSelect(camera_toolbar)
     
-    def init_cameraAction(self, c):
-        self.save_path = ""
+        def init_cameraActionButton():
+            self.save_path = ""
+            photoAction = QAction(QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
+            photoAction.setStatusTip("Take photo of current view")
+            photoAction.triggered.connect(self.take_photo)
+            camera_toolbar.addAction(photoAction)
 
-        photoAction = QAction(QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
-        photoAction.setStatusTip("Take photo of current view")
-        photoAction.triggered.connect(self.take_photo)
-        c.addAction(photoAction)
+        def init_changeFolderButton():
+            change_folder_action = QAction(QIcon(os.path.join('images', 'blue-folder-horizontal-open.png')), "Change save location...", self)
+            change_folder_action.setStatusTip("Change folder where photos are saved.")
+            change_folder_action.triggered.connect(self.change_folder)
+            camera_toolbar.addAction(change_folder_action)
 
-    def init_changeFolder(self, c):
-        change_folder_action = QAction(QIcon(os.path.join('images', 'blue-folder-horizontal-open.png')), "Change save location...", self)
-        change_folder_action.setStatusTip("Change folder where photos are saved.")
-        change_folder_action.triggered.connect(self.change_folder)
-        c.addAction(change_folder_action)
+        def init_cameraSelectDropdown():
+            camera_selector = QComboBox()
+            camera_selector.addItems([c.description() for c in self.available_cameras])
+            camera_selector.currentIndexChanged.connect( self.select_camera )
+            camera_toolbar.addWidget(camera_selector)
 
-    def init_cameraSelect(self, c):
-        camera_selector = QComboBox()
-        camera_selector.addItems([c.description() for c in self.available_cameras])
-        camera_selector.currentIndexChanged.connect( self.select_camera )
-        c.addWidget(camera_selector)
+        # Initialize subParts Here
+        init_cameraActionButton()
+        init_changeFolderButton()
+        init_cameraSelectDropdown()
 
-    def init_sideBar(self):
+# 
+
+    def init_filterSideBar(self):
         sideBar = QToolBar("Sidebar")
+        sideBar.setMovable(False)
         self.addToolBar(Qt.RightToolBarArea, sideBar)
-        self.init_filterSelect(sideBar)
+        
+        def init_filterLabelText():
+            filter_label = QLabel("Filter")
+            sideBar.addWidget(filter_label)
 
-    def init_filterSelect(self, s):
-        filter_selector = QComboBox()
-        s.addWidget(filter_selector)
+        def init_filterSelectDropdown():
+            self.filters = ["Normal", "Black/White"]
+            filter_selector = QComboBox()
+            filter_selector.addItems([c for c in self.filters])
+            sideBar.addWidget(filter_selector)
 
-    def init_menuBar(self):
-        mainMenu = self.menuBar()
-        mainMenu.setNativeMenuBar(False)
-        fileMenu = mainMenu.addMenu('File')
-        viewMenu = mainMenu.addMenu('View')
-        toolMenu = mainMenu.addMenu('Tools')
+        def init_addFilterButton():
+            add_filterButton = QPushButton("Add")
+            add_filterButton.clicked.connect(init_filterSelectDropdown)  # FIX ME
+            sideBar.addWidget(add_filterButton)
 
-        self.init_fileMenu(fileMenu)
-        self.init_viewMenu(viewMenu)
-        self.init_toolMenu(toolMenu)
+        def init_applyFiltersButton():
+            apply_button = QPushButton("Apply")
+            apply_button.clicked.connect(self.apply_filter)
+            sideBar.addWidget(apply_button)
+
+        # Initialize SubParts here
+        init_filterLabelText()
+        init_filterSelectDropdown()
+        init_addFilterButton()
+        init_applyFiltersButton()
+
+
     
     def init_fileMenu(self, m):
         exitButton = QAction('Exit', self)
@@ -108,7 +137,7 @@ class MainWindow(QMainWindow):
         m.addAction(zoomButton)
 
     def init_toolMenu(self, m):
-        filters = QAction('Black/White Filter', self)
+        filters = QAction('Filters', self)
         filters.triggered.connect(self.close)
         m.addAction(filters)
 
@@ -144,6 +173,9 @@ class MainWindow(QMainWindow):
         self.current_camera_name = self.available_cameras[i].description()
         self.save_seq = 0
 
+    def apply_filter(self):
+        print("applied")
+
     def take_photo(self):
         self.viewfinder.setContrast(100)
         #self.viewfinder.setBrightness(0)
@@ -173,7 +205,7 @@ class MainWindow(QMainWindow):
 if __name__ == '__main__':
 
     app = QApplication(sys.argv)
-    app.setApplicationName("NSAViewer")
+    app.setApplicationName("Camera")
 
     window = MainWindow()
     app.exec_()
