@@ -25,3 +25,6 @@ Week 4: September 30-October 1: Submit feedback form 1, work with current images
 
 ### Spring 2018 Final Presentation:
 [Presentation Slides](https://docs.google.com/presentation/d/179ZJ4xV3CmCaJTuzQGwk44EMOw9uHwCoV8oW-3GeamI/edit?usp=sharing)
+[presentation slides fall 2018](https://docs.google.com/presentation/d/1Xp4mftEvN9sQQSgwsrfPOWZciWiqELBXN0llDnjOKtY/edit#slide=id.g452cc128b8_0_48)
+
+
