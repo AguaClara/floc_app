@@ -4,7 +4,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtPrintSupport import *
 from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
-
+# 
 import os
 import sys
 import time
@@ -28,8 +28,8 @@ class MainWindow(QMainWindow):
         self.init_statusBar()
         self.init_camera()
         self.init_cameraBar()
-        self.init_filterSideBar()               
-               
+        self.init_filterSideBar()
+
         self.show()
 
 
@@ -64,7 +64,7 @@ class MainWindow(QMainWindow):
         camera_toolbar.setMovable(False)
         self.addToolBar(Qt.BottomToolBarArea, camera_toolbar)
 
-    
+
         def init_cameraActionButton():
             self.save_path = ""
             photoAction = QAction(QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
@@ -89,13 +89,13 @@ class MainWindow(QMainWindow):
         init_changeFolderButton()
         init_cameraSelectDropdown()
 
-# 
+#
 
     def init_filterSideBar(self):
         sideBar = QToolBar("Sidebar")
         sideBar.setMovable(False)
         self.addToolBar(Qt.RightToolBarArea, sideBar)
-        
+
         def init_filterLabelText():
             filter_label = QLabel("Filter")
             sideBar.addWidget(filter_label)
@@ -123,7 +123,7 @@ class MainWindow(QMainWindow):
         init_applyFiltersButton()
 
 
-    
+
     def init_fileMenu(self, m):
         exitButton = QAction('Exit', self)
         exitButton.setShortcut('Ctrl+Q')
