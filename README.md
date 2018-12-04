@@ -31,10 +31,12 @@ Week 11: Thanksgiving
 Week 12: November 25-Dec1: prepare final presentation.
 
 ### Spring 2018 Final Presentation:
-[Spring 2018 Final Presentation Slides](https://docs.google.com/presentation/d/179ZJ4xV3CmCaJTuzQGwk44EMOw9uHwCoV8oW-3GeamI/edit?usp=sharing)
+
+[Fall 2018 Presentation Video] https://youtu.be/2SXc7grdD3g
 
 [Fall 2018 Final Presentation Slides] (https://docs.google.com/presentation/d/1QeoitHQfX2f_iCgGeG6z51iU74PFxhHOF9QFAl-lUw8/edit?usp=sharing)
 
 [Fall 2018 Mid-year Presentation Slides](https://docs.google.com/presentation/d/1Xp4mftEvN9sQQSgwsrfPOWZciWiqELBXN0llDnjOKtY/edit#slide=id.g452cc128b8_0_48)
 
+[Spring 2018 Final Presentation Slides](https://docs.google.com/presentation/d/179ZJ4xV3CmCaJTuzQGwk44EMOw9uHwCoV8oW-3GeamI/edit?usp=sharing)
 
