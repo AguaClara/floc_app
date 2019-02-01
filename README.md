@@ -2,33 +2,29 @@
 
 ### Team Members:
 
-Ryan Tang (Lead)
-
-Eldor Bekpulatov
-
-Rohan Basavaraju
+Dana Owens  (Lead)
+Richard Yu
+Natalie Isak
 
 
-
-
-### Goals for Fall 2018:
+### Goals for Spring 2018:
 1. Train new members on Github, OpenCV and Aguaclara Safety.
-2. Get familiar with Python packages for GUI's.
-3. Get back to figuring out the camera- until then use sample images.
+2. Get familiar with scripts written spring semester.
+3. Use sample images to test code and search for bugs.
 4. Continue working on OpenCV code.
 
 ### Calendar:
-Lab times/meetings assigned to T/R 1:25-2:30 and Saturday evenings, but will probably be more flexible.
+Lab times/meetings assigned to T/R 1:25-2:30 along with time put in outside of lab.
 
-Week 1: September 9-15: Meet up, new members do tutorials.
-Week 2: September 16-22: Start researching GUI frameworks, compile a list. Get more familiar with OpenCV, Matplotlib.
-Week 3-5: September 29-October 14: Building GUI in PyQt5
-Week 6: October 14- 21: Prepared for final presentation, fixed up GUI
-Week 7: October 22-28: New member, 
-Week 8-9: October 29-Nov 11: Meeting with Monroe, change of plans in terms of direction with project. Put pause on GUI, focus on reading research paper, buidling background.
-Week 10: November 11-18 Continue researching GUI Frameworks, and understanding pipeline of filters.
-Week 11: Thanksgiving
-Week 12: November 25-Dec1: prepare final presentation.
+Week 1: Meet new members, start to look over research from previous semesters.
+Week 2: TBD
+Week 3-5: TBD
+Week 6: TBD
+Week 7: TBD
+Week 8-9: TBD 
+Week 10: TBD
+Week 11: TBD
+Week 12: TBD
 
 ### Spring 2018 Final Presentation:
 
