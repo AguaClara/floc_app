@@ -2,8 +2,8 @@
 
 ### Team Members:
 
-Dana Owens  (Lead)
-Richard Yu
+Dana Owens  (Lead),
+Richard Yu,
 Natalie Isak
 
 
