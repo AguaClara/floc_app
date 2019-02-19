@@ -1,0 +1,2 @@
+#Importing the neccessary packages
+from scipy.spatial
