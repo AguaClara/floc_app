@@ -1,0 +1,29 @@
+OpenCV Tutorial
+
+Installation
+Most tutorials will instruct you to download XCode or Homebrew, but the simplest way is to:
+1. Install Anaconda
+  MAC: https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x
+  WINDOWS: https://docs.anaconda.com/anaconda/install/windows/ 
+2. Type <<conda install -c anaconda opencv>> into the terminal 
+This will enable you to use OpenCV with Jupyter Notebook (an open-source web application that can share live code between collaborators). 
+
+To use Jupyter Notebook, open up your terminal and navigate to the directory where your file lives. Then type <<<jupyter notebook>>> and your terminal will automatically open up a new webpage in your browser with the folder of your choice. Then, choose the file you need and a new page will open with your file using jupyter notebook. 
+
+Miscellaneous Tutorials
+General Tutorials
+  https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/ 
+Detecting blobs in images
+  https://www.learnopencv.com/blob-detection-using-opencv-python-c/
+  https://github.com/dghy/Multiple-Object-Tracking 
+  https://www.kaggle.com/radustoicescu/get-coordinates-using-blob-detection 
+Measuring performance
+  https://docs.opencv.org/3.4/dc/d71/tutorial_py_optimization.html 
+Detection of colors
+  https://www.hackster.io/WolfxPac/colour-detection-using-opencv-python-8cbbe0 
+  https://realpython.com/python-opencv-color-spaces/ 
+
+
+
+
+
