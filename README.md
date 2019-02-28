@@ -11,14 +11,16 @@ Natalie Isak
 1. Train new members on Github, OpenCV and Aguaclara Safety.
 2. Get familiar with scripts written spring semester.
 3. Use sample images to test code and search for bugs.
-4. Continue working on OpenCV code.
+4. Fix gaps in flocs that are in focus.
+5. Create script that can size in focus flocs
+6. Test field of vision for camera.
 
 ### Calendar:
 Lab times/meetings assigned to T/R 1:25-2:30 along with time put in outside of lab.
 
 Week 1: Meet new members, start to look over research from previous semesters.
-Week 2: TBD
-Week 3-5: TBD
+Week 2: Get familiar with open CV, start to create tutorials for following semesters.
+Week 3-5: Work on old code. Fix gaps in flocs. Eventually size flocs.
 Week 6: TBD
 Week 7: TBD
 Week 8-9: TBD 
