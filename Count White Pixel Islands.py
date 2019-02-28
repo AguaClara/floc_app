@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[ ]:
-
-
 # Returns: the count of "white pixel [255,255,255]" islands. 
 # Requires: a 3-dimensional list "grid" that contains only two values: [255,255,255] (white pixel) and [0,0,0] (black pixel)
 def numIslands(grid):
@@ -28,10 +22,6 @@ def part_of_island(i, j,grid):
         part_of_island(i,j-1,grid)
         part_of_island(i+1,j,grid)
         part_of_island(i-1,j,grid)  
-
-
-# In[ ]:
-
 
 # Example use
 img = cv2.imread("filtered_img.jpg")
