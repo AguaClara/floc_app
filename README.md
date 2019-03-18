@@ -30,6 +30,8 @@ Week 12: TBD
 
 ### Spring 2018 Final Presentation:
 
+[Spring 2019 Mid-Year Presentation Slides] (https://docs.google.com/presentation/d/1r-v86uV3EiZ85N1uaAgKwRKOMQ2US-n4p6oVIipjUHs/edit)
+
 [Fall 2018 Presentation Video] https://youtu.be/2SXc7grdD3g
 
 [Fall 2018 Final Presentation Slides] (https://docs.google.com/presentation/d/1QeoitHQfX2f_iCgGeG6z51iU74PFxhHOF9QFAl-lUw8/edit?usp=sharing)
