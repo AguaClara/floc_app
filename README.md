@@ -29,6 +29,8 @@ Week 11: TBD
 Week 12: TBD
 
 ### Spring 2018 Final Presentation:
+[Spring 2019 Final Youtube Video] (https://www.youtube.com/watch?v=sHuIshcOfOA&list=PLhsGtpY8ipdZL4lExJA8KC0zCkaxwfs8R&index=5&t=0s)
+
 [Spring 2019 Final Presentation] (https://docs.google.com/presentation/d/1Eygbpt9PRS5Cm3Tfm3-SG0krKTNgR4sOA6cbfNLOUBY/edit?usp=sharing)
 
 [Spring 2019 Mid-Year Presentation Slides] (https://docs.google.com/presentation/d/1r-v86uV3EiZ85N1uaAgKwRKOMQ2US-n4p6oVIipjUHs/edit)
