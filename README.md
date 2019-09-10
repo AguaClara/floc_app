@@ -3,8 +3,10 @@
 ### Team Members:
 
 Dana Owens  (Lead),
-Richard Yu,
-Natalie Isak
+Natalie Isak,
+Erika Hauschild,
+Jessica Lu,
+Yoona Chang
 
 
 ### Goals for Spring 2018:
