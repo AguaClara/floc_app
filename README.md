@@ -4,7 +4,7 @@
 
 Dana Owens  (Lead),
 Natalie Isak,
-Erika Hauschildt,
+Erika Hauschild,
 Jessica Lu,
 Yoona Chang . 
 
