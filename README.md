@@ -6,7 +6,7 @@ Dana Owens  (Lead),
 Natalie Isak,
 Erika Hauschild,
 Jessica Lu,
-Yoona Chang
+Yoona Chang . 
 
 
 ### Goals for Spring 2018:
