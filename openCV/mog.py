@@ -1,5 +1,7 @@
-import numpy as np
 import cv2
+import numpy
+import wx
+
 
 cap = cv2.VideoCapture("sample.mp4")
 fgbg = cv2.createBackgroundSubtractorMOG2()
