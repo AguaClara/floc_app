@@ -11,10 +11,8 @@ This file holds all the relavant scripts for the FLoc App under Agua Clara
 import glob
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
-import matplotlib.patches as mpatches
-from skimage.measure import label, regionprops
-from skimage.segmentation import clear_border
+import os
+
 # End of Imports
 
 '''
