@@ -3,6 +3,7 @@
 # Written by Richard Yu (ry275@cornell.edu)
 
 import cv2
+import numpy as np
 
 
 # Returns: A 2-dimensional list/grid that contains value True or False, which denotes whether a coordinate is a 
@@ -13,10 +14,12 @@ def whitePixels(grid):
     for i in range(len(grid)):
         for j in range(len(grid[i])):
             curPixel = grid[i][j]
-            for rgb in curPixel:
-                 if rgb < 225:
-                        res[i][j] = False
-                        break
+            if curPixel < 255:
+                res[i][j] = False
+            #for rgb in curPixel:
+                 #if rgb < 225:
+                        #res[i][j] = False
+                        #break
     return res
 
 
@@ -28,7 +31,26 @@ import sys
 def nonBlackPixels(img):
     return cv2.countNonZero(img)
 
-
+'''
+Purpose:
+    - Given an image of a floc, will apply a set of image proccessing Functions
+    to identify in focus flocs from the background.
+Parameters:
+    - A .jpg image read in as a grayscale image i.e cv2.imread('path',0)
+Returns:
+    - A processed .jpg image
+Raises:
+    -
+'''
+def flocID(img):
+    blur = cv2.GaussianBlur(img, (5,5), 10)
+    t = cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                                    cv2.THRESH_BINARY_INV,9,7)
+    kernel = np.ones((4,4),np.uint8)
+    dilation = cv2.dilate(t,kernel,iterations = 2)
+    opened = cv2.morphologyEx(dilation, cv2.MORPH_OPEN, kernel)
+    closed = cv2.morphologyEx(opened, cv2.MORPH_CLOSE, kernel)
+    return closed
 
 # Returns: scales down img's [i],[j] dimensions by a factor of 5, effectively shrinking the image to 1/25 its original size
 # Requires: a 3-dimensional list/picture
@@ -77,9 +99,9 @@ def count_and_size_flocs(img):
                     j_flocBounds.append(j_flocBounds_raw)
                     islands += 1
         
-        print(i_flocBounds, j_flocBounds)
+        #print(i_flocBounds, j_flocBounds)
         flocAreas = whitePixelAreas(i_flocBounds, j_flocBounds, img)
-        nonBlacks = nonBlackPixels(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY))
+        nonBlacks = nonBlackPixels(img)
         flocAreasTotal = sum(flocAreas)
         description = ""
         if (abs(flocAreasTotal - nonBlacks) >= (nonBlacks/5)):
@@ -149,8 +171,9 @@ def whitePixelAreas(i_flocBounds, j_flocBounds, img):
 
 
 # Example usage
-img = cv2.imread("openCV/flocs/Image \32346.jpg")
-count_and_size_flocs(img)
+img = cv2.imread("openCV/flocs/Image 32346.jpg", 0)
+processed_img = flocID(img)
+print(count_and_size_flocs(processed_img))
 
 
 
