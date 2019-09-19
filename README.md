@@ -9,13 +9,13 @@ Jessica Lu,
 Yoona Chang . 
 
 
-### Goals for Spring 2018:
+### Goals for Fall 2019:
 1. Train new members on Github, OpenCV and Aguaclara Safety.
 2. Get familiar with scripts written spring semester.
 3. Use sample images to test code and search for bugs.
 4. Fix gaps in flocs that are in focus.
-5. Create script that can size in focus flocs
-6. Test field of vision for camera.
+5. Work on application
+
 
 ### Calendar:
 Lab times/meetings assigned to T/R 1:25-2:30 along with time put in outside of lab.
