@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f35d5a1c-4c2a-4be3-b504-d8273faf778e" name="Default Changelist" comment="small changes">
+      <change afterPath="$PROJECT_DIR$/images/edgeRemoval/After.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/edgeRemoval/Before.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/edgeRemoval/Screen Shot 2018-03-26 at 3.19.27 PM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/edgeRemoval/try.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32339.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32340.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32341.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32342.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32343.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32344.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32345.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32346.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32347.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32348.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32349.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32350.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32351.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32352.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32353.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32354.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32355.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32356.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32357.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32358.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32359.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32360.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32361.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32362.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32363.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32364.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32365.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32366.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32367.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32368.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32369.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32370.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32371.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32372.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32373.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32374.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32375.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32376.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32377.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32378.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32379.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32380.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32381.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32382.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32383.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32384.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32385.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32386.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32387.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32388.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32389.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32390.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32391.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32392.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32393.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32394.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32395.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32396.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32397.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32398.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32399.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32400.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32401.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32402.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32403.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32404.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32405.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32406.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32407.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32408.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32409.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32410.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32411.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32412.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32413.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32414.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32415.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32416.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32417.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32418.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32419.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32420.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32421.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32422.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32423.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32424.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32425.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32426.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32427.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32428.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32429.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32430.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32431.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32432.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32433.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32434.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32435.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32436.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32437.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32438.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32439.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32440.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32441.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32442.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32443.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32444.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32445.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32446.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32447.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32448.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32449.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32450.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32451.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32452.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32453.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32454.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32455.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32456.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32457.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32458.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32459.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32460.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32461.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32462.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32463.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32464.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32465.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32466.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32467.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32468.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32469.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32470.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32471.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32472.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32473.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32474.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32475.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32476.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32477.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32478.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32479.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32480.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32481.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32482.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32483.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32484.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32485.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32486.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32487.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32488.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32489.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32490.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32491.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32492.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32493.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32494.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32495.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32496.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32497.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32498.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32499.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32500.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32501.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32502.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32503.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32504.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32505.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32506.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32507.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32508.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32509.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32510.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32511.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32512.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32513.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32514.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32515.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32516.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32517.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32518.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32519.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32520.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32521.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32522.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32523.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32524.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32525.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32526.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32527.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32528.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32529.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32530.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32531.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32532.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32533.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32534.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32535.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32536.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32537.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32538.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32539.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32540.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32541.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32542.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32543.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32544.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32545.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32546.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32547.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32548.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32549.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32550.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32551.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32552.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32553.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32554.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32555.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32556.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32557.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32558.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32559.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32560.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32561.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32562.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32563.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32564.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32565.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32566.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32567.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32568.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32569.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32570.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32571.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32572.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32573.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32574.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32575.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32576.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32577.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32578.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32579.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32580.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32581.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32582.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32583.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32584.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32585.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32586.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32587.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32588.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32589.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32590.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32591.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32592.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32593.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32594.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32595.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32596.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32597.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32598.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32599.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32600.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32601.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32602.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32603.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32604.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32605.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32606.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32607.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32608.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32609.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32610.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32611.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32612.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32613.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32614.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32615.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32616.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32617.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32618.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32619.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32620.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32621.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32622.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32623.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32624.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32625.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32626.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32627.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32628.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32629.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32630.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32631.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32632.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32633.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32634.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32635.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32636.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32637.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32638.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32639.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32640.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32641.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32642.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32643.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32644.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32645.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32646.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32647.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32648.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32649.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32650.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32651.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32652.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32653.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32654.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32655.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32656.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32657.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32658.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32659.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32660.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32661.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32662.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32663.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32664.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32665.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32666.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32667.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32668.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32669.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32670.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32671.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32672.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32673.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32674.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32675.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32676.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32677.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32678.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32679.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32680.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32681.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32682.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32683.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32684.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32685.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32686.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32687.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32688.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32689.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32690.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32691.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32692.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32693.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32694.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32695.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32696.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32697.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32698.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32699.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32700.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32701.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32702.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32703.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32704.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32705.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32706.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32707.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32708.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32709.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32710.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32711.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32712.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32713.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32714.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32715.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32716.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32717.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32718.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32719.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32721.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32722.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32723.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32724.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32725.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32726.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32727.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32728.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32729.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32730.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32731.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32732.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32733.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32734.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32735.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32736.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32737.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32738.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32739.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32740.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32741.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32742.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32743.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32744.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32745.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32746.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32747.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32748.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32749.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32750.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32751.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32752.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32753.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32754.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32755.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32756.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32757.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32758.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32759.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32760.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32761.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32762.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32763.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32764.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32765.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32766.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32767.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32769.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32770.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32771.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32772.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32773.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32774.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32775.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32776.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32777.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32778.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32779.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32780.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32781.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32782.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32783.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32784.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32785.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32786.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32787.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32788.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32789.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32790.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32791.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32792.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32793.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32794.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32795.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32796.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32797.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32798.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32799.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32800.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32801.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32802.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32803.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32804.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32805.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32806.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32807.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32808.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32809.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32810.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32811.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32812.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32813.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32814.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32815.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32816.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32817.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32818.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32819.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32820.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32821.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32822.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32823.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32824.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32825.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32826.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32827.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32828.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32829.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32830.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32831.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32832.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32833.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32834.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32835.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32836.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32837.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32838.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32839.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32840.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32841.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32842.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32843.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32844.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32845.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32846.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32848.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32849.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32850.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32851.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32852.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32853.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32854.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32855.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32856.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32857.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32858.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32859.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32860.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32861.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32862.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32863.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32864.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32865.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32866.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32867.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32868.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32869.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32870.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32871.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32872.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32873.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32874.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32875.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32876.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32877.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32878.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32879.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32880.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32881.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32882.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32883.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32884.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32885.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32886.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32887.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32888.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32889.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32890.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32891.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32892.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32893.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32894.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32895.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32896.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32897.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32898.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32899.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32900.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32901.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32902.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32903.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32904.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32905.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32906.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32907.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32908.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32909.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/Image 32910.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/flocs/t1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/sudoku.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/symposium/gaussianFilter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/symposium/noise3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/symposium/noise4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/symposium/noiseReduce1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/symposium/noiseReduce2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/symposium/sobel2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/t1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/CamCalibration.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/blobDetect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/code_sub.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/count_size.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/distortion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/edgeRemoval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/gradientFill.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/gradientTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/interestingFlocs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/noiseReductionV1_1_0.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/try.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/visual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCV/mog.py" beforeDir="false" afterPath="$PROJECT_DIR$/openCV/mog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/flocApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/flocApp.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/visual.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/camera/camera.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sampleandtests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/application/__init__.py" />
+        <option value="$PROJECT_DIR$/sampleandtests.py" />
+        <option value="$PROJECT_DIR$/openCV/mog.py" />
+        <option value="$PROJECT_DIR$/application/visual.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/floc_app.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="9" />
+    <option name="y" value="42" />
+    <option name="width" value="1260" />
+    <option name="height" value="670" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="floc_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="floc_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="floc_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="floc_app" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="floc_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="floc_app" type="462c0819:PsiDirectoryNode" />
+              <item name="camera" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="floc_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="floc_app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f35d5a1c-4c2a-4be3-b504-d8273faf778e" name="Default Changelist" comment="" />
+      <created>1568316798231</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568316798231</updated>
+      <workItem from="1568316803991" duration="2063000" />
+      <workItem from="1568747723722" duration="1963000" />
+      <workItem from="1568919679143" duration="823000" />
+    </task>
+    <task id="LOCAL-00001" summary="small changes">
+      <created>1568748051707</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568748051707</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4849000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="9" y="42" width="1260" height="670" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25779969" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32871974" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.17993079" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32956383" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/openCV/mog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/visual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/camera.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sampleandtests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

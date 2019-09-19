@@ -12,6 +12,9 @@ import glob
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+import matplotlib.patches as mpatches
+from skimage.measure import label, regionprops
+from skimage.segmentation import clear_border
 # End of Imports
 
 '''
@@ -49,8 +52,16 @@ def flocID(img):
     kernel = np.ones((4,4),np.uint8)
     dilation = cv2.dilate(t,kernel,iterations = 2)
     opened = cv2.morphologyEx(dilation, cv2.MORPH_OPEN, kernel)
+<<<<<<< .merge_file_SJZ9eo
     closed = cv2.morphologyEx(opened, cv2.MORPH_CLOSE, kernel)
     return closed
+=======
+    kernel = np.ones((8,8),np.uint8)
+    closed = cv2.morphologyEx(opened, cv2.MORPH_CLOSE, kernel)
+    cleared = closed.copy()
+    cleared=clear_border(cleared)
+    return cleared
+>>>>>>> .merge_file_KzRhnR
 
 '''
 Purpose:

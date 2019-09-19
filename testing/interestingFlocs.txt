@@ -1,0 +1,23 @@
+Big Central Focused Floc: 32903
+Small central focused floc: 32899
+Large focused floc on upper right border: 32891
+One, maybe 2 small focused flocs: 32864
+One small focused floc: 32857
+Two small focused flocs, one large focused floc on border: 32855
+One small focused floc: 32848
+One large focused floc: 32847
+Two semi focused one in focus floc: 32833
+One central floc: 32830
+Two focused flocs on opposite ends: 32828
+One focused floc upper right corner: 32822
+One focused floc bottom center: 32810
+Two kind of focused flocs: 32799
+One focused floc center: 32784
+Very Large focused floc: 32790
+Small focused floc: 32773
+One focused floc: 32771
+One focused one out of focus floc: 32766
+Two small focused flocs: 32753
+One large focused floc: 32730
+
+------ Break at 32730

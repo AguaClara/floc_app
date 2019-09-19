@@ -2,7 +2,6 @@ import cv2
 import numpy
 import wx
 
-
 cap = cv2.VideoCapture("sample.mp4")
 fgbg = cv2.createBackgroundSubtractorMOG2()
 
@@ -18,7 +17,6 @@ while(1):
             break
     else:
         break
-    
 
 cap.release()
 cv2.destroyAllWindows()
