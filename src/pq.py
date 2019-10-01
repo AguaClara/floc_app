@@ -26,7 +26,7 @@ class App(QWidget):
     def handleOpen(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        fileName, _ = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","All Files (*)", options=options)
+        fileName, _ = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "", "All Files (*)", options=options)
         if fileName:
             hbox = QHBoxLayout(self)
             pixmap = QPixmap("IMG_9870.jpeg")
