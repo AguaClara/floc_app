@@ -29,7 +29,7 @@ class App(QWidget):
         fileName, _ = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","All Files (*)", options=options)
         if fileName:
             hbox = QHBoxLayout(self)
-            pixmap = QPixmap("IMG_9870.jpeg")
+            pixmap = QPixmap("../openCV/flocs/Image 32339.jpg")
             pixmap_resized = pixmap.scaled(400, 600)
             lbl = QLabel(self)
             lbl.setPixmap(pixmap_resized)
