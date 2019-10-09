@@ -26,14 +26,15 @@ class DB(object):
         self.conn = sqlite3.connect('todo.db', check_same_thread=False)
         self.create_user_table()
 
-    def create_user_table(self):
+    def create_floc_table(self):
         try:
             self.conn.execute("""
-                CREATE TABLE users (
+                CREATE TABLE flocs (
                     ID INTEGER PRIMARY KEY,
-                    NAME TEXT NOT NULL,
-                    USERNAME TEXT NOT NULL,
-                    BALANCE DECIMAL NOT NULL
+                    DATE DATE NOT NULL,
+                    TIME TIME NOT NULL,
+                    SIZE DECIMAL NOT NULL,
+                    COUNT INTEGER NOT NULL
                 )
             """)
         except Exception as e:
