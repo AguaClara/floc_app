@@ -31,10 +31,8 @@ class DB(object):
             self.conn.execute("""
                 CREATE TABLE flocs (
                     ID INTEGER PRIMARY KEY,
-                    DATE DATE NOT NULL,
-                    TIME TIME NOT NULL,
-                    SIZE DECIMAL NOT NULL,
-                    COUNT INTEGER NOT NULL
+                    FLOC COUNT NOT NULL,
+                    FLOC SIZE TIME NOT NULL
                 )
             """)
         except Exception as e:
@@ -66,18 +64,3 @@ class DB(object):
         deleted = self.get_user_by_id(id)
         self.conn.execute('DELETE FROM users WHERE ID == ?;', (id, ))
         return deleted
-
-    def send_money(self, sender_id, receiver_id, amount):
-        data = {'sender_id': sender_id,
-                'receiver_id': receiver_id, 'amount': amount}
-        sender_balance = self.get_user_by_id(sender_id)['balance']
-        receiver_balance = self.get_user_by_id(receiver_id)['balance']
-        if sender_balance - amount < 0:
-            return None
-        cursor = self.conn.cursor()
-        cursor.execute(
-            'UPDATE users SET BALANCE=BALANCE-? WHERE ID==?;', (sender_balance - amount, sender_id))
-        cursor.execute(
-            'UPDATE users SET BALANCE= BALANCE+? WHERE ID==?;', (receiver_balance - amount, receiver_id))
-        self.conn.commit()
-        return data
