@@ -2,6 +2,10 @@ import os
 import json
 import sqlite3
 
+sqlite_file = #the address on the user's disk of the database file (saved as a .sqlite) 
+conn = sqlite3.connect(sqlite_file)
+c = conn.cursor()
+
 # From: https://goo.gl/YzypO
 
 
@@ -64,3 +68,6 @@ class DB(object):
         deleted = self.get_user_by_id(id)
         self.conn.execute('DELETE FROM users WHERE ID == ?;', (id, ))
         return deleted
+    
+conn.commit()
+conn.close()    
