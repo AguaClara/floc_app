@@ -1,0 +1,23 @@
+import sqlite3
+
+sqlite_file = 'size_of_flocs'    
+table_name1 = 'sizes'
+size_field = 'size' # name of the column
+date_time_field = 'date_time' #time stamp of the size of the flocs
+field_type = 'INTEGER'  # column data type
+
+conn = sqlite3.connect(sqlite_file)
+c = conn.cursor()
+
+# Creating a new SQLite table with 1 column
+c.execute('CREATE TABLE {tn} ({nf} {ft})'\
+        .format(tn=table_name1, nf=size_field, ft=field_type))
+
+#following block of code sets the time and date stamp to each new entry of the size of the flocs 
+c.execute("ALTER TABLE {tn} ADD COLUMN '{cn}'"\
+         .format(tn=table_name, cn=date_time_col))
+c.execute("UPDATE {tn} SET {cn}=(CURRENT_TIMESTAMP) WHERE {idf}='some_id1'"\
+         .format(tn=table_name, idf=id_field, cn=date_time_col))
+
+conn.commit()
+conn.close()
