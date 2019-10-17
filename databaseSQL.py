@@ -63,13 +63,29 @@ class DB(object):
 
     def create_floc_table(self):
         try:
-            self.conn.execute("""
-                CREATE TABLE flocs (
-                    ID INTEGER PRIMARY KEY,
-                    FLOC COUNT NOT NULL,
-                    FLOC SIZE TIME NOT NULL
-                )
-            """)
+            sqlite_file = 'size_of_flocs'    
+            table_name1 = 'sizes'
+            size_field = 'size' # name of the column
+            date_time_field = 'date_time' #time stamp of the size of the flocs
+            field_type = 'INTEGER'  # column data type
+
+            # Creating a new SQLite table with 1 column
+            c.execute('CREATE TABLE {tn} ({nf} {ft})'\
+                    .format(tn=table_name1, nf=size_field, ft=field_type))
+
+            #following block of code sets the time and date stamp to each new entry of the size of the flocs 
+            c.execute("ALTER TABLE {tn} ADD COLUMN '{cn}'"\
+                     .format(tn=table_name, cn=date_time_col))
+            c.execute("UPDATE {tn} SET {cn}=(CURRENT_TIMESTAMP) WHERE {idf}='some_id1'"\
+                     .format(tn=table_name, idf=id_field, cn=date_time_col))
+            
+#             self.conn.execute("""
+#                 CREATE TABLE flocs (
+#                     ID INTEGER PRIMARY KEY,
+#                     FLOC COUNT NOT NULL,
+#                     FLOC SIZE TIME NOT NULL
+#                 )
+#             """)
         except Exception as e:
             print(e)
 
