@@ -2,11 +2,11 @@
 
 ### Team Members:
 
-Dana Owens  (Lead),
-Natalie Isak,
+Natalie Isak (Lead),
 Erika Hauschild,
 Jessica Lu,
-Yoona Chang . 
+Yoona Chang,
+Luke Bowsher . 
 
 
 ### Goals for Fall 2019:
