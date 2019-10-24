@@ -27,16 +27,16 @@ sqlite_file = #the address on the user's disk of the database file (saved as a .
 #         return instances[cls]
 #     return getinstance()
 
-class DB(object):
-    """
-    DB driver for the To-Do app - deals with writing entities
-    to the DB and reading entities from the DB
-    """
+# class DB(object):
+#     """
+#     DB driver for the To-Do app - deals with writing entities
+#     to the DB and reading entities from the DB
+#     """
 
-    def __init__(self):
-        # TODO Implement this to connect to the database and create tables
-        self.conn = sqlite3.connect('todo.db', check_same_thread=False)
-        self.create_user_table()
+#     def __init__(self):
+#         # TODO Implement this to connect to the database and create tables
+#         self.conn = sqlite3.connect('todo.db', check_same_thread=False)
+#         self.create_user_table()
 
     def create_floc_table(self):
         try:
