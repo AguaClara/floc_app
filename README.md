@@ -31,6 +31,8 @@ Week 11: TBD
 Week 12: TBD
 
 ### Spring 2019 Final Presentation:
+[Fall 2019 Mid Semester Report] (https://docs.google.com/presentation/d/1hcd1FI6bk135MemGDJmM8IyK67U3TIcQ9dujdROTbdk/edit?usp=sharing)
+
 [Spring 2019 Final Youtube Video] (https://www.youtube.com/watch?v=sHuIshcOfOA&list=PLhsGtpY8ipdZL4lExJA8KC0zCkaxwfs8R&index=5&t=0s)
 
 [Spring 2019 Final Presentation] (https://docs.google.com/presentation/d/1Eygbpt9PRS5Cm3Tfm3-SG0krKTNgR4sOA6cbfNLOUBY/edit?usp=sharing)
