@@ -1,9 +1,10 @@
 import json
 import sqlite3
+sqlite_file = #the address on the user's disk of the database file (saved as a .sqlite)
 conn = sqlite3.connect(sqlite_file)
 c = conn.cursor()
 
-sqlite_file = #the address on the user's disk of the database file (saved as a .sqlite) 
+
 
 # From: https://goo.gl/YzypO
 
@@ -52,9 +53,9 @@ sqlite_file = #the address on the user's disk of the database file (saved as a .
 
             #following block of code sets the time and date stamp to each new entry of the size of the flocs 
             c.execute("ALTER TABLE {tn} ADD COLUMN '{cn}'"\
-                     .format(tn=table_name, cn=date_time_col))
+                     .format(tn=table_name1, cn=date_time_col))
             c.execute("UPDATE {tn} SET {cn}=(CURRENT_TIMESTAMP) WHERE {idf}='some_id1'"\
-                     .format(tn=table_name, idf=id_field, cn=date_time_col))
+                     .format(tn=table_name1, idf=id_field, cn=date_time_col))
             
 #             self.conn.execute("""
 #                 CREATE TABLE flocs (
@@ -65,28 +66,27 @@ sqlite_file = #the address on the user's disk of the database file (saved as a .
 #             """)
         except Exception as e:
             print(e)
-
-    def values_in_col(cursor, table_name, print_out=True):
     """ Returns a dictionary with columns as keys
     and the number of not-null entries as associated values.
     """
-    cursor.execute('PRAGMA TABLE_INFO({})'.format(table_name))
-    info = cursor.fetchall()
-    col_dict = dict()
-    for col in info:
-        col_dict[col[1]] = 0
-    for col in col_dict:
-        c.execute('SELECT ({0}) FROM {1} '
-                  'WHERE {0} IS NOT NULL'.format(col, table_name))
-        # In my case this approach resulted in a
-        # better performance than using COUNT
-        number_rows = len(c.fetchall())
-        col_dict[col] = number_rows
-    if print_out:
-        print("\nNumber of entries per column:")
-        for i in col_dict.items():
-            print('{}: {}'.format(i[0], i[1]))
-    return col_dict
+    def values_in_col(cursor, table_name, print_out=True):
+        cursor.execute('PRAGMA TABLE_INFO({})'.format(table_name))
+        info = cursor.fetchall()
+        col_dict = dict()
+        for col in info:
+            col_dict[col[1]] = 0
+        for col in col_dict:
+            c.execute('SELECT ({0}) FROM {1} '
+                      'WHERE {0} IS NOT NULL'.format(col, table_name))
+            # In my case this approach resulted in a
+            # better performance than using COUNT
+            number_rows = len(c.fetchall())
+            col_dict[col] = number_rows
+        if print_out:
+            print("\nNumber of entries per column:")
+            for i in col_dict.items():
+                print('{}: {}'.format(i[0], i[1]))
+        return col_dict
     
 #     def get_all_users(self):
 #         cursor = self.conn.execute('SELECT * FROM users;')
@@ -118,6 +118,6 @@ sqlite_file = #the address on the user's disk of the database file (saved as a .
 if __name__ == '__main__':
     sqlite_file = 'flocSizes.sqlite' #this creates the name of the file that will be saved as the first time the function is run 
     table_name = 'sizes_of_flocs'
-    conn, c = connect(sqlite_file)
+    #conn, c = connect(sqlite_file)
     values_in_col(c, table_name, print_out=True)
-    close(conn)  
+    #close(conn)
