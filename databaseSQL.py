@@ -88,6 +88,10 @@ c = conn.cursor()
                 print('{}: {}'.format(i[0], i[1]))
         return col_dict
     
+    def add_size(outputOfScript):
+        INSERT INTO 'sizes' ('size') 
+        VALUES (outputOfScript)
+    
 #     def get_all_users(self):
 #         cursor = self.conn.execute('SELECT * FROM users;')
 #         users = []
