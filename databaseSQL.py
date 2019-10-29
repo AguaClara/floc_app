@@ -56,24 +56,24 @@ def create_connection(db_file):
 #         self.conn = sqlite3.connect('todo.db', check_same_thread=False)
 #         self.create_user_table()
 
-    def create_floc_table(self):
-        try:
-            sqlite_file = 'size_of_flocs'    
-            table_name1 = 'sizes'
-            size_field = 'size' # name of the column
-            date_time_field = 'date_time' #time stamp of the size of the flocs
-            field_type = 'INTEGER'  # column data type
+def create_floc_table(self):
+    try:
+        sqlite_file = 'size_of_flocs'
+        table_name1 = 'sizes'
+        size_field = 'size' # name of the column
+        date_time_field = 'date_time' #time stamp of the size of the flocs
+        field_type = 'INTEGER'  # column data type
 
-            # Creating a new SQLite table with 1 column
-            c.execute('CREATE TABLE {tn} ({nf} {ft})'\
-                    .format(tn=table_name1, nf=size_field, ft=field_type))
+        # Creating a new SQLite table with 1 column
+        c.execute('CREATE TABLE {tn} ({nf} {ft})'\
+                .format(tn=table_name1, nf=size_field, ft=field_type))
 
-            #following block of code sets the time and date stamp to each new entry of the size of the flocs 
-            c.execute("ALTER TABLE {tn} ADD COLUMN '{cn}'"\
-                     .format(tn=table_name1, cn=date_time_col))
-            c.execute("UPDATE {tn} SET {cn}=(CURRENT_TIMESTAMP) WHERE {idf}='some_id1'"\
-                     .format(tn=table_name1, idf=id_field, cn=date_time_col))
-            
+        #following block of code sets the time and date stamp to each new entry of the size of the flocs
+        c.execute("ALTER TABLE {tn} ADD COLUMN '{cn}'"\
+                 .format(tn=table_name1, cn=date_time_col))
+        c.execute("UPDATE {tn} SET {cn}=(CURRENT_TIMESTAMP) WHERE {idf}='some_id1'"\
+                 .format(tn=table_name1, idf=id_field, cn=date_time_col))
+
 #             self.conn.execute("""
 #                 CREATE TABLE flocs (
 #                     ID INTEGER PRIMARY KEY,
@@ -81,34 +81,38 @@ def create_connection(db_file):
 #                     FLOC SIZE TIME NOT NULL
 #                 )
 #             """)
-        except Exception as e:
-            print(e)
-    """ Returns a dictionary with columns as keys
-    and the number of not-null entries as associated values.
-    """
-    def values_in_col(cursor, table_name, print_out=True):
-        cursor.execute('PRAGMA TABLE_INFO({})'.format(table_name))
-        info = cursor.fetchall()
-        col_dict = dict()
-        for col in info:
-            col_dict[col[1]] = 0
-        for col in col_dict:
-            c.execute('SELECT ({0}) FROM {1} '
-                      'WHERE {0} IS NOT NULL'.format(col, table_name))
-            # In my case this approach resulted in a
-            # better performance than using COUNT
-            number_rows = len(c.fetchall())
-            col_dict[col] = number_rows
-        if print_out:
-            print("\nNumber of entries per column:")
-            for i in col_dict.items():
-                print('{}: {}'.format(i[0], i[1]))
-        return col_dict
-    
-    def add_size(outputOfScript):
-        c.execute('INSERT INTO 'sizes' ('size')'
-        'VALUES (outputOfScript)
-    
+    except Exception as e:
+        print(e)
+
+
+""" Returns a dictionary with columns as keys
+and the number of not-null entries as associated values.
+"""
+
+
+def values_in_col(cursor, table_name, print_out=True):
+    cursor.execute('PRAGMA TABLE_INFO({})'.format(table_name))
+    info = cursor.fetchall()
+    col_dict = dict()
+    for col in info:
+        col_dict[col[1]] = 0
+    for col in col_dict:
+        c.execute('SELECT ({0}) FROM {1} '
+                  'WHERE {0} IS NOT NULL'.format(col, table_name))
+        # In my case this approach resulted in a
+        # better performance than using COUNT
+        number_rows = len(c.fetchall())
+        col_dict[col] = number_rows
+    if print_out:
+        print("\nNumber of entries per column:")
+        for i in col_dict.items():
+            print('{}: {}'.format(i[0], i[1]))
+    return col_dict
+
+#     def add_size(outputOfScript):
+#         c.execute('INSERT INTO 'sizes' ('size')'
+#         'VALUES (outputOfScript)
+
 #     def get_all_users(self):
 #         cursor = self.conn.execute('SELECT * FROM users;')
 #         users = []
