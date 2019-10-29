@@ -1,8 +1,25 @@
 import json
 import sqlite3
-sqlite_file = #the address on the user's disk of the database file (saved as a .sqlite)
-conn = sqlite3.connect(sqlite_file)
-c = conn.cursor()
+from sqlite3 import Error
+
+
+def create_connection(db_file):
+    """ create a database connection to the SQLite database
+        specified by db_file
+    :param db_file: database file
+    :return: Connection object or None
+    """
+    conn = None
+    try:
+        conn = sqlite3.connect(db_file)
+        return conn
+    except Error as e:
+        print(e)
+
+    return conn
+
+    # conn = sqlite3.connect(sqlite_file)
+# c = conn.cursor()
 
 
 
@@ -89,8 +106,8 @@ c = conn.cursor()
         return col_dict
     
     def add_size(outputOfScript):
-        INSERT INTO 'sizes' ('size') 
-        VALUES (outputOfScript)
+        c.execute('INSERT INTO 'sizes' ('size')'
+        'VALUES (outputOfScript)
     
 #     def get_all_users(self):
 #         cursor = self.conn.execute('SELECT * FROM users;')
@@ -120,7 +137,8 @@ c = conn.cursor()
 #         return deleted
     
 if __name__ == '__main__':
-    sqlite_file = 'flocSizes.sqlite' #this creates the name of the file that will be saved as the first time the function is run 
+    sqlite_file = 'flocSizes.sqlite' # this creates the name of the file that will be saved as the first time the function is run
+    conn = create_connection(sqlite_file)
     table_name = 'sizes_of_flocs'
     #conn, c = connect(sqlite_file)
     values_in_col(c, table_name, print_out=True)
