@@ -35,27 +35,29 @@ def create_table(conn, create_table_sql):
 def main():
     database = r"C:\sqlite\db\pythonsqlite.db"
 
-    sql_create_floc_table = """ CREATE TABLE IF NOT EXISTS projects (
+    sql_create_floc_table = """ CREATE TABLE IF NOT EXISTS flocs (
                                         id integer PRIMARY KEY,
-                                        size integer,
+                                        size integer NOT NULL
                                     ); """
 
     # create a database connection
     conn = create_connection(database)
+    conn.commit()
 
     # create tables
     if conn is not None:
         # create projects table
-        a = create_table(conn, sql_create_floc_table)
+        create_table(conn, sql_create_floc_table)
 
     else:
         print("Error! cannot create the database connection.")
 
-    sql = ''' INSERT INTO a(size)
+    sql = ''' INSERT INTO flocs (size)
               VALUES(?) '''
     cur = conn.cursor()
-    cur.execute(sql, 5)
+    cur.execute(sql, (5, ))
     print(cur.lastrowid)
+    conn.close()
 
 
 if __name__ == '__main__':
