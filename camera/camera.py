@@ -120,8 +120,9 @@ class MainWindow(QMainWindow):
 
         # Data button
 
-<<<<<<< HEAD
-=======
+
+<< << << < HEAD
+== == == =
         def init_export():
             export_button = QPushButton("Export")
             export_button.clicked.connect(self.export)
@@ -133,7 +134,7 @@ class MainWindow(QMainWindow):
         init_addFilterButton()
         init_applyFiltersButton()
         init_export()
->>>>>>> 243ba82b7cbbd8e7e523b1d286f622c77d644b04
+>>>>>> > 243ba82b7cbbd8e7e523b1d286f622c77d644b04
 
 #        def init_addFilterButton():
 #            add_filterButton = QPushButton("Add")
