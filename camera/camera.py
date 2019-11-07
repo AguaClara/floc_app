@@ -4,10 +4,11 @@ from PyQt5.QtCore import *
 from PyQt5.QtPrintSupport import *
 from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
-# 
+#
 import os
 import sys
 import time
+import database2
 
 
 class MainWindow(QMainWindow):
@@ -116,11 +117,17 @@ class MainWindow(QMainWindow):
             apply_button.clicked.connect(self.apply_filter)
             sideBar.addWidget(apply_button)
 
+        def init_export():
+            export_button = QPushButton("Export")
+            export_button.clicked.connect(self.export)
+            sideBar.addWidget(export_button)
+
         # Initialize SubParts here
         init_filterLabelText()
         init_filterSelectDropdown()
         init_addFilterButton()
         init_applyFiltersButton()
+        init_export()
 
 
 
@@ -134,14 +141,15 @@ class MainWindow(QMainWindow):
         zoomButton = QAction('Zoom', self)
         zoomButton.setShortcut('Ctrl + Shift+')
         zoomButton.triggered.connect(self.close)
-        m.addAction(zoomButton)
-
-    def init_toolMenu(self, m):
         filters = QAction('Filters', self)
         filters.triggered.connect(self.close)
+        m.addAction(zoomButton)
         m.addAction(filters)
 
-
+    def init_toolMenu(self, m):
+        exp = QAction('Export Data', self)
+        exp.triggered.connect(self.close)
+        m.addAction(exp)
 
 
     def select_filter(self, i):
@@ -175,6 +183,9 @@ class MainWindow(QMainWindow):
 
     def apply_filter(self):
         print("applied")
+
+    def export(self):
+        database2.expToCSV()
 
     def take_photo(self):
         self.viewfinder.setContrast(100)
