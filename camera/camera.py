@@ -8,6 +8,7 @@ from PyQt5.QtMultimediaWidgets import *
 import os
 import sys
 import time
+import database2
 
 
 class MainWindow(QMainWindow):
@@ -119,6 +120,20 @@ class MainWindow(QMainWindow):
 
         # Data button
 
+<<<<<<< HEAD
+=======
+        def init_export():
+            export_button = QPushButton("Export")
+            export_button.clicked.connect(self.export)
+            sideBar.addWidget(export_button)
+
+        # Initialize SubParts here
+        init_filterLabelText()
+        init_filterSelectDropdown()
+        init_addFilterButton()
+        init_applyFiltersButton()
+        init_export()
+>>>>>>> 243ba82b7cbbd8e7e523b1d286f622c77d644b04
 
 #        def init_addFilterButton():
 #            add_filterButton = QPushButton("Add")
@@ -146,13 +161,20 @@ class MainWindow(QMainWindow):
         zoomButton = QAction('Zoom', self)
         zoomButton.setShortcut('Ctrl + Shift+')
         zoomButton.triggered.connect(self.close)
-        m.addAction(zoomButton)
-
-    def init_toolMenu(self, m):
         filters = QAction('Filters', self)
         filters.triggered.connect(self.close)
+        m.addAction(zoomButton)
         m.addAction(filters)
 
+<<<<<<< HEAD
+=======
+    def init_toolMenu(self, m):
+        exp = QAction('Export Data', self)
+        exp.triggered.connect(self.close)
+        m.addAction(exp)
+
+
+>>>>>>> 243ba82b7cbbd8e7e523b1d286f622c77d644b04
     def select_filter(self, i):
         self.camera = QCamera(self.available_cameras[i])
         self.camera.setViewfinder(self.viewfinder)
@@ -187,6 +209,9 @@ class MainWindow(QMainWindow):
 
     def apply_filter(self):
         print("applied")
+
+    def export(self):
+        database2.expToCSV()
 
     def take_photo(self):
         self.viewfinder.setContrast(100)
