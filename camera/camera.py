@@ -4,7 +4,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtPrintSupport import *
 from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
-# 
+#
 import os
 import sys
 import time
@@ -31,7 +31,6 @@ class MainWindow(QMainWindow):
         self.init_filterSideBar()
 
         self.show()
-
 
     def init_menuBar(self):
         mainMenu = self.menuBar()
@@ -60,28 +59,31 @@ class MainWindow(QMainWindow):
 # Initialize Camera bar
     def init_cameraBar(self):
         camera_toolbar = QToolBar("Camera")
-        camera_toolbar.setIconSize(QSize(45,45))
+        camera_toolbar.setIconSize(QSize(45, 45))
         camera_toolbar.setMovable(False)
         self.addToolBar(Qt.BottomToolBarArea, camera_toolbar)
 
-
         def init_cameraActionButton():
             self.save_path = ""
-            photoAction = QAction(QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
+            photoAction = QAction(
+                QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
             photoAction.setStatusTip("Take photo of current view")
             photoAction.triggered.connect(self.take_photo)
             camera_toolbar.addAction(photoAction)
 
         def init_changeFolderButton():
-            change_folder_action = QAction(QIcon(os.path.join('images', 'blue-folder-horizontal-open.png')), "Change save location...", self)
-            change_folder_action.setStatusTip("Change folder where photos are saved.")
+            change_folder_action = QAction(QIcon(os.path.join(
+                'images', 'blue-folder-horizontal-open.png')), "Change save location...", self)
+            change_folder_action.setStatusTip(
+                "Change folder where photos are saved.")
             change_folder_action.triggered.connect(self.change_folder)
             camera_toolbar.addAction(change_folder_action)
 
         def init_cameraSelectDropdown():
             camera_selector = QComboBox()
-            camera_selector.addItems([c.description() for c in self.available_cameras])
-            camera_selector.currentIndexChanged.connect( self.select_camera )
+            camera_selector.addItems([c.description()
+                                      for c in self.available_cameras])
+            camera_selector.currentIndexChanged.connect(self.select_camera)
             camera_toolbar.addWidget(camera_selector)
 
         # Initialize subParts Here
@@ -106,23 +108,33 @@ class MainWindow(QMainWindow):
             filter_selector.addItems([c for c in self.filters])
             sideBar.addWidget(filter_selector)
 
-        def init_addFilterButton():
-            add_filterButton = QPushButton("Add")
-            add_filterButton.clicked.connect(init_filterSelectDropdown)  # FIX ME
-            sideBar.addWidget(add_filterButton)
+        def action_getDataButton():
+            print("get data button")
 
-        def init_applyFiltersButton():
-            apply_button = QPushButton("Apply")
-            apply_button.clicked.connect(self.apply_filter)
-            sideBar.addWidget(apply_button)
+        def init_getDataButton(self):
+            button = QPushButton("Get Floc Size Data")
+            button.setToolTip('Press here for real-time floc size data.')
+            button.clicked.connect(action_getDataButton)
+            sideBar.addWidget(button)
 
+        # Data button
+
+
+#        def init_addFilterButton():
+#            add_filterButton = QPushButton("Add")
+#            add_filterButton.clicked.connect(init_filterSelectDropdown)  # FIX ME
+#            sideBar.addWidget(add_filterButton)
+
+#        def init_applyFiltersButton():
+#            apply_button = QPushButton("Apply")
+#            apply_button.clicked.connect(self.apply_filter)
+#            sideBar.addWidget(apply_button)
         # Initialize SubParts here
-        init_filterLabelText()
-        init_filterSelectDropdown()
-        init_addFilterButton()
-        init_applyFiltersButton()
-
-
+#        init_filterLabelText()
+#        init_filterSelectDropdown()
+#        init_addFilterButton()
+#        init_applyFiltersButton()
+        init_getDataButton(self)
 
     def init_fileMenu(self, m):
         exitButton = QAction('Exit', self)
@@ -141,34 +153,34 @@ class MainWindow(QMainWindow):
         filters.triggered.connect(self.close)
         m.addAction(filters)
 
-
-
-
     def select_filter(self, i):
         self.camera = QCamera(self.available_cameras[i])
         self.camera.setViewfinder(self.viewfinder)
         self.camera.setCaptureMode(QCamera.CaptureStillImage)
-        self.camera.error.connect(lambda: self.alert(self.camera.errorString()))
+        self.camera.error.connect(
+            lambda: self.alert(self.camera.errorString()))
         self.camera.start()
 
         self.capture = QCameraImageCapture(self.camera)
         self.capture.error.connect(lambda i, e, s: self.alert(s))
-        self.capture.imageCaptured.connect(lambda d, i: self.status.showMessage("Image %04d captured" % self.save_seq))
+        self.capture.imageCaptured.connect(
+            lambda d, i: self.status.showMessage("Image %04d captured" % self.save_seq))
 
         self.current_camera_name = self.available_cameras[i].description()
         self.save_seq = 0
-
 
     def select_camera(self, i):
         self.camera = QCamera(self.available_cameras[i])
         self.camera.setViewfinder(self.viewfinder)
         self.camera.setCaptureMode(QCamera.CaptureStillImage)
-        self.camera.error.connect(lambda: self.alert(self.camera.errorString()))
+        self.camera.error.connect(
+            lambda: self.alert(self.camera.errorString()))
         self.camera.start()
 
         self.capture = QCameraImageCapture(self.camera)
         self.capture.error.connect(lambda i, e, s: self.alert(s))
-        self.capture.imageCaptured.connect(lambda d, i: self.status.showMessage("Image %04d captured" % self.save_seq))
+        self.capture.imageCaptured.connect(
+            lambda d, i: self.status.showMessage("Image %04d captured" % self.save_seq))
 
         self.current_camera_name = self.available_cameras[i].description()
         self.save_seq = 0
@@ -178,7 +190,7 @@ class MainWindow(QMainWindow):
 
     def take_photo(self):
         self.viewfinder.setContrast(100)
-        #self.viewfinder.setBrightness(0)
+        # self.viewfinder.setBrightness(0)
 
         timestamp = time.strftime("%d-%b-%Y-%H_%M_%S")
         self.capture.capture(os.path.join(self.save_path, "%s-%04d-%s.jpg" % (
@@ -189,7 +201,8 @@ class MainWindow(QMainWindow):
         self.save_seq += 1
 
     def change_folder(self):
-        path = QFileDialog.getExistingDirectory(self, "Snapshot save location", "")
+        path = QFileDialog.getExistingDirectory(
+            self, "Snapshot save location", "")
         if path:
             self.save_path = path
             self.save_seq = 0

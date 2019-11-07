@@ -31,19 +31,21 @@ def create_table(conn, create_table_sql):
     except Error as e:
         print(e)
 
+
 def expToCSV(conn):
     c = conn.cursor()
     c.execute("SELECT * FROM table")
     table = c.fetchall()
     print(table)
 
-    #to export as csv file
+    # to export as csv file
     with open("wub.csv", "wb") as write_file:
         cursor = connection.cursor()
         for row in cursor.execute("SELECT * FROM table"):
             writeRow = " ".join(row)
             write_file.write(writeRow)
-        
+
+
 def main():
     database = r"C:\sqlite\db\pythonsqlite.db"
 

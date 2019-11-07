@@ -29,14 +29,15 @@ def create_table(table_name):
             size decimal,
             count integer,
             time TIMESTAMP
-        ) 
+        )
         """
 
 
-def create_floc(size, count):
-    return """
+def create_floc(floc):
+    return ("""
     INSERT INTO flocs(id, size, count, time)
-    """
+    VALUES (?, ?, ?, ?)
+    """, floc)
 
 
 def execute(command, conn):
@@ -47,6 +48,11 @@ def execute(command, conn):
         print(e)
 
 
+def get_all_flocs():
+    return """
+    SELECT * from flocs"""
+
+
 def main():
     database = 'flocSizes.sqlite'
     conn = create_connection(database)
@@ -54,8 +60,8 @@ def main():
     if conn is not None:
         # create projects table
         execute(create_table("Flocs"), conn)
-        execute(create_floc(5, 3), conn)
-
+        execute(create_floc((1, 4, 3, 2)), conn)
+        print(execute(get_all_flocs(), conn))
     else:
         print("Error! cannot create the database connection.")
 
