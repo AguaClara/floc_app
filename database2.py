@@ -1,6 +1,8 @@
 import json
 import sqlite3
 from sqlite3 import Error
+import cv2
+import count_and_size
 
 
 def create_connection(db_file):
@@ -40,10 +42,33 @@ def expToCSV(conn):
 
     # to export as csv file
     with open("wub.csv", "wb") as write_file:
-        cursor = connection.cursor()
+        cursor = conn.cursor()
         for row in cursor.execute("SELECT * FROM table"):
             writeRow = " ".join(row)
             write_file.write(writeRow)
+
+
+def add_flocs(img, cur):
+    sql = ''' INSERT INTO flocs (size)
+              VALUES(?) '''
+    for size in count_and_size.count_and_size_flocs(img):
+        cur.execute(sql, (size, ))
+
+
+def get_all_flocs(cur):
+    sql = """ SELECT * from flocs """
+    data = cur.execute(sql)
+    for cell in data:
+        print(cell)
+
+
+def get_floc_from_id(cur, id):
+    sql = """SELECT * FROM flocs WHERE id=?"""
+    cur.execute(sql, (id,))
+    rows = cur.fetchall()
+
+    for row in rows:
+        print(row)
 
 
 def main():
@@ -66,11 +91,11 @@ def main():
     else:
         print("Error! cannot create the database connection.")
 
-    sql = ''' INSERT INTO flocs (size)
-              VALUES(?) '''
+    img = cv2.imread("openCV/flocs/Image 32339.jpg")
     cur = conn.cursor()
-    cur.execute(sql, (5, ))
-    print(cur.lastrowid)
+    add_flocs(img, cur)
+    print("get floc with id of 40: \n" + str(get_floc_from_id(cur, 40)))
+    print("get all flocs: " + str(get_all_flocs(cur)))
     conn.close()
 
 
