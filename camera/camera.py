@@ -10,22 +10,20 @@ import os
 import sys
 import time, sqlite3
 # import count_and_size
-# import database2
+import database2
 
 
 class MainWindow(QMainWindow):
 
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
-
         self.setWindowTitle("Floc App")
         self.initUI()
 
-        self.timer = QTimer(self)
+        # timer = QTimer(self)
         # timer.timeout.connect(self.take_photo)
         # timer.start(5000)
         # timer.start()
-
         width = self.width()
         height = self.height()
         self.setGeometry(10, 10, 800, 400)
@@ -77,17 +75,8 @@ class MainWindow(QMainWindow):
             photoAction = QAction(
                 QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
             photoAction.setStatusTip("Take photo of current view")
-            photoAction.triggered.connect(self.start_photo)
+            photoAction.triggered.connect(self.take_photo)
             camera_toolbar.addAction(photoAction)
-
-
-        def init_camera_stop_button():
-            photoAction = QAction(
-                QIcon(os.path.join('images', 'end_s.png')), "Take photo...", self)
-            photoAction.setStatusTip("pause")
-            photoAction.triggered.connect(self.stop_photo)
-            camera_toolbar.addAction(photoAction)
-        
 
         def init_changeFolderButton():
             change_folder_action = QAction(QIcon(os.path.join(
@@ -106,7 +95,6 @@ class MainWindow(QMainWindow):
 
         # Initialize subParts Here
         init_cameraActionButton()
-        init_camera_stop_button()
         init_changeFolderButton()
         init_cameraSelectDropdown()
 
@@ -138,9 +126,32 @@ class MainWindow(QMainWindow):
 
         # Data button
 
+
+        def export(self):
+            database = r"C:\sqlite\db\pythonsqlite.db"
+
+            sql_create_floc_table = """ CREATE TABLE IF NOT EXISTS flocs (
+                                                id integer PRIMARY KEY,
+                                                size integer NOT NULL
+                                            ); """
+
+            # create a database connection
+            conn = database2.create_connection(database)
+            conn.commit()
+
+            # create tables
+            if conn is not None:
+                # create projects table
+                database2.create_table(conn, sql_create_floc_table)
+
+            else:
+                print("Error! cannot create the database connection.")
+
+            database2.expToCSV(conn)
+
         def init_export():
             export_button = QPushButton("Export")
-            export_button.clicked.connect(self.export)
+            export_button.clicked.connect(export)
             sideBar.addWidget(export_button)
 
         # Initialize SubParts here
@@ -223,9 +234,6 @@ class MainWindow(QMainWindow):
     def apply_filter(self):
         print("applied")
 
-    def export(self):
-        database2.expToCSV(conn)
-
     def take_photo(self):
         self.viewfinder.setContrast(100)
         # self.viewfinder.setBrightness(0)
@@ -238,16 +246,10 @@ class MainWindow(QMainWindow):
         )))
         self.save_seq += 1
 
-    def start_photo(self):
-        # self.timer = QTimer(self)
-        self.timer.timeout.connect(self.take_photo)
-        self.timer.start(5000)
-        self.timer.start()
-
         # try :
-        #     self.conn = sqlite3.connect("database2.db")
+        #     self.conn = sqlite3.connect("flocs.db")
         #     self.c = self.conn.cursor()
-        #     self.c.execute("INSERT INTO flocs (size) VALUES(?) '''
+        #     self.c.execute("INSERT INTO flocs (size) VALUES(?) ''',
         #     self.conn.commit()
         #      self.c.close()
         #     self.conn.close()
@@ -255,11 +257,6 @@ class MainWindow(QMainWindow):
         #     self.close()
         # except Exception:
         #     QMessageBox.warning(QMessageBox(), 'Error', 'Could not add student to the database.')
-
-    def stop_photo (self):
-            remaining = self.timer.remainingTime()
-            self.timer.stop()
-            self.timer.setInterval(remaining)
 
 
 
@@ -286,8 +283,8 @@ if __name__ == '__main__':
     app.setApplicationName("Camera")
     model = QtSql.QSqlTableModel()
 
-    # db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
-    # db.setDatabaseName('flocs.db')
+    db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
+    db.setDatabaseName('flocs.db')
 
     # query = QtSql.QSqlQuery()
     # model = QtSql.QSqlTableModel()
