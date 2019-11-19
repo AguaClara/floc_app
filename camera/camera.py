@@ -21,10 +21,11 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Floc App")
         self.initUI()
 
-        # timer = QTimer(self)
+        self.timer = QTimer(self)
         # timer.timeout.connect(self.take_photo)
         # timer.start(5000)
         # timer.start()
+
         width = self.width()
         height = self.height()
         self.setGeometry(10, 10, 800, 400)
@@ -76,8 +77,17 @@ class MainWindow(QMainWindow):
             photoAction = QAction(
                 QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
             photoAction.setStatusTip("Take photo of current view")
-            photoAction.triggered.connect(self.take_photo)
+            photoAction.triggered.connect(self.start_photo)
             camera_toolbar.addAction(photoAction)
+
+
+        def init_camera_stop_button():
+            photoAction = QAction(
+                QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
+            photoAction.setStatusTip("pause")
+            photoAction.triggered.connect(self.stop_photo)
+            camera_toolbar.addAction(photoAction)
+        
 
         def init_changeFolderButton():
             change_folder_action = QAction(QIcon(os.path.join(
@@ -96,6 +106,7 @@ class MainWindow(QMainWindow):
 
         # Initialize subParts Here
         init_cameraActionButton()
+        init_camera_stop_button()
         init_changeFolderButton()
         init_cameraSelectDropdown()
 
@@ -126,8 +137,6 @@ class MainWindow(QMainWindow):
             sideBar.addWidget(button)
 
         # Data button
-
-
 
         def init_export():
             export_button = QPushButton("Export")
@@ -229,10 +238,16 @@ class MainWindow(QMainWindow):
         )))
         self.save_seq += 1
 
+    def start_photo(self):
+        # self.timer = QTimer(self)
+        self.timer.timeout.connect(self.take_photo)
+        self.timer.start(5000)
+        self.timer.start()
+
         # try :
-        #     self.conn = sqlite3.connect("flocs.db")
+        #     self.conn = sqlite3.connect("database2.db")
         #     self.c = self.conn.cursor()
-        #     self.c.execute("INSERT INTO flocs (size) VALUES(?) ''',
+        #     self.c.execute("INSERT INTO flocs (size) VALUES(?) '''
         #     self.conn.commit()
         #      self.c.close()
         #     self.conn.close()
@@ -240,6 +255,11 @@ class MainWindow(QMainWindow):
         #     self.close()
         # except Exception:
         #     QMessageBox.warning(QMessageBox(), 'Error', 'Could not add student to the database.')
+
+    def stop_photo (self):
+            remaining = self.timer.remainingTime()
+            self.timer.stop()
+            self.timer.setInterval(remaining)
 
 
 
@@ -265,8 +285,8 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setApplicationName("Camera")
 
-    db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
-    db.setDatabaseName('flocs.db')
+    # db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
+    # db.setDatabaseName('flocs.db')
 
     # query = QtSql.QSqlQuery()
     # model = QtSql.QSqlTableModel()
