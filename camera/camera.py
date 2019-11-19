@@ -20,7 +20,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Floc App")
         self.initUI()
 
-        # timer = QTimer(self)
+        timer = QTimer(self)
         # timer.timeout.connect(self.take_photo)
         # timer.start(5000)
         # timer.start()
@@ -75,8 +75,17 @@ class MainWindow(QMainWindow):
             photoAction = QAction(
                 QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
             photoAction.setStatusTip("Take photo of current view")
-            photoAction.triggered.connect(self.take_photo)
+            photoAction.triggered.connect(self.start_photo)
             camera_toolbar.addAction(photoAction)
+
+
+        def init_camera_stop_button():
+            photoAction = QAction(
+                QIcon(os.path.join('images', 'end_s.png')), "Take photo...", self)
+            photoAction.setStatusTip("pause")
+            photoAction.triggered.connect(self.stop_photo)
+            camera_toolbar.addAction(photoAction)
+
 
         def init_changeFolderButton():
             change_folder_action = QAction(QIcon(os.path.join(
@@ -95,6 +104,7 @@ class MainWindow(QMainWindow):
 
         # Initialize subParts Here
         init_cameraActionButton()
+        init_camera_stop_button()
         init_changeFolderButton()
         init_cameraSelectDropdown()
 
@@ -151,7 +161,7 @@ class MainWindow(QMainWindow):
 
         def init_export():
             export_button = QPushButton("Export")
-            export_button.clicked.connect(export)
+            export_button.clicked.connect(self.export)
             sideBar.addWidget(export_button)
 
         # Initialize SubParts here
@@ -245,6 +255,20 @@ class MainWindow(QMainWindow):
             timestamp
         )))
         self.save_seq += 1
+
+    def start_photo(self):
+        # self.timer = QTimer(self)
+        self.timer.timeout.connect(self.take_photo)
+        self.timer.start(5000)
+        self.timer.start()
+
+    def stop_photo (self):
+        remaining = self.timer.remainingTime()
+        self.timer.stop()
+        self.timer.setInterval(remaining)
+
+
+
 
         # try :
         #     self.conn = sqlite3.connect("flocs.db")
