@@ -284,6 +284,7 @@ class MainWindow(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setApplicationName("Camera")
+    model = QtSql.QSqlTableModel()
 
     # db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
     # db.setDatabaseName('flocs.db')
