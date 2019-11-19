@@ -94,8 +94,8 @@ def main():
     img = cv2.imread("openCV/flocs/Image 32339.jpg")
     cur = conn.cursor()
     add_flocs(img, cur)
-    print("get floc with id of 40: \n" + str(get_floc_from_id(cur, 40)))
-    print("get all flocs: " + str(get_all_flocs(cur)))
+    # print(get_floc_from_id(cur, 40))
+    print(get_all_flocs(cur))
     conn.close()
 
 
