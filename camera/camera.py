@@ -8,7 +8,7 @@ from PyQt5.QtMultimediaWidgets import *
 import os
 import sys
 import time
-import database2
+# import database2
 
 
 class MainWindow(QMainWindow):
@@ -18,6 +18,11 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Floc App")
         self.initUI()
+
+        timer = QTimer(self)
+        timer.timeout.connect(self.take_photo)
+        timer.start(5000)
+        timer.start()
         width = self.width()
         height = self.height()
         self.setGeometry(10, 10, 800, 400)
@@ -121,8 +126,7 @@ class MainWindow(QMainWindow):
         # Data button
 
 
-<< << << < HEAD
-== == == =
+
         def init_export():
             export_button = QPushButton("Export")
             export_button.clicked.connect(self.export)
@@ -131,10 +135,10 @@ class MainWindow(QMainWindow):
         # Initialize SubParts here
         init_filterLabelText()
         init_filterSelectDropdown()
-        init_addFilterButton()
-        init_applyFiltersButton()
+        # init_addFilterButton()
+        # init_applyFiltersButton()
         init_export()
->>>>>> > 243ba82b7cbbd8e7e523b1d286f622c77d644b04
+
 
 #        def init_addFilterButton():
 #            add_filterButton = QPushButton("Add")
@@ -167,15 +171,12 @@ class MainWindow(QMainWindow):
         m.addAction(zoomButton)
         m.addAction(filters)
 
-<<<<<<< HEAD
-=======
     def init_toolMenu(self, m):
         exp = QAction('Export Data', self)
         exp.triggered.connect(self.close)
         m.addAction(exp)
 
 
->>>>>>> 243ba82b7cbbd8e7e523b1d286f622c77d644b04
     def select_filter(self, i):
         self.camera = QCamera(self.available_cameras[i])
         self.camera.setViewfinder(self.viewfinder)
