@@ -34,21 +34,19 @@ def create_table(conn, create_table_sql):
         print(e)
 
 
-def expToCSV():
-    conn = create_connection(database)
-    conn.commit()
+def expToCSV(conn):
     c = conn.cursor()
-    c.execute("SELECT * FROM table")
+    c.execute("SELECT * FROM flocs")
     table = c.fetchall()
     print(table)
 
     # to export as csv file
     with open("wub.csv", "wb") as write_file:
         cursor = conn.cursor()
-        for row in cursor.execute("SELECT * FROM table"):
+        for row in cursor.execute("SELECT * FROM flocs"):
             writeRow = " ".join(row)
             write_file.write(writeRow)
-    conn.close()
+
 
 def add_flocs(img, cur):
     sql = ''' INSERT INTO flocs (size)
