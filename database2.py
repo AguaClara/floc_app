@@ -2,7 +2,7 @@ import json
 import sqlite3
 from sqlite3 import Error
 import cv2
-import count_and_size
+import camera_and_size
 
 
 def create_connection(db_file):
@@ -34,7 +34,9 @@ def create_table(conn, create_table_sql):
         print(e)
 
 
-def expToCSV(conn):
+def expToCSV():
+    conn = create_connection(database)
+    conn.commit()
     c = conn.cursor()
     c.execute("SELECT * FROM table")
     table = c.fetchall()
@@ -46,7 +48,7 @@ def expToCSV(conn):
         for row in cursor.execute("SELECT * FROM table"):
             writeRow = " ".join(row)
             write_file.write(writeRow)
-
+    conn.close()
 
 def add_flocs(img, cur):
     sql = ''' INSERT INTO flocs (size)
