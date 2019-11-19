@@ -10,7 +10,7 @@ import os
 import sys
 import time, sqlite3
 # import count_and_size
-# import database2
+import database2
 
 
 class MainWindow(QMainWindow):
@@ -224,7 +224,7 @@ class MainWindow(QMainWindow):
         print("applied")
 
     def export(self):
-        database2.expToCSV()
+        database2.expToCSV(conn)
 
     def take_photo(self):
         self.viewfinder.setContrast(100)
