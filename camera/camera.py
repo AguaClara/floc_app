@@ -4,11 +4,13 @@ from PyQt5.QtCore import *
 from PyQt5.QtPrintSupport import *
 from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
+from PyQt5 import QtSql
 #
 import os
 import sys
-import time
-import database2
+import time, sqlite3
+# import count_and_size
+# import database2
 
 
 class MainWindow(QMainWindow):
@@ -18,6 +20,11 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Floc App")
         self.initUI()
+
+        # timer = QTimer(self)
+        # timer.timeout.connect(self.take_photo)
+        # timer.start(5000)
+        # timer.start()
         width = self.width()
         height = self.height()
         self.setGeometry(10, 10, 800, 400)
@@ -121,8 +128,7 @@ class MainWindow(QMainWindow):
         # Data button
 
 
-<< << << < HEAD
-== == == =
+
         def init_export():
             export_button = QPushButton("Export")
             export_button.clicked.connect(self.export)
@@ -131,10 +137,10 @@ class MainWindow(QMainWindow):
         # Initialize SubParts here
         init_filterLabelText()
         init_filterSelectDropdown()
-        init_addFilterButton()
-        init_applyFiltersButton()
+        # init_addFilterButton()
+        # init_applyFiltersButton()
         init_export()
->>>>>> > 243ba82b7cbbd8e7e523b1d286f622c77d644b04
+
 
 #        def init_addFilterButton():
 #            add_filterButton = QPushButton("Add")
@@ -167,15 +173,12 @@ class MainWindow(QMainWindow):
         m.addAction(zoomButton)
         m.addAction(filters)
 
-<<<<<<< HEAD
-=======
     def init_toolMenu(self, m):
         exp = QAction('Export Data', self)
         exp.triggered.connect(self.close)
         m.addAction(exp)
 
 
->>>>>>> 243ba82b7cbbd8e7e523b1d286f622c77d644b04
     def select_filter(self, i):
         self.camera = QCamera(self.available_cameras[i])
         self.camera.setViewfinder(self.viewfinder)
@@ -219,12 +222,29 @@ class MainWindow(QMainWindow):
         # self.viewfinder.setBrightness(0)
 
         timestamp = time.strftime("%d-%b-%Y-%H_%M_%S")
-        self.capture.capture(os.path.join(self.save_path, "%s-%04d-%s.jpg" % (
+        img= self.capture.capture(os.path.join(self.save_path, "%s-%04d-%s.jpg" % (
             self.current_camera_name,
             self.save_seq,
             timestamp
         )))
         self.save_seq += 1
+
+        # try :
+        #     self.conn = sqlite3.connect("flocs.db")
+        #     self.c = self.conn.cursor()
+        #     self.c.execute("INSERT INTO flocs (size) VALUES(?) ''',
+        #     self.conn.commit()
+        #      self.c.close()
+        #     self.conn.close()
+        #     QMessageBox.information(QMessageBox(),'Successful','Student is added successfully to the database.')
+        #     self.close()
+        # except Exception:
+        #     QMessageBox.warning(QMessageBox(), 'Error', 'Could not add student to the database.')
+
+
+
+    # database2.add_flocs (img, )
+
 
     def change_folder(self):
         path = QFileDialog.getExistingDirectory(
@@ -242,9 +262,15 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == '__main__':
-
     app = QApplication(sys.argv)
     app.setApplicationName("Camera")
+
+    db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
+    db.setDatabaseName('flocs.db')
+
+    # query = QtSql.QSqlQuery()
+    # model = QtSql.QSqlTableModel()
+
 
     window = MainWindow()
     app.exec_()
