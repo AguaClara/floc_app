@@ -10,7 +10,7 @@ import os
 import sys
 import time, sqlite3
 # import count_and_size
-import database2
+# import database2
 
 
 class MainWindow(QMainWindow):
@@ -83,7 +83,7 @@ class MainWindow(QMainWindow):
 
         def init_camera_stop_button():
             photoAction = QAction(
-                QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
+                QIcon(os.path.join('images', 'end_s.png')), "Take photo...", self)
             photoAction.setStatusTip("pause")
             photoAction.triggered.connect(self.stop_photo)
             camera_toolbar.addAction(photoAction)
