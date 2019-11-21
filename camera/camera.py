@@ -161,7 +161,7 @@ class MainWindow(QMainWindow):
 
         def init_export():
             export_button = QPushButton("Export")
-            export_button.clicked.connect(self.export)
+            export_button.clicked.connect(export)
             sideBar.addWidget(export_button)
 
         # Initialize SubParts here
