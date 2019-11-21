@@ -20,7 +20,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Floc App")
         self.initUI()
 
-        timer = QTimer(self)
+        self.timer = QTimer(self)
         # timer.timeout.connect(self.take_photo)
         # timer.start(5000)
         # timer.start()
