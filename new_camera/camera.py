@@ -10,7 +10,7 @@ import os
 import sys
 import time, sqlite3
 # import count_and_size
-import database2
+# import database2
 
 
 class MainWindow(QMainWindow):
@@ -161,7 +161,7 @@ class MainWindow(QMainWindow):
 
         def init_export():
             export_button = QPushButton("Export")
-            export_button.clicked.connect(self.export)
+            export_button.clicked.connect(export)
             sideBar.addWidget(export_button)
 
         # Initialize SubParts here
