@@ -6,11 +6,14 @@ from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
 from PyQt5 import QtSql
 #
+import numpy as np
 import os
 import sys
-import time, sqlite3
+import cv2
+import time
+import sqlite3
 # import count_and_size
-# import database2
+import database2
 
 
 class MainWindow(QMainWindow):
@@ -29,6 +32,24 @@ class MainWindow(QMainWindow):
         self.setGeometry(10, 10, 800, 400)
 
         self.show()
+        database = r"C:\sqlite\db\pythonsqlite.db"
+
+        sql_create_floc_table = """ CREATE TABLE IF NOT EXISTS flocs (
+                                            id integer PRIMARY KEY,
+                                            size integer NOT NULL
+                                        ); """
+
+        # create a database connection
+        conn = database2.create_connection(database)
+        conn.commit()
+
+        # create tables
+        if conn is not None:
+            # create projects table
+            database2.create_table(conn, sql_create_floc_table)
+
+        else:
+            print("Error! cannot create the database connection.")
 
     def initUI(self):
         self.init_menuBar()
@@ -78,14 +99,12 @@ class MainWindow(QMainWindow):
             photoAction.triggered.connect(self.start_photo)
             camera_toolbar.addAction(photoAction)
 
-
         def init_camera_stop_button():
             photoAction = QAction(
                 QIcon(os.path.join('images', 'end_s.png')), "Take photo...", self)
             photoAction.setStatusTip("pause")
             photoAction.triggered.connect(self.stop_photo)
             camera_toolbar.addAction(photoAction)
-
 
         def init_changeFolderButton():
             change_folder_action = QAction(QIcon(os.path.join(
@@ -136,14 +155,8 @@ class MainWindow(QMainWindow):
 
         # Data button
 
-
         def export(self):
             database = r"C:\sqlite\db\pythonsqlite.db"
-
-            sql_create_floc_table = """ CREATE TABLE IF NOT EXISTS flocs (
-                                                id integer PRIMARY KEY,
-                                                size integer NOT NULL
-                                            ); """
 
             # create a database connection
             conn = database2.create_connection(database)
@@ -152,12 +165,10 @@ class MainWindow(QMainWindow):
             # create tables
             if conn is not None:
                 # create projects table
-                database2.create_table(conn, sql_create_floc_table)
+                database2.expToCSV(conn)
 
             else:
                 print("Error! cannot create the database connection.")
-
-            database2.expToCSV(conn)
 
         def init_export():
             export_button = QPushButton("Export")
@@ -208,7 +219,6 @@ class MainWindow(QMainWindow):
         exp.triggered.connect(self.close)
         m.addAction(exp)
 
-
     def select_filter(self, i):
         self.camera = QCamera(self.available_cameras[i])
         self.camera.setViewfinder(self.viewfinder)
@@ -244,16 +254,55 @@ class MainWindow(QMainWindow):
     def apply_filter(self):
         print("applied")
 
+    # def QImageToMat(self, qimg):
+    #     """RGB888"""
+    #     #qimg = QImage()
+    #     # qimg.load("/home/auss/Pictures/test.png")
+    #     qimg = qimg.convertToFormat(QImage.Format_RGB888)
+    #     qimg = qimg.rgbSwapped()
+    #     assert(qimg.byteCount() == qimg.width() * qimg.height() * 3)
+
+    #     ptr = qimg.constBits()
+    #     ptr.setsize(qimg.byteCount())
+
+    #     mat = np.array(ptr).reshape(
+    #         qimg.height(), qimg.width(), 3)  # Copies the data
+    #     return mat
+
     def take_photo(self):
         self.viewfinder.setContrast(100)
         # self.viewfinder.setBrightness(0)
 
         timestamp = time.strftime("%d-%b-%Y-%H_%M_%S")
-        img= self.capture.capture(os.path.join(self.save_path, "%s-%04d-%s.jpg" % (
+
+        path = (os.path.join(self.save_path, "%s-%04d-%s.jpg" % (
             self.current_camera_name,
             self.save_seq,
             timestamp
         )))
+        img = self.capture.capture(path)
+        # qimg = QImage()
+        # qimg.load('image.jpg')
+        # img = self.QImageToMat(self.capture)
+        database = r"C:\sqlite\db\pythonsqlite.db"
+        # create a database connection
+        conn = database2.create_connection(database)
+        conn.commit()
+        is_empty = True
+        while is_empty:
+            img = cv2.imread(path)
+            if img is not None:
+                is_empty = False
+        # create tables
+        if conn is not None:
+            # create projects table
+            cur = conn.cursor()
+            database2.add_flocs(img, cur)
+            conn.commit()
+            conn.close()
+
+        else:
+            print("Error! cannot create the database connection.")
         self.save_seq += 1
 
     def start_photo(self):
@@ -262,13 +311,10 @@ class MainWindow(QMainWindow):
         self.timer.start(5000)
         self.timer.start()
 
-    def stop_photo (self):
+    def stop_photo(self):
         remaining = self.timer.remainingTime()
         self.timer.stop()
         self.timer.setInterval(remaining)
-
-
-
 
         # try :
         #     self.conn = sqlite3.connect("flocs.db")
@@ -282,10 +328,7 @@ class MainWindow(QMainWindow):
         # except Exception:
         #     QMessageBox.warning(QMessageBox(), 'Error', 'Could not add student to the database.')
 
-
-
     # database2.add_flocs (img, )
-
 
     def change_folder(self):
         path = QFileDialog.getExistingDirectory(
@@ -312,7 +355,6 @@ if __name__ == '__main__':
 
     # query = QtSql.QSqlQuery()
     # model = QtSql.QSqlTableModel()
-
 
     window = MainWindow()
     app.exec_()

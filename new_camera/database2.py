@@ -2,7 +2,7 @@ import json
 import sqlite3
 from sqlite3 import Error
 import cv2
-import camera_and_size
+import count_and_size
 
 
 def create_connection(db_file):
@@ -41,10 +41,10 @@ def expToCSV(conn):
     print(table)
 
     # to export as csv file
-    with open("wub.csv", "wb") as write_file:
+    with open("wub.csv", "w") as write_file:
         cursor = conn.cursor()
         for row in cursor.execute("SELECT * FROM flocs"):
-            writeRow = " ".join(row)
+            writeRow = " ".join(str(x) for x in row)
             write_file.write(writeRow)
 
 
@@ -52,6 +52,7 @@ def add_flocs(img, cur):
     sql = ''' INSERT INTO flocs (size)
               VALUES(?) '''
     for size in count_and_size.count_and_size_flocs(img):
+        print(size)
         cur.execute(sql, (size, ))
 
 
