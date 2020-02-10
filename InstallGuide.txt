@@ -1,20 +1,13 @@
 Install Guide
 
-1. Install home-brew
-    2. Copy paste this into terminal: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-2. Install python
-    1. brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb
-    2. Note this installs python 3.6.5, installing a later version causes OpenCV not to work
-    3. Note, if a previous version of python has been installed run brew unlink python
-3. Install Python IDE
-    1. User choice, I personally use Sublime Text 3
-    2. Link IDE with python3
-        1. For sublime - https://gist.github.com/zaemiel/4fbd8b5125fda7a140be
-    3. Note - run files by saying python3 [file_name] in terminal
-4. Clone GitHub branch
+1. Install Python, Homebrew, PyQt5, Numpy, and OpenCV
+	Follow the instructions with this link: 
+	https://www.learnopencv.com/install-opencv-3-4-4-on-macos/
+2. Clone GitHub branch
     1. Git clone https://github.com/AguaClara/floc_app.git
-5. Install PySide
-    1. pip3 install --index-url=http://download.qt.io/snapshots/ci/pyside/5.12/latest/ pyside2 --trusted-host download.qt.io
-    2. If that does not work try python -m pip3 install PySide2-5.11.0a1-5.11.0-cp36-cp36m-win_amd64.whl
-6. Install OpenCV
-    1. pip install opencv-python
+3. Run 'camera.py' in the folder 'new_camera' and if everything runs then you are good to go!
+	If PyQt5 does not work, try:
+	1. brew uninstall qt
+	   brew install PyQt5
+	OR
+	2. pip3 install PyQt5

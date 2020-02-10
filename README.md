@@ -3,10 +3,10 @@
 ### Team Members:
 
 Natalie Isak (Lead),
-Erika Hauschild,
-Jessica Lu,
 Yoona Chang,
-Luke Bowsher . 
+Luke Bowsher,
+Alanna Kim,
+Kelly Cheng. 
 
 
 ### Goals for Fall 2019:
