@@ -30,9 +30,9 @@ def create_table(conn, create_table_sql):
     try:
         c = conn.cursor()
         c.execute(create_table_sql)
+     
     except Error as e:
         print(e)
-
 
 def expToCSV(conn):
     c = conn.cursor()
@@ -46,6 +46,11 @@ def expToCSV(conn):
         for row in cursor.execute("SELECT * FROM flocs"):
             writeRow = " ".join(str(x) for x in row)
             write_file.write(writeRow)
+    # with open("new_data.csv", "w") as csv_file:
+    #     cursor = conn.cursor()
+    #     csv_writer = csv.writer(csv_file, delimiter="\t")
+    #     csv_writer.writerow([i[0] for i in cursor.description])
+    #     csv_writer.writerows(cursor)
 
 
 def add_flocs(img, cur):
@@ -54,6 +59,7 @@ def add_flocs(img, cur):
     for size in count_and_size.count_and_size_flocs(img):
         print(size)
         cur.execute(sql, (size, ))
+
 
 
 def get_all_flocs(cur):

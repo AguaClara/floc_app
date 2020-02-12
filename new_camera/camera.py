@@ -12,9 +12,11 @@ import sys
 import cv2
 import time
 import sqlite3
-# import count_and_size
+import count_and_size
 import database2
 
+
+database = r"C:sqlitedbpythonsqlite.db"
 
 class MainWindow(QMainWindow):
 
@@ -32,7 +34,8 @@ class MainWindow(QMainWindow):
         self.setGeometry(10, 10, 800, 400)
 
         self.show()
-        database = r"C:\sqlite\db\pythonsqlite.db"
+        # database = r"C:sqlitedbpythonsqlite.db"
+        # database = r"databse.db"
 
         sql_create_floc_table = """ CREATE TABLE IF NOT EXISTS flocs (
                                             id integer PRIMARY KEY,
@@ -156,7 +159,7 @@ class MainWindow(QMainWindow):
         # Data button
 
         def export(self):
-            database = r"C:\sqlite\db\pythonsqlite.db"
+            # database = r"C:\sqlite\db\pythonsqlite.db"
 
             # create a database connection
             conn = database2.create_connection(database)
@@ -284,7 +287,7 @@ class MainWindow(QMainWindow):
         # qimg = QImage()
         # qimg.load('image.jpg')
         # img = self.QImageToMat(self.capture)
-        database = r"C:\sqlite\db\pythonsqlite.db"
+        # database = r"C:\sqlite\db\pythonsqlite.db"
         # create a database connection
         conn = database2.create_connection(database)
         conn.commit()
@@ -316,19 +319,8 @@ class MainWindow(QMainWindow):
         self.timer.stop()
         self.timer.setInterval(remaining)
 
-        # try :
-        #     self.conn = sqlite3.connect("flocs.db")
-        #     self.c = self.conn.cursor()
-        #     self.c.execute("INSERT INTO flocs (size) VALUES(?) ''',
-        #     self.conn.commit()
-        #      self.c.close()
-        #     self.conn.close()
-        #     QMessageBox.information(QMessageBox(),'Successful','Student is added successfully to the database.')
-        #     self.close()
-        # except Exception:
-        #     QMessageBox.warning(QMessageBox(), 'Error', 'Could not add student to the database.')
 
-    # database2.add_flocs (img, )
+
 
     def change_folder(self):
         path = QFileDialog.getExistingDirectory(
