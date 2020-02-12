@@ -45,7 +45,7 @@ def expToCSV(conn):
     with open("new2.csv", "w") as write_file:
         cursor = conn.cursor()
         for row in cursor.execute("SELECT * FROM flocs"):
-            writeRow= " , ".join(str(x) for x in row)
+            writeRow= ", ".join(str(x) for x in row)
             writeRow2= writeRow+"\n"
             write_file.write(writeRow2)
 
