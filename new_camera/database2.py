@@ -3,6 +3,7 @@ import sqlite3
 from sqlite3 import Error
 import cv2
 import count_and_size
+import csv
 
 
 def create_connection(db_file):
@@ -41,16 +42,13 @@ def expToCSV(conn):
     print(table)
 
     # to export as csv file
-    with open("wub.csv", "w") as write_file:
+    with open("new2.csv", "w") as write_file:
         cursor = conn.cursor()
         for row in cursor.execute("SELECT * FROM flocs"):
-            writeRow = " ".join(str(x) for x in row)
-            write_file.write(writeRow)
-    # with open("new_data.csv", "w") as csv_file:
-    #     cursor = conn.cursor()
-    #     csv_writer = csv.writer(csv_file, delimiter="\t")
-    #     csv_writer.writerow([i[0] for i in cursor.description])
-    #     csv_writer.writerows(cursor)
+            writeRow= " , ".join(str(x) for x in row)
+            writeRow2= writeRow+"\n"
+            write_file.write(writeRow2)
+
 
 
 def add_flocs(img, cur):
