@@ -17,4 +17,5 @@ plt.title('Data from the CSV File: id and sizes')
 plt.xlabel('id')
 plt.ylabel('sizes')
 
+
 plt.show()
