@@ -44,13 +44,12 @@ def expToCSV(conn):
     # to export as csv file
     with open("new2.csv", "w") as write_file:
         cursor = conn.cursor()
-        fieldnames = ['id', 'size']
-        writer = csv.DictWriter(write_file, fieldnames=fieldnames)
-        writer.writeheader()
+        # uncomment when you want the fieldnames displayed in the imported csv file
+        # fieldnames = ['id', 'size']
+        # writer = csv.DictWriter(write_file, fieldnames=fieldnames)
+        # writer.writeheader()
 
-        for row in cursor.execute("SELECT * FROM flocs"):
-
-            
+        for row in cursor.execute("SELECT * FROM flocs"):  
             wr= ", ".join(str(x) for x in row)
             wr2= wr+"\n"
             write_file.write(wr2)
