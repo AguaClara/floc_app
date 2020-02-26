@@ -16,7 +16,10 @@ import sqlite3
 import count_and_size
 import database2
 
-import matplotib
+import matplotlib.pyplot as plt
+import csv
+
+import matplotlib
 matplotlib.use('Qt5Agg')
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -35,11 +38,26 @@ class MplCanvas(FigureCanvas):
                 QSizePolicy.Expanding)
         FigureCanvas.updateGeometry(self)
 
-    def plot(self, data = np.empty(shape=(1,2))):
-        ax = self.figure.add_subplot(111)
-        ax.plot(data[:,0],data[:,1], 'r-')
-        ax.set_title('PyQt Matplotlib Example')
-        self.draw()
+    def plot(self, data):
+        x=[]
+        y=[]
+
+        with open( data, 'r') as csvfile:
+            plots= csv.reader(csvfile, delimiter=',')
+            for row in plots:
+                x.append(int(row[0]))
+                y.append(int(row[1]))
+
+        plt.plot(x,y)
+
+        plt.title('Data from the CSV File: id and sizes')
+
+        plt.xlabel('id')
+        plt.ylabel('sizes')
+
+        plt.draw()
+
+
 
 
 class MainWindow(QMainWindow):
@@ -55,7 +73,7 @@ class MainWindow(QMainWindow):
         # timer.start()
         width = self.width()
         height = self.height()
-        self.setGeometry(10, 10, 900, 500)
+        self.setGeometry(10, 10, 1000, 1000)
 
         self.show()
         # database = r"C:sqlitedbpythonsqlite.db"
@@ -109,7 +127,9 @@ class MainWindow(QMainWindow):
             pass
         self.viewfinder = QCameraViewfinder()
         self.viewfinder.show()
-        self.setCentralWidget(self.viewfinder)
+        # self.setCentralWidget(self.viewfinder)
+        sc= MplCanvas(self, width=5, height=4, dpi=100)
+        self.setCentralWidget(sc.plot('new2.csv'))
         self.select_camera(0)
 
     # def init_plot(self):
