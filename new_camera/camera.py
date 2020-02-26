@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         # timer.start()
         width = self.width()
         height = self.height()
-        self.setGeometry(10, 10, 1000, 1000)
+        self.setGeometry(10, 10, 900, 500)
 
         self.show()
         # database = r"C:sqlitedbpythonsqlite.db"
