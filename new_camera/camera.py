@@ -7,6 +7,7 @@ from PyQt5.QtMultimediaWidgets import *
 from PyQt5 import QtSql
 #
 import numpy as np
+import sys
 import os
 import sys
 import cv2
@@ -15,8 +16,31 @@ import sqlite3
 import count_and_size
 import database2
 
+import matplotib
+matplotlib.use('Qt5Agg')
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+import numpy as np
 
 database = r"C:sqlitedbpythonsqlite.db"
+class MplCanvas(FigureCanvas):
+
+    def __init__(self, parent=None, width=5, height=4, dpi=100):
+        fig = Figure(figsize=(width, height), dpi=dpi)
+        self.axes = fig.add_subplot(111)
+        super(MplCanvas, self).__init__(fig)
+
+        FigureCanvas.setSizePolicy(self,
+                QSizePolicy.Expanding,
+                QSizePolicy.Expanding)
+        FigureCanvas.updateGeometry(self)
+
+    def plot(self, data = np.empty(shape=(1,2))):
+        ax = self.figure.add_subplot(111)
+        ax.plot(data[:,0],data[:,1], 'r-')
+        ax.set_title('PyQt Matplotlib Example')
+        self.draw()
+
 
 class MainWindow(QMainWindow):
 
@@ -31,7 +55,7 @@ class MainWindow(QMainWindow):
         # timer.start()
         width = self.width()
         height = self.height()
-        self.setGeometry(10, 10, 800, 400)
+        self.setGeometry(10, 10, 1000, 1000)
 
         self.show()
         # database = r"C:sqlitedbpythonsqlite.db"
@@ -60,8 +84,9 @@ class MainWindow(QMainWindow):
         self.init_camera()
         self.init_cameraBar()
         self.init_filterSideBar()
-
         self.show()
+        # new widget for plots 
+        # self.init_plot()
 
     def init_menuBar(self):
         mainMenu = self.menuBar()
@@ -86,6 +111,9 @@ class MainWindow(QMainWindow):
         self.viewfinder.show()
         self.setCentralWidget(self.viewfinder)
         self.select_camera(0)
+
+    # def init_plot(self):
+
 
 # Initialize Camera bar
     def init_cameraBar(self):
@@ -138,14 +166,14 @@ class MainWindow(QMainWindow):
         self.addToolBar(Qt.RightToolBarArea, sideBar)
 
         def init_filterLabelText():
-            filter_label = QLabel("Filter")
+            filter_label = QLabel("Export Data")
             sideBar.addWidget(filter_label)
 
-        def init_filterSelectDropdown():
-            self.filters = ["Normal", "Black/White"]
-            filter_selector = QComboBox()
-            filter_selector.addItems([c for c in self.filters])
-            sideBar.addWidget(filter_selector)
+        # def init_filterSelectDropdown():
+        #     self.filters = ["Normal", "Black/White"]
+        #     filter_selector = QComboBox()
+        #     filter_selector.addItems([c for c in self.filters])
+        #     sideBar.addWidget(filter_selector)
 
         def action_getDataButton():
             print("get data button")
@@ -155,6 +183,7 @@ class MainWindow(QMainWindow):
             button.setToolTip('Press here for real-time floc size data.')
             button.clicked.connect(action_getDataButton)
             sideBar.addWidget(button)
+
 
         # Data button
 
@@ -180,7 +209,7 @@ class MainWindow(QMainWindow):
 
         # Initialize SubParts here
         init_filterLabelText()
-        init_filterSelectDropdown()
+        # init_filterSelectDropdown()
         # init_addFilterButton()
         # init_applyFiltersButton()
         init_export()
@@ -335,6 +364,7 @@ class MainWindow(QMainWindow):
         """
         err = QErrorMessage(self)
         err.showMessage(s)
+
 
 
 if __name__ == '__main__':
