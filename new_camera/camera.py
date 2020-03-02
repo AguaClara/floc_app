@@ -81,6 +81,41 @@ class MainWindow(QMainWindow):
         else:
             print("Error! cannot create the database connection.")
 
+# class mainWindow(QtGui.QTabWidget):
+#     def __init__(self, parent = None):
+#         super(mainWindow, self).__init__(parent)
+
+#         #GUI configuration
+#         self.tab1 = QtGui.QWidget()
+#         self.addTab(self.tab1,"Tab 1")
+#         self.figure = plt.figure(figsize=(10,5))
+#         self.resize(800,480)
+#         self.canvas = FigureCanvas(self.figure)
+    
+#         layout = QtGui.QVBoxLayout()
+#         layout.addWidget(self.canvas)
+#         self.setLayout(layout)
+#         self.plot()
+
+#     def plot(self):
+#         data = [random.random() for i in range(10)]
+#         ax = self.figure.add_subplot(111)
+#         ax.hold(False)
+#         ax.plot(data, '*-')
+#         self.canvas.draw()
+
+# def main():
+#     app = QtGui.QApplication(sys.argv)
+#     main = mainWindow()
+#     main.show()
+#     sys.exit(app.exec_())
+
+# if __name__ == '__main__':
+#     main()
+
+
+            
+
     def initUI(self):
         self.init_menuBar()
         self.init_statusBar()
