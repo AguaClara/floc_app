@@ -26,23 +26,18 @@ from matplotlib.figure import Figure
 import numpy as np
 
 database = r"C:sqlitedbpythonsqlite.db"
-class MplCanvas(FigureCanvas):
+# class MplCanvas(FigureCanvas):
 
-    def __init__(self, parent=None, width=5, height=4, dpi=100):
-        fig = Figure(figsize=(width, height), dpi=dpi)
-        self.axes = fig.add_subplot(111)
-        super(MplCanvas, self).__init__(fig)
+#     def __init__(self, parent=None, width=5, height=4, dpi=100):
+#         fig = Figure(figsize=(width, height), dpi=dpi)
+#         self.axes = fig.add_subplot(111)
+#         super(MplCanvas, self).__init__(fig)
 
-        FigureCanvas.setSizePolicy(self,
-                QSizePolicy.Expanding,
-                QSizePolicy.Expanding)
-        FigureCanvas.updateGeometry(self)
+#         FigureCanvas.setSizePolicy(self,
+#                 QSizePolicy.Expanding,
+#                 QSizePolicy.Expanding)
+#         FigureCanvas.updateGeometry(self)
 
-    def plot(self, data = np.empty(shape=(1,2))):
-        ax = self.figure.add_subplot(111)
-        ax.plot(data[:,0],data[:,1], 'r-')
-        ax.set_title('PyQt Matplotlib Example')
-        self.draw()
 
 
 class MainWindow(QMainWindow):
@@ -81,38 +76,23 @@ class MainWindow(QMainWindow):
         else:
             print("Error! cannot create the database connection.")
 
-# class mainWindow(QtGui.QTabWidget):
-#     def __init__(self, parent = None):
-#         super(mainWindow, self).__init__(parent)
-
-#         #GUI configuration
-#         self.tab1 = QtGui.QWidget()
-#         self.addTab(self.tab1,"Tab 1")
-#         self.figure = plt.figure(figsize=(10,5))
-#         self.resize(800,480)
-#         self.canvas = FigureCanvas(self.figure)
+            #GUI configuration
+        # self.tab1 = QtGui.QWidget()
+        # self.addTab(self.tab1,"Tab 1")
+        # self.figure = plt.figure(figsize=(10,5))
+        # self.resize(800,480)
+        # self.canvas = FigureCanvas(self.figure)
     
-#         layout = QtGui.QVBoxLayout()
-#         layout.addWidget(self.canvas)
-#         self.setLayout(layout)
-#         self.plot()
+        # layout = QtGui.QVBoxLayout()
+        # layout.addWidget(self.canvas)
+        # self.tab1.setLayout(layout)
+        # self.plot()
 
-#     def plot(self):
-#         data = [random.random() for i in range(10)]
-#         ax = self.figure.add_subplot(111)
-#         ax.hold(False)
-#         ax.plot(data, '*-')
-#         self.canvas.draw()
-
-# def main():
-#     app = QtGui.QApplication(sys.argv)
-#     main = mainWindow()
-#     main.show()
-#     sys.exit(app.exec_())
-
-# if __name__ == '__main__':
-#     main()
-
+    def plot(self, data = np.empty(shape=(1,2))):
+        ax = self.figure.add_subplot(111)
+        ax.plot(data[:,0],data[:,1], 'r-')
+        ax.set_title('PyQt Matplotlib Example')
+        self.draw()
 
             
 
