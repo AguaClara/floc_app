@@ -16,7 +16,7 @@ import sqlite3
 import count_and_size
 import database2
 
-import matplotib
+import matplotlib
 matplotlib.use('Qt5Agg')
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -122,24 +122,34 @@ class MainWindow(QMainWindow):
         camera_toolbar.setMovable(False)
         self.addToolBar(Qt.BottomToolBarArea, camera_toolbar)
 
+        def find_data_file(filename):
+            if getattr(sys, 'frozen', False):
+                # The application is frozen
+                datadir = os.path.dirname(sys.executable)
+            else:
+                # The application is not frozen
+                # Change this bit to match where you store your data files:
+                # datadir = os.path.dirname('images')
+                datadir = ''
+            return os.path.join(datadir, 'images', filename)
+
         def init_cameraActionButton():
             self.save_path = ""
             photoAction = QAction(
-                QIcon(os.path.join('images', 'camera-black.png')), "Take photo...", self)
+                QIcon(find_data_file('camera-black.png')), "Take photo...", self)
             photoAction.setStatusTip("Take photo of current view")
             photoAction.triggered.connect(self.start_photo)
             camera_toolbar.addAction(photoAction)
 
         def init_camera_stop_button():
             photoAction = QAction(
-                QIcon(os.path.join('images', 'end_s.png')), "Take photo...", self)
+                QIcon(find_data_file('end_s.png')), "Take photo...", self)
             photoAction.setStatusTip("pause")
             photoAction.triggered.connect(self.stop_photo)
             camera_toolbar.addAction(photoAction)
 
         def init_changeFolderButton():
-            change_folder_action = QAction(QIcon(os.path.join(
-                'images', 'blue-folder-horizontal-open.png')), "Change save location...", self)
+            change_folder_action = QAction(QIcon(find_data_file('blue-folder-horizontal-open.png')), "Change save location...", self)
             change_folder_action.setStatusTip(
                 "Change folder where photos are saved.")
             change_folder_action.triggered.connect(self.change_folder)
