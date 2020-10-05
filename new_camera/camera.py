@@ -6,6 +6,7 @@ from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
 from PyQt5 import QtSql
 #
+
 import numpy as np
 import sys
 import os
@@ -21,6 +22,8 @@ matplotlib.use('Qt5Agg')
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import numpy as np
+
+print(cv2.__version__)
 
 database = r"C:sqlitedbpythonsqlite.db"
 class MplCanvas(FigureCanvas):
