@@ -25,7 +25,7 @@ import numpy as np
 
 print(cv2.__version__)
 
-database = r"C:sqlitedbpythonsqlite.db"
+database = r"sqlitedbpythonsqlite.db"
 class MplCanvas(FigureCanvas):
 
     def __init__(self, parent=None, width=5, height=4, dpi=100):
