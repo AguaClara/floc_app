@@ -3,7 +3,7 @@
 ### Team Members:
 
 Luke Bowsher (Lead),
-Claudia Bouchard,
+Claudia Buchard,
 Eric Zhang,
 
 
@@ -19,13 +19,21 @@ Eric Zhang,
 Lab times/meetings assigned to M/W 12:00-1:00 along with time put in outside of lab.
 
 Week 1: Meet new members, start to look over research from previous semesters.
+
 Week 2: Get familiar with open CV, start to create tutorials for following semesters.
+
 Week 3-5: Work on old code. Download libraries and do tutorials for OpenCV and PyQt5. 
+
 Week 6: Prep for the Symposium.
+
 Week 7: TBD
+
 Week 8-9: TBD 
+
 Week 10: TBD
+
 Week 11: TBD
+
 Week 12: TBD
 
 ### Past Final Presentations and Symposiums:
