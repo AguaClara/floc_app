@@ -37,6 +37,8 @@ Week 11: TBD
 Week 12: TBD
 
 ### Past Final Presentations and Symposiums:
+[Fall 2020 Mid Semester Report](https://docs.google.com/presentation/d/1oN9V-x60sKY75Q0gbIF1KfMMD_XpEGL3rWUGq5j2MFU/edit#slide=id.g6bf0681270_3_13)
+
 [Fall 2019 Final Presentation](https://docs.google.com/presentation/d/1V7DbmVCS-ye1o7zWci04LKQUMpRtBDyCIrPb06znFM8/edit?usp=sharing)
 
 [Fall 2019 Mid Semester Report](https://docs.google.com/presentation/d/1hcd1FI6bk135MemGDJmM8IyK67U3TIcQ9dujdROTbdk/edit?usp=sharing)
