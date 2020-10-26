@@ -11,7 +11,7 @@ Eric Zhang,
 1. Train new members on Github, OpenCV and Python.
 2. Get familiar with scripts written spring semester.
 3. Use sample images to test code and search for bugs.
-4. Fix gaps in flocs that are in focus.
+4. Use gradients to improve floc detection.
 5. Update application with graphing.
 
 
