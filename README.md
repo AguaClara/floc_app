@@ -2,14 +2,12 @@
 
 ### Team Members:
 
-Natalie Isak (Lead),
-Yoona Chang,
-Luke Bowsher,
-Alanna Kim,
-Kelly Cheng. 
+Luke Bowsher (Lead),
+Claudia Buchard,
+Eric Zhang. 
 
 
-### Goals for Fall 2019:
+### Goals for Fall 2020:
 1. Train new members on Github, OpenCV and Aguaclara Safety.
 2. Get familiar with scripts written spring semester.
 3. Use sample images to test code and search for bugs.
