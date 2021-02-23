@@ -8,3 +8,5 @@ from PyQt5.QtMultimediaWidgets import *
 from PyQt5 import QtSql
 
 print(cv2.__version__)
+
+print("test")
