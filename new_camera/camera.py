@@ -6,8 +6,6 @@ from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
 from PyQt5 import QtSql
 #
-
-import numpy as np
 import sys
 import os
 import sys

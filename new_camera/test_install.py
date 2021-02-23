@@ -7,4 +7,4 @@ from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
 from PyQt5 import QtSql
 
-print("here")
+print(cv2.__version__)
