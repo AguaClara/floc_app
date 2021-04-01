@@ -1,3 +1,4 @@
+# import statements, if these run ok then all installs should be good
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
@@ -5,14 +6,13 @@ from PyQt5.QtPrintSupport import *
 from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
 from PyQt5 import QtSql
-#
+
 import sys
 import os
 import sys
 import cv2
 import time
 import sqlite3
-import count_and_size
 import database2
 
 import matplotlib
@@ -21,9 +21,10 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import numpy as np
 
-print(cv2.__version__)
-
-database = r"sqlitedbpythonsqlite.db"
+#print(cv2.__version__)
+#name of the database file, currently stored in the same directory as the camera file
+database = r"flocs.db"
+#functions to add plots for data analysis, currently in development phase (still needs to be worked on) 
 class MplCanvas(FigureCanvas):
 
     def __init__(self, parent=None, width=5, height=4, dpi=100):
@@ -42,9 +43,8 @@ class MplCanvas(FigureCanvas):
         ax.set_title('PyQt Matplotlib Example')
         self.draw()
 
-
 class MainWindow(QMainWindow):
-
+    # Creates PyQt window and sets up the database
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setWindowTitle("Floc App")
@@ -59,12 +59,11 @@ class MainWindow(QMainWindow):
         self.setGeometry(10, 10, 900, 500)
 
         self.show()
-        # database = r"C:sqlitedbpythonsqlite.db"
-        # database = r"databse.db"
 
         sql_create_floc_table = """ CREATE TABLE IF NOT EXISTS flocs (
                                             id integer PRIMARY KEY,
-                                            size integer NOT NULL
+                                            size integer NOT NULL,
+                                            datetime string NOT NULL
                                         ); """
 
         # create a database connection
@@ -78,7 +77,7 @@ class MainWindow(QMainWindow):
 
         else:
             print("Error! cannot create the database connection.")
-
+    # sets up the buttons and other icons for window
     def initUI(self):
         self.init_menuBar()
         self.init_statusBar()
@@ -88,7 +87,7 @@ class MainWindow(QMainWindow):
         self.show()
         # new widget for plots 
         # self.init_plot()
-
+    # sets up the menu bar
     def init_menuBar(self):
         mainMenu = self.menuBar()
         mainMenu.setNativeMenuBar(False)
@@ -99,11 +98,11 @@ class MainWindow(QMainWindow):
         self.init_fileMenu(fileMenu)
         self.init_viewMenu(viewMenu)
         self.init_toolMenu(toolMenu)
-
+    # sets up the status bar 
     def init_statusBar(self):
         self.status = QStatusBar()
         self.setStatusBar(self.status)
-
+    # connects to the camera and creats camera window in the app
     def init_camera(self):
         self.available_cameras = QCameraInfo.availableCameras()
         if not self.available_cameras:
@@ -199,8 +198,6 @@ class MainWindow(QMainWindow):
         # Data button
 
         def export(self):
-            # database = r"C:\sqlite\db\pythonsqlite.db"
-
             # create a database connection
             conn = database2.create_connection(database)
             conn.commit()
