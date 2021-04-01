@@ -4,6 +4,7 @@ from sqlite3 import Error
 import cv2
 import count_and_size
 import csv
+from datetime import datetime
 
 def create_connection(db_file):
     """ create a database connection to the SQLite database
@@ -58,11 +59,15 @@ def expToCSV(conn):
 
 
 def add_flocs(img, cur):
-    sql = ''' INSERT INTO flocs (size)
-              VALUES(?) '''
+    sql = ''' INSERT INTO flocs (size, datetime)
+              VALUES(?, ?) '''
+    now = datetime.now()
+     # DD/MM/YY H/Min/Sec
+    datetm = now.strftime("%d/%m/%Y %H:%M:%S")
+    print(datetm)
     for size in count_and_size.count_and_size_flocs(img):
         print(size)
-        cur.execute(sql, (size, ))
+        cur.execute(sql, (size, datetm))
 
 
 
@@ -83,7 +88,7 @@ def get_floc_from_id(cur, id):
 
 
 def main():
-    database = r"C:\sqlite\db\pythonsqlite.db"
+    database = r"flocdb.db"
 
     sql_create_floc_table = """ CREATE TABLE IF NOT EXISTS flocs (
                                         id integer PRIMARY KEY,
