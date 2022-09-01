@@ -38,6 +38,11 @@ Week 11: TBD
 Week 12: TBD
 
 ### Past Final Presentations and Symposiums:
+
+[Spring 2022 Final Presentation](https://docs.google.com/presentation/d/1r8-G_Ea6SyM1M_pffFuqtgvnAb_rDRd8ezK0JUXlvrY/edit?usp=sharing)
+
+[Spring 2022 Symposium](https://docs.google.com/presentation/d/1lN17nH7SViauxV60-MNWXvXnROPf0CU9lqWE5abpPS4/edit?usp=sharing)
+
 [Fall 2021 Final Presentation](https://docs.google.com/presentation/d/15gGtVZq7ohoJt0qPYdtGkVUlnR_wbzXDH84xXjCFbVE/edit?usp=sharing)
 
 [Fall 2021 Mid Semester Symposium](https://docs.google.com/presentation/d/1Dk5jsD8MGgFafpW7VuZvAXGf9qo5JQuHs1u-88Q_5bY/edit?usp=sharing)
