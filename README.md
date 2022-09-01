@@ -17,7 +17,7 @@ Jacqueline Hui
 
 
 ### Calendar:
-Lab times/meetings assigned to Thursday @ 6:00-7:00 PM and Friday @ 3:00-4:00 PM along with time put in outside of lab.
+Lab times/meetings assigned to Tuesday @ 5:00-6:30 PM and Thursday @ 4:45-5:45 PM along with time put in outside of lab.
 
 Week 1: Meet new members, start to look over research from previous semesters.
 
