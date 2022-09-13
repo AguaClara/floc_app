@@ -1,10 +1,7 @@
 # Floc App 
 
-### Team Members:
-
-Ethan Stanley (Lead),
-Manvir Chalal, 
-Ashwin Char,
+### Team Members: 
+Ashwin Char(lead),
 Jacqueline Hui
 
 ### Goals for Spring 2022:
