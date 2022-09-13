@@ -14,13 +14,13 @@ Jacqueline Hui
 
 
 ### Calendar:
-Lab times/meetings assigned to Tuesday @ 5:00-6:30 PM and Thursday @ 4:45-5:45 PM along with time put in outside of lab.
+Lab times/meetings assigned to Tuesday @ 4:00-5:30 PM and Thursday @ 4:45-5:45 PM along with time put in outside of lab.
 
-Week 1: Meet new members, start to look over research from previous semesters.
+Week 1: Familiarizing ourselves witht he codebase and blender.
 
-Week 2: Get familiar with open CV, start to create tutorials for following semesters.
+Week 2: Working on writing a blender script to simulate images of flocs.
 
-Week 3-5: Work on classifying images, ordering camera, creating code to go through all images and calculate the error.
+Week 3-5: Work on and improve our initial blender script and meet with technical advisor for advice. 
 
 Week 6: Prep for the Symposium.
 
