@@ -2,7 +2,10 @@
 
 ### Team Members: 
 Ashwin Char(lead),
-Jacqueline Hui
+Jacqueline Hui,
+Shreehari Srinivasan,
+Stanley Chen
+
 
 ### Goals for Spring 2022:
 1. Train new members on Github, OpenCV and Python.
