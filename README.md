@@ -1,28 +1,29 @@
 # Floc App 
 
-### Team Members:
+### Team Members: 
+Ashwin Char(lead),
+Jacqueline Hui,
+Shreehari Srinivasan,
+Stanley Chen
 
-Luke Bowsher (Lead),
-Claudia Buchard,
-Eric Zhang,
 
-
-### Goals for Fall 2020:
+### Goals for Spring 2022:
 1. Train new members on Github, OpenCV and Python.
-2. Get familiar with scripts written spring semester.
-3. Use sample images to test code and search for bugs.
-4. Use gradients to improve floc detection.
-5. Update application with graphing.
+2. Get familiar with scripts written fall semester.
+3. Go through sample images and classify the floc sizes within the images, use this as the test data set
+4. Run the algorithm on these images and adjust filters based on which ones minimize the error with the test data set calculations
+5. Obtain a new camera, run tests on images with the camera
+6. Update front-end application to make it easier to use and more advanced.
 
 
 ### Calendar:
-Lab times/meetings assigned to M/W 12:00-1:00 along with time put in outside of lab.
+Lab times/meetings assigned to Tuesday @ 4:00-5:30 PM and Thursday @ 4:45-5:45 PM along with time put in outside of lab.
 
-Week 1: Meet new members, start to look over research from previous semesters.
+Week 1: Familiarizing ourselves witht he codebase and blender.
 
-Week 2: Get familiar with open CV, start to create tutorials for following semesters.
+Week 2: Working on writing a blender script to simulate images of flocs.
 
-Week 3-5: Work on old code. Download libraries and do tutorials for OpenCV and PyQt5. 
+Week 3-5: Work on and improve our initial blender script and meet with technical advisor for advice. 
 
 Week 6: Prep for the Symposium.
 
@@ -37,6 +38,19 @@ Week 11: TBD
 Week 12: TBD
 
 ### Past Final Presentations and Symposiums:
+
+[Spring 2022 Final Presentation](https://docs.google.com/presentation/d/1r8-G_Ea6SyM1M_pffFuqtgvnAb_rDRd8ezK0JUXlvrY/edit?usp=sharing)
+
+[Spring 2022 Symposium](https://docs.google.com/presentation/d/1lN17nH7SViauxV60-MNWXvXnROPf0CU9lqWE5abpPS4/edit?usp=sharing)
+
+[Fall 2021 Final Presentation](https://docs.google.com/presentation/d/15gGtVZq7ohoJt0qPYdtGkVUlnR_wbzXDH84xXjCFbVE/edit?usp=sharing)
+
+[Fall 2021 Mid Semester Symposium](https://docs.google.com/presentation/d/1Dk5jsD8MGgFafpW7VuZvAXGf9qo5JQuHs1u-88Q_5bY/edit?usp=sharing)
+
+[Spring 2021 Final Presentation](https://docs.google.com/presentation/d/19inmcH5CBPOBX5c1Nw1N9mSC0dIKGBzrAcoIVj_N1Ac/edit?usp=sharing)
+
+[Spring 2021 Mid Semester Symposium](https://docs.google.com/presentation/d/1j6noCBywoWVKCvTe95sORkxPyxs3kA7GcLjCr5pm4MU/edit?usp=sharing)
+
 [Fall 2020 Mid Semester Report](https://docs.google.com/presentation/d/1oN9V-x60sKY75Q0gbIF1KfMMD_XpEGL3rWUGq5j2MFU/edit#slide=id.g6bf0681270_3_13)
 
 [Fall 2019 Final Presentation](https://docs.google.com/presentation/d/1V7DbmVCS-ye1o7zWci04LKQUMpRtBDyCIrPb06znFM8/edit?usp=sharing)
