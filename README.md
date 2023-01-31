@@ -1,10 +1,10 @@
 # Floc App 
 
 ### Team Members: 
-Ashwin Char(lead),
+Shreehari Srinivasan(lead),
 Jacqueline Hui,
-Shreehari Srinivasan,
-Stanley Chen
+Stanley Chen,
+Sahil Hosalli
 
 
 ### Goals for Spring 2022:
@@ -17,9 +17,9 @@ Stanley Chen
 
 
 ### Calendar:
-Lab times/meetings assigned to Tuesday @ 4:00-5:30 PM and Thursday @ 4:45-5:45 PM along with time put in outside of lab.
+Lab times/meetings assigned to Monday @ 6:00-7:30 PM and Friday @ 2:30-3:30 PM along with time put in outside of lab.
 
-Week 1: Familiarizing ourselves witht he codebase and blender.
+Week 1: Familiarizing ourselves with the codebase and onboarding new members.
 
 Week 2: Working on writing a blender script to simulate images of flocs.
 
