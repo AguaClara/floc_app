@@ -3,7 +3,6 @@
 ### Team Members: 
 Shreehari Srinivasan(lead),
 Jacqueline Hui,
-Stanley Chen,
 Sahil Hosalli
 
 
