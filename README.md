@@ -3,7 +3,8 @@
 ### Team Members: 
 Shreehari Srinivasan(lead),
 Jacqueline Hui,
-Sahil Hosalli
+Sahil Hosalli,
+Anya Yerramilli
 
 
 ### Goals for Spring 2023:
@@ -14,7 +15,7 @@ Sahil Hosalli
 
 
 ### Calendar:
-Lab times/meetings assigned to Monday @ 6:00-7:30 PM and Friday @ 2:30-3:30 PM along with time put in outside of lab.
+Lab times/meetings assigned to Monday @ 6:00-7:30 PM and Thursday @ 5:00-6:00 PM along with time put in outside of lab.
 
 Week 1: Familiarizing ourselves with the codebase and onboarding new members.
 
