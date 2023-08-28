@@ -7,9 +7,9 @@ Sahil Hosalli,
 Anya Yerramilli
 
 
-### Goals for Spring 2023:
+### Goals for Fall 2023:
 1. Train new members on Github, OpenCV and Python.
-2. Get familiar with scripts written fall semester.
+2. Get familiar with scripts written spring semester.
 3. Run the algorithm on these images and adjust filters based on which ones minimize the error with the test data set calculations
 4. Obtain a new camera, run tests on images with the camera
 
