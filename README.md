@@ -15,7 +15,7 @@ Anya Yerramilli
 
 
 ### Calendar:
-Lab times/meetings assigned to Monday @ 6:00-7:30 PM and Saturday @ 2:00-3:00 PM along with time put in outside of lab.
+Lab times/meetings assigned to Wednesday @ 6:00-7:00 PM and Saturday @ 2:00-3:30 PM along with time put in outside of lab.
 
 Week 1: Familiarizing ourselves with the codebase and onboarding new members.
 
