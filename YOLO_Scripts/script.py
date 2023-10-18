@@ -4,7 +4,7 @@ import numpy as np
 import os
 import pandas as pd
 
-MODEL_FILE_PATH = "best.pt"
+MODEL_FILE_PATH = "model.pt"
 IMAGES = "images"
 
 model = YOLO(MODEL_FILE_PATH)
