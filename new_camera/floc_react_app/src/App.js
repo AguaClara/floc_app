@@ -1,12 +1,12 @@
-import Dropdown from 'react-bootstrap/Dropdown';
+//import Dropdown from 'react-bootstrap/Dropdown';
 import './App.css';
+import logo from './camera_placeholder.jpeg';
 function App() {
   return (
     <div className="App">
-      <p>Hello World</p>
       <header className="Floc App">
         <div className="cameraBox">
-          <img className="camera placeholder" imageUrl='https://i.imgur.com/yXOvdOSs.jpg' alt="Camera Placeholder"/>
+          <img className="camera placeholder" src={logo} alt="Camera Placeholder"/>
         </div>
         <div className="exportBox">
           <p>Export Data</p>

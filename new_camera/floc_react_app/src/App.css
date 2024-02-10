@@ -7,6 +7,25 @@
   pointer-events: none;
 }
 
+div.exportBox {
+  float: right;
+}
+
+div.cameraBox {
+  position: relative;
+  left: 30px;
+  width: fit-content;
+  float: left;
+}
+
+div.cameraControlsBox {
+  position: relative;
+  left: 50px;
+  width: fit-content;
+  padding: 20px;
+  margin: 20px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
