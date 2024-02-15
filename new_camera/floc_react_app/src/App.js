@@ -1,4 +1,3 @@
-import Dropdown from 'react-bootstrap/Dropdown';
 import './App.css';
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
@@ -14,19 +13,18 @@ function App() {
     console.log(imageSrc);
   };
   return (
-    <div className="App">
-      <p>Hello World</p>
+    <div className="container">
       <header className="Floc App">
         <div className="cameraBox">
           <div style={{ position: 'relative', width: 640, height: 480 }}>
-            <Webcam
+            <Webcam className='video'
               audio={false}
               ref={webcamRef}
               screenshotFormat="image/jpeg"
               width={640}
               height={480}
             />
-            <button
+            <button className="pic"
               style={{
                 position: 'absolute',
                 bottom: 10,
@@ -35,7 +33,7 @@ function App() {
               }}
               onClick={capture}
             >
-              Take Picture
+            <img alt = '' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30}/>
             </button>
           </div>
           {imgSrc && (
@@ -48,25 +46,13 @@ function App() {
         </div>
         <div className="exportBox">
           <p>Export Data</p>
-          <button className="exportButton">
+          <button className="button">
             Export
           </button>
-          <button className="flocSizeData">
+          <button className="button">Change Save Location</button>
+          <button className="button">
             Get Floc Size Data
           </button>
-        </div>
-        <div className="cameraControlsBox">
-          <button className="Start Button">Start</button>
-          <button className="End Button">End</button>
-          <button className="Change Save Location">Change Save Location</button>
-          <Dropdown className="Select Camera">
-            <Dropdown.Toggle variant="success" id="dropdown_basic">
-              Select
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Camera1</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
         </div>
       </header>
     </div>
