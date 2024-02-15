@@ -11,6 +11,20 @@ function App() {
     // Here you can save the image to a directory using backend logic
     // For demonstration purpose, you can log the base64 image data
     console.log(imageSrc);
+
+    fetch('http://127.0.0.1:5000/upload', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ image: imageSrc })
+    })
+      .then(response => response.json())
+      .then(data => { console.log(data); alert(JSON.stringify(data)) })
+      .catch(error => console.log(error)
+      )
+
+
   };
   const fetchData = () => {
     // Use the Fetch API to send a GET request to your Flask backend
@@ -50,7 +64,7 @@ function App() {
               }}
               onClick={capture}
             >
-            <img alt = '' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30}/>
+              <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} />
             </button>
           </div>
           {imgSrc && (
@@ -63,7 +77,7 @@ function App() {
         </div>
         <div className="exportBox">
           <p>Export Data</p>
-          <button className="exportButton" onClick={fetchData}>
+          <button className="button" onClick={fetchData}>
             Export
           </button>
           <button className="button">Change Save Location</button>
