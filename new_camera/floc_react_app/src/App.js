@@ -12,6 +12,23 @@ function App() {
     // For demonstration purpose, you can log the base64 image data
     console.log(imageSrc);
   };
+  const fetchData = () => {
+    // Use the Fetch API to send a GET request to your Flask backend
+    fetch('http://127.0.0.1:5000/test')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data); // Process and display the data as needed
+        alert(JSON.stringify(data)); // Displaying the data in an alert for demonstration
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  };
   return (
     <div className="container">
       <header className="Floc App">
@@ -42,11 +59,11 @@ function App() {
               <img src={imgSrc} alt="Captured" />
             </div>
           )}
-      
+
         </div>
         <div className="exportBox">
           <p>Export Data</p>
-          <button className="button">
+          <button className="exportButton" onClick={fetchData}>
             Export
           </button>
           <button className="button">Change Save Location</button>
@@ -58,4 +75,5 @@ function App() {
     </div>
   );
 }
+
 export default App
