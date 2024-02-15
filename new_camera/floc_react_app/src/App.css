@@ -1,36 +1,4 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-div.exportBox {
-  float: right;
-}
-
-div.cameraBox {
-  position: relative;
-  left: 30px;
-  width: fit-content;
-  float: left;
-}
-
-div.cameraControlsBox {
-  position: relative;
-  left: 50px;
-  width: fit-content;
-  padding: 20px;
-  margin: 20px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -47,11 +15,66 @@ div.cameraControlsBox {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Reset default margin and padding */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply a modern sans-serif font */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Light gray background color */
+}
+
+/* Style for container div */
+.container {
+  text-align: center;
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  align-items: flex-start; /* Align items to the top */
+  height: 100vh;
+  padding: 20px; /* Add padding for spacing */
+  grid-gap: 20px;
+}
+
+.pic {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.cameraBox, .exportBox {
+  margin-bottom: 20px;
+  background-color: #ffffff; /* White background color */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Add shadow for depth */
+  overflow: hidden; /* Hide overflow */
+}
+
+.exportBox {
+  padding: 20px;
+}
+
+/* Style for webcam video */
+.video {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Style for buttons */
+.button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
 }
