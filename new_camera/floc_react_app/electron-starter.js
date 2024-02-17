@@ -17,7 +17,7 @@ function createWindow() {
 
     // Create the browser window.
     const win = new BrowserWindow({
-        width: 900,
+        width: 680,
         height: 700,
         webPreferences: {
             nodeIntegration: true,
@@ -34,9 +34,10 @@ app.whenReady().then(createWindow);
 
 // Quit when all windows are closed, except on macOS
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+    // if (process.platform !== 'darwin') {
+    //     app.quit();
+    // }
+    app.quit();
 });
 
 app.on('quit', () => {
