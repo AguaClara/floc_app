@@ -32,7 +32,7 @@ body {
   text-align: center;
   display: flex;
   justify-content: flex-start; /* Align items to the start */
-  align-items: flex-start; /* Align items to the top */
+  align-items: fcenter; /* Align items to the top */
   height: 100vh;
   padding: 20px; /* Add padding for spacing */
   grid-gap: 20px;
