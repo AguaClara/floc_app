@@ -17,12 +17,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron-start": "App.js",
-    "electron": "electron ."
+    "electron-start": "electron .",
+    "dev": "concurrently \"npm run start\" \"npm run electron-wait\"",
+    "electron-wait": "wait-on http://localhost:3000 && npm run electron-start"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +44,9 @@
     ]
   },
   "devDependencies": {
-    "electron": "^28.2.3"
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.2.3",
+    "wait-on": "^7.2.0"
   }
 }
