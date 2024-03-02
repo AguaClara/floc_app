@@ -29,10 +29,10 @@ body {
 
 /* Style for container div */
 .container {
-  text-align: center;
   display: flex;
-  justify-content: flex-start; /* Align items to the start */
-  align-items: flex-start; /* Align items to the top */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   height: 100vh;
   padding: 20px; /* Add padding for spacing */
   grid-gap: 20px;

@@ -98,9 +98,9 @@ function App() {
             style={{ 
               position: 'relative', 
               bottom: 43,
-              right: -170,
+              right: 0,
               zindex: 15 }}>
-                <CameraDropdown/>
+                <CameraDropdown className="camera_dropdown"/>
             </div>
             <button className="pic"
               style={{
