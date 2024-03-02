@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
+import CameraDropdown from './CameraDropdown.jsx';
 function App() {
   const webcamRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
@@ -48,13 +49,21 @@ function App() {
       <header className="Floc App">
         <div className="cameraBox">
           <div style={{ position: 'relative', width: 640, height: 480 }}>
-            <Webcam className='video'
+          <Webcam className='video'
               audio={false}
               ref={webcamRef}
               screenshotFormat="image/jpeg"
               width={640}
               height={480}
             />
+            <div 
+            style={{ 
+              position: 'absolute', 
+              bottom: 15,
+              left: 15,
+              zindex: 15 }}>
+                <CameraDropdown/>
+            </div>
             <button className="pic"
               style={{
                 position: 'absolute',

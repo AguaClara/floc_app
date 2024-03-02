@@ -16,7 +16,7 @@ function createWindow() {
     });
 
     // Create the browser window.
-    const win = new BrowserWiçndow({
+    const win = new BrowserWindow({
         width: 680,
         height: 700,
         webPreferences: {
