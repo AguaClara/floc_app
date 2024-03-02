@@ -10,6 +10,7 @@ class Image(Base):
     __tablename__ = 'images'
     id = Column(Integer, primary_key=True)
     name = Column(String, unique=True)
+    base64_data = Column(String, unique=True)
     flocs = relationship('Floc', backref='image')
 
 class Floc(Base):
@@ -50,8 +51,8 @@ class DatabaseOperations:
     def __init__(self, session):
         self.session = session
 
-    def add_image(self, image_name):
-        new_image = Image(name=image_name)
+    def add_image(self, image_name, image_base64):
+        new_image = Image(name=image_name, base64_data=image_base64)
         self.session.add(new_image)
         self.session.commit()
         return new_image
@@ -61,6 +62,13 @@ class DatabaseOperations:
         self.session.add(new_floc)
         self.session.commit()
         return new_floc
+    
+    def get_current_image_id(self):
+        result = self.session.query(Image.id).order_by(Image.id.desc()).first()
+        if result:
+            return result[0]
+        return -1
+
 
     def get_flocs_by_image_name(self, image_name):
         return self.session.query(Floc).join(Image).filter(Image.name == image_name).all()
