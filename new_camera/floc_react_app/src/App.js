@@ -96,9 +96,9 @@ function App() {
             />
             <div 
             style={{ 
-              position: 'absolute', 
-              bottom: 15,
-              left: 15,
+              position: 'relative', 
+              bottom: 43,
+              right: -170,
               zindex: 15 }}>
                 <CameraDropdown/>
             </div>
