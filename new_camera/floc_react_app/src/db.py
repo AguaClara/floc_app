@@ -27,6 +27,26 @@ def start():
     return session
 
 class DatabaseOperations:
+    """
+    Usage:
+    db_ops = DatabaseOperations()
+
+    # Add an image
+    image = db_ops.add_image('Image 32339.jpg')
+
+    # Add a floc to the image we just added
+    db_ops.add_floc(image.id, 150.5)
+    db_ops.add_floc(image.id, 200.5)
+    db_ops.add_floc(image.id, 250.5)
+
+    # Retrieve all flocs for a given image name
+    flocs = db_ops.get_flocs_by_image_name('Image 32339.jpg')
+    for floc in flocs:
+        print(f"Floc ID: {floc.id}, Image ID: {floc.image_id}, Size: {floc.size}")
+
+    # Close the connection when done
+    db_ops.close()
+    """
     def __init__(self, session):
         self.session = session
 
@@ -47,22 +67,3 @@ class DatabaseOperations:
 
     def close(self):
         self.session.close()
-
-# Usage
-# db_ops = DatabaseOperations()
-
-# Add an image
-# image = db_ops.add_image('Image 32339.jpg')
-
-# # Add a floc to the image we just added
-# db_ops.add_floc(image.id, 150.5)
-# db_ops.add_floc(image.id, 200.5)
-# db_ops.add_floc(image.id, 250.5)
-
-# # Retrieve all flocs for a given image name
-# flocs = db_ops.get_flocs_by_image_name('Image 32339.jpg')
-# for floc in flocs:
-#     print(f"Floc ID: {floc.id}, Image ID: {floc.image_id}, Size: {floc.size}")
-
-# Close the connection when done
-# db_ops.close()
