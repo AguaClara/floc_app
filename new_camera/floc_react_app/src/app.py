@@ -159,6 +159,23 @@ def delete_image(image_id):
     db_ops.close()
     return jsonify({"message": "Image deleted successfully"}), 200
 
+@app.route("/images/", methods=["DELETE"])
+def delete_all_images():
+    """
+    Deletes all images in the database
+    """
+    session = start()
+    db_ops = DatabaseOperations(session)
+
+    images = db_ops.session.query(Image).all()
+
+    for image in images:
+        db_ops.session.delete(image)
+    db_ops.session.commit()
+
+    db_ops.close()
+    return jsonify({"message": "All images deleted successfully"}), 200
+
 
 if __name__ == "__main__":
     app.run(debug=True)
