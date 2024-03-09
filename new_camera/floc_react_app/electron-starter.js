@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const { spawn } = require('child_process');
+
 
 let flaskProcess = null;
 
@@ -45,6 +46,31 @@ app.on('quit', () => {
     console.log('Quitting Electron, terminating Flask server...');
     flaskProcess.kill();
 });
+
+ipcMain.on('choosePath', (event) => {
+    // Show the directory selection dialog
+    const result = dialog.showOpenDialogSync({
+        title: 'Select Save Location',
+        properties: ['openDirectory'],
+    });
+
+    // Send the selected path back to the renderer process
+    event.sender.send('choosePathResult', result && result.length > 0 ? result[0] : null);
+});
+
+// ipcMain.handle('choosePath', async () => {
+//     const options = {
+//         title: 'Select Save Location',
+//         properties: ['openDirectory'],
+//     };
+
+//     // Show the directory selection dialog
+//     const result = await dialog.showOpenDialog(options);
+
+//     // Return the selected path to the renderer process
+//     return result.filePaths[0] || null;
+// });
+
 
 app.on('activate', () => {
     // On macOS it's common to re-create a window in the app when the

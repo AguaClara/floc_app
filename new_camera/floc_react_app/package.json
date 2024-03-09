@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dialog": "^0.3.1",
     "flask": "^0.2.10",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
@@ -46,7 +47,7 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
-    "electron": "^28.2.3",
+    "electron": "^28.2.6",
     "wait-on": "^7.2.0"
   }
 }

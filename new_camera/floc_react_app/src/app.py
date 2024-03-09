@@ -4,6 +4,9 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from db import Image, Floc, DatabaseOperations, start
 
+from electron import app, dialog, ipcMain
+
+
 # Set up app and database
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///floc.db'
@@ -104,6 +107,25 @@ def get_image(image_id):
     db_ops.close()
 
     return jsonify(response), 200
+
+@app.expose
+def choose_path():
+    print('choose_path called')
+    options = {
+        'title': 'Select Save Location',
+        'properties': ['openDirectory'],
+    }
+
+    # Show the directory selection dialog
+    result = dialog.showOpenDialog(options)
+    print(result)
+
+    # Return the selected path to the renderer process
+    selected_path = result['filePaths'][0] if result.get('filePaths') else None
+    print('Selected Path (main process):', selected_path)
+    return selected_path
+
+
 
 @app.route("/images/<int:image_id>/", methods=["DELETE"])
 def delete_image(image_id):
