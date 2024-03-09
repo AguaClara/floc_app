@@ -6,7 +6,14 @@ let flaskProcess = null;
 
 function createWindow() {
     // Start the Flask server
-    flaskProcess = spawn('python3', ['src/app.py']);
+    // if mac
+    if (process.platform === 'darwin') {
+        flaskProcess = spawn('python3', ['src/app.py']);
+    }
+    // if windows
+    else if (process.platform === 'win32') {
+        flaskProcess = spawn('python', ['src/app.py']);
+    }
 
     flaskProcess.stdout.on('data', (data) => {
         console.log(`Flask stdout: ${data}`);
