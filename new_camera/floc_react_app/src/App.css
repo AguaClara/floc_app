@@ -78,3 +78,11 @@ body {
 .button:hover {
   background-color: #45a049;
 }
+
+.clear {
+  opacity: 0.0;
+}
+
+.solid {
+  opacity: 1.0;
+}

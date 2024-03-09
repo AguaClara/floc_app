@@ -10,6 +10,8 @@ function App() {
   const [autoCapture, setAutoCapture] = useState(false);
   const [autoCaptureInterval, setAutoCaptureInterval] = useState(null);
   const [fileLocation, setFileLocation] = useState(null);
+  const [flashing, setFlashing] = useState(false);
+  const [flashingInterval, setFlashingInterval] = useState(null);
 
   useEffect(() => {
     // Handle responses from the main process
@@ -53,67 +55,6 @@ function App() {
 
   };
 
-  // const choosePath = async () => {
-  //   // const filePaths = await window.showDirectoryPicker();
-
-  //   const { filePaths } = await dialog.showOpenDialog({
-  //     title: 'Save to Folder',
-  //     properties: ['openDirectory'],
-  //   });
-
-  //   // save file path as string in filelocation state
-  //   setFileLocation(filePaths[0]);
-  //   alert(filePaths)
-  //   return filePaths;
-  // }
-
-  // const choosePath = () => {
-  //   const { dialog } = require('electron');
-
-  //   // Options for the directory picker dialog
-  //   const options = {
-  //     title: 'Select Save Location',
-  //     properties: ['openDirectory'],
-  //   };
-
-  //   // Show the directory picker dialog
-  //   dialog.showOpenDialog(options)
-  //     .then(result => {
-  //       // result.canceled will be true if the user cancels the dialog
-  //       if (!result.canceled) {
-  //         // Get the selected directory path
-  //         const selectedPath = result.filePaths[0];
-
-  //         // Update the state with the selected path
-  //         setFileLocation(selectedPath);
-
-  //         // Optionally, you can do something with the selected path (e.g., save it to backend)
-  //         console.log('Selected Path:', selectedPath);
-  //       }
-  //     })
-  //     .catch(err => {
-  //       console.error('Error in directory picker dialog:', err);
-  //     });
-  // };
-
-
-  // const choosePath = async () => {
-  //   console.log("js chhose path called")
-  //   // Call the choose_path function directly from the main process
-  //   ipcRenderer.send('choosePath');
-
-  //   // const result = await remote.choose_path();
-
-  //   // // Log the selected path (for demonstration purposes)
-  //   // console.log('Selected Path:', result);
-
-  //   // // Update the state with the selected path or perform other actions
-  //   // if (result) {
-  //   //     setFileLocation(result);
-  //   // }
-  // };
-
-
   const choosePath = () => {
     // Send a request to the main process to show directory selection dialog
     ipcRenderer.send('choosePath');
@@ -125,6 +66,8 @@ function App() {
     // Stop auto-capture mode if it's currently active
     if (autoCapture) {
       clearInterval(autoCaptureInterval);
+      clearInterval(flashingInterval);
+      setFlashing(false);
       setAutoCapture(false);
       return;
     }
@@ -146,6 +89,12 @@ function App() {
         .then(data => { console.log(data); alert(JSON.stringify(data)) })
         .catch(error => console.log(error));
     }, 5000); // Capture an image every 5 seconds
+
+     //set red button to flas
+    const flashIntervalId = setInterval(() => {
+      setFlashing(prevFlashing => !prevFlashing);
+    }, 500);
+    setFlashingInterval(flashIntervalId);
 
     // Set auto-capture mode to true
     setAutoCapture(true);
@@ -202,7 +151,7 @@ function App() {
               }}
               onClick={capture}
             >
-              <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} />
+            <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className={flashing ? 'clear': 'solid'}/>
             </button>
 
             <button className="autoCaptureButton"
