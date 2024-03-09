@@ -43,7 +43,7 @@ function App() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ image: imageSrc })
+      body: JSON.stringify({ image: imageSrc, filePath: fileLocation })
     })
       .then(response => response.json())
       .then(data => { console.log(data); alert(JSON.stringify(data)) })
@@ -140,7 +140,7 @@ function App() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ image: imageSrc })
+        body: JSON.stringify({ image: imageSrc, filePath: fileLocation })
       })
         .then(response => response.json())
         .then(data => { console.log(data); alert(JSON.stringify(data)) })
