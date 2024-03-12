@@ -2,6 +2,8 @@ import './App.css';
 import React, { useRef, useState, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import CameraDropdown from './CameraDropdown.jsx';
+import {Link} from 'react-router-dom';
+
 const { ipcRenderer, ipcMain } = window.require('electron');
 // import { dialog } from '@electron/remote'
 function App() {
@@ -183,6 +185,9 @@ function App() {
           <button className="button">
             Get Floc Size Data
           </button>
+          <div style={{ textAlign: 'center', margin: 25}}>
+            <Link to="/new" className="button" style={{ textDecoration: 'none' }} >Go to New Page</Link>
+          </div>
         </div>
       </header>
     </div>
