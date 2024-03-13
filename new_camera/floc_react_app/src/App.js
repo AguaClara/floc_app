@@ -14,6 +14,7 @@ function App() {
   const [fileLocation, setFileLocation] = useState(null);
   const [flashing, setFlashing] = useState(false);
   const [flashingInterval, setFlashingInterval] = useState(null);
+  const [countdownSeconds, setCountdownSeconds] = useState(5);
 
   useEffect(() => {
     // Handle responses from the main process
@@ -90,6 +91,8 @@ function App() {
       return;
     }
 
+    capture();
+
     // Start auto-capture mode
     const intervalId = setInterval(() => {
       const imageSrc = webcamRef.current.getScreenshot();
@@ -106,7 +109,7 @@ function App() {
         .then(response => response.json())
         .then(data => { console.log(data); alert(JSON.stringify(data)) })
         .catch(error => console.log(error));
-    }, 5000); // Capture an image every 5 seconds
+    }, countdownSeconds * 1000); // Capture an image every 5 seconds
 
      //set red button to flas
     const flashIntervalId = setInterval(() => {
