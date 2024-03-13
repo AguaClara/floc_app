@@ -24,18 +24,27 @@ body, html {
 /* Apply a modern sans-serif font */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Light gray background color */
+  background-color: #ffffff; /* Light gray background color */
 }
 
-/* Style for container div */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  padding: 20px; /* Add padding for spacing */
-  grid-gap: 20px;
+.headerBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8%;
+  background-color: #ffffff; /* White background color */
+  overflow: hidden; /* Hide overflow */
+}
+
+.contentContainer {
+  background-color: #f0f0f0;
+  position: fixed;
+  top: 8%;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .pic {
@@ -44,12 +53,120 @@ body {
   background-color: transparent;
 }
 
-.cameraBox, .exportBox {
-  margin-bottom: 20px;
+.logoBox {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;
+  box-shadow: inset 0px -5px 5px -5px rgba(0, 0, 0, 0.1);
+}
+
+.tabsBox {
+  position: absolute;
+  height: 100%;
+  width: 70%;
+  left: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 11px;
+}
+
+/* Style for tabs */
+.cameraPageButton {
+  padding: 10px 20px;
+  margin: 0 5px;
+  width: 22%;
+  text-align: center;
+  background-color: #f6f6f6;
+  color: rgb(77, 75, 75);
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 
+    inset 0px -5px 5px -5px rgba(0, 0, 0, 0.1), /* Inset shadow only along the bottom edge */
+    0px 5px 5px rgba(0, 0, 0, 0.1), /* Shadow on the top side */
+    -5px 0px 5px rgba(0, 0, 0, 0.1), /* Shadow on the left side */
+    5px 0px 5px rgba(0, 0, 0, 0.1); /* Shadow on the right side */
+}
+.cameraPageButton.active {
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.dataPageButton {
+  padding: 10px 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 22%;
+  background-color: #f6f6f6;
+  color: rgb(77, 75, 75);
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 
+    inset 0px -5px 5px -5px rgba(0, 0, 0, 0.1), /* Inset shadow only along the bottom edge */
+    0px 5px 5px rgba(0, 0, 0, 0.1), /* Shadow on the top side */
+    -5px 0px 5px rgba(0, 0, 0, 0.1), /* Shadow on the left side */
+    5px 0px 5px rgba(0, 0, 0, 0.1); /* Shadow on the right side */
+}
+.dataPageButton.active {
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.settingsPageButton {
+  padding: 10px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 22%;
+  text-align: center;
+  background-color: #f6f6f6;
+  color: rgb(77, 75, 75);
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  box-shadow: 
+    inset 0px -5px 5px -5px rgba(0, 0, 0, 0.1), /* Inset shadow only along the bottom edge */
+    0px 5px 5px rgba(0, 0, 0, 0.1), /* Shadow on the top side */
+    -5px 0px 5px rgba(0, 0, 0, 0.1), /* Shadow on the left side */
+    5px 0px 5px rgba(0, 0, 0, 0.1); /* Shadow on the right side */
+}
+.settingsPageButton.active {
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.cameraBox {
+  position: fixed;
+  top: 20%;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
   background-color: #ffffff; /* White background color */
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Add shadow for depth */
   overflow: hidden; /* Hide overflow */
+}
+
+.cameraDropdownBox {
+  position: 'relative';
+  bottom: 43;
+  right: 0;
+  z-index: 15;
+}
+
+.exportBox {
+  position: fixed;
+  top: 85%;
 }
 
 .exportBox {

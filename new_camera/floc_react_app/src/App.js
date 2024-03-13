@@ -139,71 +139,66 @@ function App() {
   return (
     <div className="container">
       <header className="Floc App">
-        <div>
-          <img src="https://res.cloudinary.com/scalefunder/image/fetch/s--7ZiRgq59--/f_auto,fl_lossy,q_auto/https://github.com/AguaClara/public_relations/blob/master/AguaClara%2520Official%2520Logo/FINAL%2520LOGO%25202.0.png%3Fraw%3Dtrue" alt="" width={290} height={95} />
+        <div className = "headerBox">
+          <div className = "logoBox">
+            <img className = "logo" src="https://res.cloudinary.com/scalefunder/image/fetch/s--7ZiRgq59--/f_auto,fl_lossy,q_auto/https://github.com/AguaClara/public_relations/blob/master/AguaClara%2520Official%2520Logo/FINAL%2520LOGO%25202.0.png%3Fraw%3Dtrue" alt="" width={200} height={60} />
+          </div>
+          <div className = "tabsBox">
+            <Link to="/new" className="dataPageButton" style={{ textDecoration: 'none'}} >Dashboard</Link>
+            <Link to="/" className="cameraPageButton active" style={{ textDecoration: 'none'}} >Camera</Link>
+            <Link to="/new" className="settingsPageButton" style={{ textDecoration: 'none'}} >Settings</Link>
+          </div>
         </div>
-        <div className="cameraBox">
-          <div style={{ position: 'relative', width: 640, height: 480 }}>
-            <Webcam className='video'
-              audio={false}
-              ref={webcamRef}
-              screenshotFormat="image/jpeg"
-              width={640}
-              height={480}
-            />
-            <div
-              style={{
-                position: 'relative',
-                bottom: 43,
-                right: 0,
-                zindex: 15
-              }}>
-              <CameraDropdown className="camera_dropdown" />
+        <div className = "contentContainer">
+          <div className="cameraBox">
+            <div style={{ position: 'relative', width: 640, height: 480 }}>
+              <Webcam className='video'
+                audio={false}
+                ref={webcamRef}
+                screenshotFormat="image/jpeg"
+                width={640}
+                height={480}
+              />
+              <div
+                style={{
+                  position: 'relative',
+                  width: '15%',
+                  margin: '0 auto',
+                  bottom: '9%',
+                  zindex: 15
+                }}>
+                <CameraDropdown />
+              </div>
+              <button className="pic"
+                style={{
+                  position: 'absolute',
+                  bottom: 10,
+                  right: 10,
+                  zIndex: 100,
+                }}
+                onClick={capture}
+              >
+              <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className={flashing ? 'clear': 'solid'}/>
+              </button>
+
+              <button className="autoCaptureButton"
+                style={{
+                  position: 'absolute',
+                  bottom: 10,
+                  left: 10,
+                  zIndex: 100,
+                }}
+                onClick={toggleAutoCapture}>
+                <img alt='' src='https://cdn3.iconfinder.com/data/icons/photography-vol-1-1/66/photography-05-1024.png' width={30} height={30} />
+                {autoCapture ? 'Stop Auto-Capture' : 'Start Auto-Capture'}
+              </button>
             </div>
-            <button className="pic"
-              style={{
-                position: 'absolute',
-                bottom: 10,
-                right: 10,
-                zIndex: 100,
-              }}
-              onClick={capture}
-            >
-            <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className={flashing ? 'clear': 'solid'}/>
-            </button>
-
-            <button className="autoCaptureButton"
-              style={{
-                position: 'absolute',
-                bottom: 10,
-                left: 10,
-                zIndex: 100,
-              }}
-              onClick={toggleAutoCapture}>
-              <img alt='' src='https://cdn3.iconfinder.com/data/icons/photography-vol-1-1/66/photography-05-1024.png' width={30} height={30} />
-              {autoCapture ? 'Stop Auto-Capture' : 'Start Auto-Capture'}
+          </div>
+          <div>
+            <button className="deleteButton" onClick={deleteImages}>
+              <img src="https://cdn-icons-png.flaticon.com/512/3515/3515498.png" alt="Delete All Images" width={30} height={30} />
             </button>
           </div>
-
-        </div>
-        <div className="exportBox">
-          <p>Export Data</p>
-          <button className="button" onClick={fetchData}>
-            Export
-          </button>
-          <button className="button" onClick={choosePath}>Set File Location</button>
-          <button className="button">
-            Get Floc Size Data
-          </button>
-          <div style={{ textAlign: 'center', margin: 25}}>
-            <Link to="/new" className="button" style={{ textDecoration: 'none' }} >Go to New Page</Link>
-          </div>
-        </div>
-        
-        <div>
-          <button className="deleteButton" onClick={deleteImages}>
-            <img src="https://cdn-icons-png.flaticon.com/512/3515/3515498.png" alt="Delete All Images" width={30} height={30} />
-          </button>
         </div>
 
       </header>
