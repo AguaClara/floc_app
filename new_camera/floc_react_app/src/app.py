@@ -91,7 +91,6 @@ def upload_image():
     if "," in image_base64_data:
         image_base64_data = image_base64_data.split(",")[1]
     image_data = base64.b64decode(image_base64_data)
-    print(image_base64_data)
     with open(filePath, "wb") as file:
         file.write(image_data)
     new_image = db_ops.add_image(image_name, image_base64_data)
@@ -144,6 +143,7 @@ def get_last_n_images():
     db_ops.close()
     return jsonify(image_list), 200
 
+
 # @app.expose
 # def choose_path():
 #     print("choose_path called")
@@ -180,6 +180,7 @@ def delete_image(image_id):
 
     db_ops.close()
     return jsonify({"message": "Image deleted successfully"}), 200
+
 
 @app.route("/images/", methods=["DELETE"])
 def delete_all_images():
