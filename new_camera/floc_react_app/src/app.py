@@ -122,6 +122,28 @@ def get_image(image_id):
     return jsonify(response), 200
 
 
+@app.route("/images/latest", methods=["GET"])
+def get_last_n_images():
+    """
+    Gets the last n images
+    """
+    body = json.loads(request.data)
+    n = body.get("limit")
+    session = start()
+    db_ops = DatabaseOperations(session)
+    images = db_ops.session.query(Image).order_by(Image.id.desc()).limit(n).all()
+    image_list = []
+    for image in images:
+        image_dict = {
+            "id": image.id,
+            "name": image.name,
+            "image": image.base64_data,
+            "flocs": [{"id": floc.id, "size": floc.size} for floc in image.flocs],
+        }
+        image_list.append(image_dict)
+    db_ops.close()
+    return jsonify(image_list), 200
+
 # @app.expose
 # def choose_path():
 #     print("choose_path called")

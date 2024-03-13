@@ -69,7 +69,6 @@ class DatabaseOperations:
             return result[0]
         return -1
 
-
     def get_flocs_by_image_name(self, image_name):
         return self.session.query(Floc).join(Image).filter(Image.name == image_name).all()
 
