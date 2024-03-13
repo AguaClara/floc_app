@@ -184,12 +184,6 @@ function App() {
               {autoCapture ? 'Stop Auto-Capture' : 'Start Auto-Capture'}
             </button>
           </div>
-          {imgSrc && (
-            <div>
-              <h2>Preview:</h2>
-              <img src={imgSrc} alt="Captured" />
-            </div>
-          )}
 
         </div>
         <div className="exportBox">
@@ -197,7 +191,7 @@ function App() {
           <button className="button" onClick={fetchData}>
             Export
           </button>
-          <button className="button" onClick={choosePath}>Change Save Location</button>
+          <button className="button" onClick={choosePath}>Set File Location</button>
           <button className="button">
             Get Floc Size Data
           </button>
