@@ -63,6 +63,22 @@ function App() {
     console.log('choosePath called');
   };
 
+  const deleteImages = () => {
+    fetch('http://127.0.0.1:5000/images/', {
+      method: 'DELETE'
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Image deletion failed');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      alert(JSON.stringify(data));
+    })
+  };
+
   // Auto-capture mode
   const toggleAutoCapture = () => {
     // Stop auto-capture mode if it's currently active
@@ -189,6 +205,13 @@ function App() {
             <Link to="/new" className="button" style={{ textDecoration: 'none' }} >Go to New Page</Link>
           </div>
         </div>
+        
+        <div>
+          <button className="deleteButton" onClick={deleteImages}>
+            <img src="https://cdn-icons-png.flaticon.com/512/3515/3515498.png" alt="Delete All Images" width={30} height={30} />
+          </button>
+        </div>
+
       </header>
     </div>
   );
