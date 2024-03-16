@@ -1,21 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import NewPage from './NewPage';
+import Setting from './Setting';
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <HashRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/new" element={<NewPage />} />
-    </Routes>
-  </HashRouter>,
-  document.getElementById('root')
-);
+const Index = () => {
+  const [countdownSeconds, setCountdownSeconds] = useState(5);
+
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<App countdownSecond={countdownSeconds} />} />
+        <Route path="/new" element={<NewPage />} />
+        <Route path="/Setting" element={<Setting countdownSecond = {countdownSeconds} setCountdownSeconds={setCountdownSeconds} />}/>
+      </Routes>
+    </HashRouter>
+  );
+};
+ReactDOM.render(<Index />, document.getElementById('root'));
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
