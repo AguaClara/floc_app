@@ -2,7 +2,7 @@ import './App.css';
 import React, { useRef, useState, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import CameraDropdown from './CameraDropdown.jsx';
-import {Link} from 'react-router-dom';
+import HeaderBox from './headerBox.jsx';
 
 const { ipcRenderer, ipcMain } = window.require('electron');
 // import { dialog } from '@electron/remote'
@@ -32,8 +32,6 @@ function App() {
       ipcRenderer.removeAllListeners('choosePathResult');
     };
   }, []);
-
-
 
   const capture = () => {
     const imageSrc = webcamRef.current.getScreenshot();
@@ -139,16 +137,7 @@ function App() {
   return (
     <div className="container">
       <header className="Floc App">
-        <div className = "headerBox">
-          <div className = "logoBox">
-            <img className = "logo" src="https://res.cloudinary.com/scalefunder/image/fetch/s--7ZiRgq59--/f_auto,fl_lossy,q_auto/https://github.com/AguaClara/public_relations/blob/master/AguaClara%2520Official%2520Logo/FINAL%2520LOGO%25202.0.png%3Fraw%3Dtrue" alt="" width={200} height={60} />
-          </div>
-          <div className = "tabsBox">
-            <Link to="/new" className="dataPageButton" style={{ textDecoration: 'none'}} >Dashboard</Link>
-            <Link to="/" className="cameraPageButton active" style={{ textDecoration: 'none'}} >Camera</Link>
-            <Link to="/new" className="settingsPageButton" style={{ textDecoration: 'none'}} >Settings</Link>
-          </div>
-        </div>
+        <HeaderBox/>
         <div className = "contentContainer">
           <div className="cameraBox">
             <div style={{ position: 'relative', width: 640, height: 480 }}>
@@ -168,6 +157,7 @@ function App() {
                   zindex: 15
                 }}>
                 <CameraDropdown />
+                <headerBox />
               </div>
               <button className="pic"
                 style={{
@@ -194,7 +184,8 @@ function App() {
               </button>
             </div>
           </div>
-          <div>
+          <div className = "controlsBox">
+          <button className="button" onClick={choosePath}>Set File Location</button>
             <button className="deleteButton" onClick={deleteImages}>
               <img src="https://cdn-icons-png.flaticon.com/512/3515/3515498.png" alt="Delete All Images" width={30} height={30} />
             </button>
