@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 const { ipcRenderer, ipcMain } = window.require('electron');
 // import { dialog } from '@electron/remote'
-function App() {
+function App(props) {
   const webcamRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
   const [autoCapture, setAutoCapture] = useState(false);
@@ -14,7 +14,10 @@ function App() {
   const [fileLocation, setFileLocation] = useState(null);
   const [flashing, setFlashing] = useState(false);
   const [flashingInterval, setFlashingInterval] = useState(null);
-  const [countdownSeconds, setCountdownSeconds] = useState(5);
+  const [countdownSeconds, setCountdownSeconds] = useState(props.countdownSecond || 5);
+  
+
+
 
   useEffect(() => {
     // Handle responses from the main process
@@ -90,8 +93,8 @@ function App() {
       setAutoCapture(false);
       return;
     }
-
     capture();
+
 
     // Start auto-capture mode
     const intervalId = setInterval(() => {
@@ -121,6 +124,15 @@ function App() {
     setAutoCapture(true);
     setAutoCaptureInterval(intervalId);
   };
+  const captureOff = () => {
+    if (autoCapture) {
+      clearInterval(autoCaptureInterval);
+      clearInterval(flashingInterval);
+      setFlashing(false);
+      setAutoCapture(false);
+      return;
+    }
+  };
 
   const fetchData = () => {
     // Use the Fetch API to send a GET request to Flask backend
@@ -139,12 +151,17 @@ function App() {
         console.error('There was a problem with the fetch operation:', error);
       });
   };
+
   return (
     <div className="container">
       <header className="Floc App">
         <div>
           <img src="https://res.cloudinary.com/scalefunder/image/fetch/s--7ZiRgq59--/f_auto,fl_lossy,q_auto/https://github.com/AguaClara/public_relations/blob/master/AguaClara%2520Official%2520Logo/FINAL%2520LOGO%25202.0.png%3Fraw%3Dtrue" alt="" width={290} height={95} />
+          <Link to="/Setting" className='settingButton' style={{ textDecoration: 'none'}} onClick={captureOff}>
+            <img alt='' src='https://www.freeiconspng.com/uploads/gear-icon-png-12.png' width={30} height={30}/>
+          </Link>
         </div>
+
         <div className="cameraBox">
           <div style={{ position: 'relative', width: 640, height: 480 }}>
             <Webcam className='video'
@@ -199,7 +216,7 @@ function App() {
             Get Floc Size Data
           </button>
           <div style={{ textAlign: 'center', margin: 25}}>
-            <Link to="/new" className="button" style={{ textDecoration: 'none' }} >Go to New Page</Link>
+            <Link to="/new" className="button" style={{ textDecoration: 'none' }} onClick={captureOff}>Go to New Page</Link>
           </div>
         </div>
         
