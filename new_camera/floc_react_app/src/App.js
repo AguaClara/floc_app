@@ -19,7 +19,7 @@ function App(props) {
 
   const [screenFlash, setScreenFlash] = useState(false);
   const [countdown, setCountdown] = useState(false);
-  const count_array = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1, null];
+  const count_array = [null, null, null, null, 3, 3, 2, 2, 1, 1, null];
   let count_idx = 0;
 
   useEffect(() => {
@@ -120,6 +120,12 @@ function App(props) {
 
     //set red button to flash
     const flashIntervalId = setInterval(() => {
+      if(count_idx===9) {
+        setScreenFlash(true);
+      }
+      else {
+        setScreenFlash(false);
+      }
       if (count_idx <= 9) {
         //setScreenFlash(false);
         count_idx++;
@@ -174,7 +180,7 @@ function App(props) {
                 }}
                 onClick={capture}
               >
-                <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className='solid' />
+                <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className={flashing? 'clear':'solid'} />
               </button>
 
               <button className="autoCaptureButton"

@@ -18,7 +18,7 @@ const HeaderBox = () => {
         else if (tabIndex === 1)
             route = '/';
         else if (tabIndex === 2)
-            route = '/Settings';
+            route = '/Setting';
         navigate(route);
         setCurrTab(tabIndex);
     };
