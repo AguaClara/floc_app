@@ -4,6 +4,8 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from db import Image, Floc, DatabaseOperations, start
 import base64
+import os
+
 
 # from electron import app, dialog, ipcMain
 
@@ -76,6 +78,20 @@ def upload_image():
     image_base64_data = body.get("image")
     filePath = body.get("filePath")
 
+    # Path to the filename.txt in the source directory
+    filename_path = os.path.join(os.path.dirname(__file__), "filename.txt")
+
+    if filePath:
+        filePath = filePath
+    elif os.path.exists(filename_path):
+        with open(filename_path, "r") as file:
+            filePath = file.read().strip()
+    else:
+        return jsonify({"error": "No file path provided and filename.txt does not exist."}), 400
+
+    with open(filename_path, "w") as file:
+        file.write(filePath)
+
     if filePath is None:
         return jsonify({"error": "No file path provided"}), 400
     session = start()
@@ -86,6 +102,8 @@ def upload_image():
         image_name = "image0"
     else:
         image_name = f"image{current_id+1}"
+    
+
 
     filePath = filePath + "/" + image_name + ".jpeg"
     if "," in image_base64_data:
