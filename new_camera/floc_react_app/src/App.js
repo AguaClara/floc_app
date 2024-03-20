@@ -198,9 +198,6 @@ function App(props) {
           </div>
           <div className="controlsBox">
             <button className="button" onClick={choosePath}>Set File Location</button>
-            <button className="button">
-              Get Floc Size Data
-            </button>
           </div>
         </div>
       </header>
