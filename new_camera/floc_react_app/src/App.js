@@ -2,22 +2,25 @@ import './App.css';
 import React, { useRef, useState, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import CameraDropdown from './CameraDropdown.jsx';
-import {Link} from 'react-router-dom';
+import HeaderBox from './headerBox.jsx';
 
-const { ipcRenderer, ipcMain } = window.require('electron');
+const { ipcRenderer } = window.require('electron');
 // import { dialog } from '@electron/remote'
 function App(props) {
   const webcamRef = useRef(null);
-  const [imgSrc, setImgSrc] = useState(null);
   const [autoCapture, setAutoCapture] = useState(false);
   const [autoCaptureInterval, setAutoCaptureInterval] = useState(null);
   const [fileLocation, setFileLocation] = useState(null);
   const [flashing, setFlashing] = useState(false);
   const [flashingInterval, setFlashingInterval] = useState(null);
   const [countdownSeconds, setCountdownSeconds] = useState(props.countdownSecond || 5);
-  
 
 
+
+  const [screenFlash, setScreenFlash] = useState(false);
+  const [countdown, setCountdown] = useState(false);
+  const count_array = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1, null];
+  let count_idx = 0;
 
   useEffect(() => {
     // Handle responses from the main process
@@ -37,11 +40,12 @@ function App(props) {
     };
   }, []);
 
-
-
   const capture = () => {
+    setScreenFlash(true);
+    setTimeout(() => {
+      setScreenFlash(false);
+    }, 500);
     const imageSrc = webcamRef.current.getScreenshot();
-    setImgSrc(imageSrc);
     // Here you can save the image to a directory using backend logic
     // For demonstration purpose, you can log the base64 image data
     console.log(imageSrc);
@@ -54,10 +58,9 @@ function App(props) {
       body: JSON.stringify({ image: imageSrc, filePath: fileLocation })
     })
       .then(response => response.json())
-      .then(data => { console.log(data); alert(JSON.stringify(data)) })
+      //.then(data => { console.log(data); alert(JSON.stringify(data)) })
       .catch(error => console.log(error)
       )
-
 
   };
 
@@ -71,16 +74,16 @@ function App(props) {
     fetch('http://127.0.0.1:5000/images/', {
       method: 'DELETE'
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Image deletion failed');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-      alert(JSON.stringify(data));
-    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Image deletion failed');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        alert(JSON.stringify(data));
+      })
   };
 
   // Auto-capture mode
@@ -91,15 +94,16 @@ function App(props) {
       clearInterval(flashingInterval);
       setFlashing(false);
       setAutoCapture(false);
+      count_idx = 0;
+      setCountdown(null);
       return;
     }
     capture();
 
-
+    setCountdown(count_array[count_idx]);
     // Start auto-capture mode
     const intervalId = setInterval(() => {
       const imageSrc = webcamRef.current.getScreenshot();
-      setImgSrc(imageSrc);
 
       // Send the captured image to the backend
       fetch('http://127.0.0.1:5000/upload', {
@@ -110,12 +114,21 @@ function App(props) {
         body: JSON.stringify({ image: imageSrc, filePath: fileLocation })
       })
         .then(response => response.json())
-        .then(data => { console.log(data); alert(JSON.stringify(data)) })
+        //.then(data => { console.log(data); alert(JSON.stringify(data)) })
         .catch(error => console.log(error));
     }, countdownSeconds * 1000); // Capture an image every 5 seconds
 
-     //set red button to flas
+    //set red button to flash
     const flashIntervalId = setInterval(() => {
+      if (count_idx <= 9) {
+        //setScreenFlash(false);
+        count_idx++;
+      }
+      else {
+        //setScreenFlash(true);
+        count_idx = 1;
+      }
+      setCountdown(count_array[count_idx]);
       setFlashing(prevFlashing => !prevFlashing);
     }, 500);
     setFlashingInterval(flashIntervalId);
@@ -134,100 +147,74 @@ function App(props) {
     }
   };
 
-  const fetchData = () => {
-    // Use the Fetch API to send a GET request to Flask backend
-    fetch('http://127.0.0.1:5000/test')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log(data); // Process and display the data as needed
-        alert(JSON.stringify(data)); // Displaying the data in an alert for demonstration
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
-  };
-
   return (
     <div className="container">
       <header className="Floc App">
-        <div>
-          <img src="https://res.cloudinary.com/scalefunder/image/fetch/s--7ZiRgq59--/f_auto,fl_lossy,q_auto/https://github.com/AguaClara/public_relations/blob/master/AguaClara%2520Official%2520Logo/FINAL%2520LOGO%25202.0.png%3Fraw%3Dtrue" alt="" width={290} height={95} />
-          <Link to="/Setting" className='settingButton' style={{ textDecoration: 'none'}} onClick={captureOff}>
-            <img alt='' src='https://www.freeiconspng.com/uploads/gear-icon-png-12.png' width={30} height={30}/>
+        <HeaderBox />
+        <div className="contentContainer">
+          <Link to="/Setting" className='settingButton' style={{ textDecoration: 'none' }} onClick={captureOff}>
+            <img alt='' src='https://www.freeiconspng.com/uploads/gear-icon-png-12.png' width={30} height={30} />
           </Link>
-        </div>
+          <div className="cameraBox">
+            <div style={{ position: 'relative', width: 640, height: 480 }}>
+              <Webcam className='video'
+                audio={false}
+                ref={webcamRef}
+                screenshotFormat="image/jpeg"
+                width={640}
+                height={480}
+              />
+              {screenFlash && <div className="flash-overlay" />}
+              <div
+                style={{
+                  position: 'relative',
+                  width: '15%',
+                  margin: '0 auto',
+                  bottom: '9%',
+                  zindex: 15
+                }}>
+                <CameraDropdown />
+                <headerBox />
+              </div>
+              <p className={flashing ? 'clear' : 'countdown'} >{countdown}</p>
+              <button className="pic"
+                style={{
+                  position: 'absolute',
+                  bottom: 10,
+                  right: 10,
+                  zIndex: 100,
+                }}
+                onClick={capture}
+              >
+                <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className='solid' />
+              </button>
 
-        <div className="cameraBox">
-          <div style={{ position: 'relative', width: 640, height: 480 }}>
-            <Webcam className='video'
-              audio={false}
-              ref={webcamRef}
-              screenshotFormat="image/jpeg"
-              width={640}
-              height={480}
-            />
-            <div
-              style={{
-                position: 'relative',
-                bottom: 43,
-                right: 0,
-                zindex: 15
-              }}>
-              <CameraDropdown className="camera_dropdown" />
+              <button className="autoCaptureButton"
+                style={{
+                  position: 'absolute',
+                  bottom: 10,
+                  left: 10,
+                  zIndex: 100,
+                }}
+                onClick={toggleAutoCapture}>
+                <img alt='' src='https://cdn3.iconfinder.com/data/icons/photography-vol-1-1/66/photography-05-1024.png' width={30} height={30} />
+                {autoCapture ? 'Stop Auto-Capture' : 'Start Auto-Capture'}
+              </button>
             </div>
-            <button className="pic"
-              style={{
-                position: 'absolute',
-                bottom: 10,
-                right: 10,
-                zIndex: 100,
-              }}
-              onClick={capture}
-            >
-            <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className={flashing ? 'clear': 'solid'}/>
-            </button>
-
-            <button className="autoCaptureButton"
-              style={{
-                position: 'absolute',
-                bottom: 10,
-                left: 10,
-                zIndex: 100,
-              }}
-              onClick={toggleAutoCapture}>
-              <img alt='' src='https://cdn3.iconfinder.com/data/icons/photography-vol-1-1/66/photography-05-1024.png' width={30} height={30} />
-              {autoCapture ? 'Stop Auto-Capture' : 'Start Auto-Capture'}
-            </button>
           </div>
-
-        </div>
-        <div className="exportBox">
-          <p>Export Data</p>
-          <button className="button" onClick={fetchData}>
-            Export
-          </button>
-          <button className="button" onClick={choosePath}>Set File Location</button>
-          <button className="button">
-            Get Floc Size Data
-          </button>
-          <div style={{ textAlign: 'center', margin: 25}}>
-            <Link to="/new" className="button" style={{ textDecoration: 'none' }} onClick={captureOff}>Go to New Page</Link>
+          <div className="controlsBox">
+            <button className="button" onClick={choosePath}>Set File Location</button>
+            <button className="button">
+              Get Floc Size Data
+            </button>
+            <div style={{ textAlign: 'center', margin: 25 }}>
+              <Link to="/new" className="button" style={{ textDecoration: 'none' }} >Go to New Page</Link>
+            </div>
           </div>
         </div>
-        
-        <div>
-          <button className="deleteButton" onClick={deleteImages}>
-            <img src="https://cdn-icons-png.flaticon.com/512/3515/3515498.png" alt="Delete All Images" width={30} height={30} />
-          </button>
-        </div>
-
       </header>
     </div>
+
   );
 }
 
