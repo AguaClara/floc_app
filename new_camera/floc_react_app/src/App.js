@@ -4,16 +4,19 @@ import Webcam from 'react-webcam';
 import CameraDropdown from './CameraDropdown.jsx';
 import HeaderBox from './headerBox.jsx';
 
-const { ipcRenderer, ipcMain } = window.require('electron');
+const { ipcRenderer } = window.require('electron');
 // import { dialog } from '@electron/remote'
 function App() {
   const webcamRef = useRef(null);
-  const [imgSrc, setImgSrc] = useState(null);
   const [autoCapture, setAutoCapture] = useState(false);
   const [autoCaptureInterval, setAutoCaptureInterval] = useState(null);
   const [fileLocation, setFileLocation] = useState(null);
   const [flashing, setFlashing] = useState(false);
   const [flashingInterval, setFlashingInterval] = useState(null);
+  const [screenFlash, setScreenFlash] = useState(false);
+  const [countdown, setCountdown] = useState(false);
+  const count_array = [5,5,4,4,3,3,2,2,1,1,null];
+  let count_idx = 0;
 
   useEffect(() => {
     // Handle responses from the main process
@@ -34,8 +37,11 @@ function App() {
   }, []);
 
   const capture = () => {
+    setScreenFlash(true);
+    setTimeout(() => {
+      setScreenFlash(false);
+    }, 500);
     const imageSrc = webcamRef.current.getScreenshot();
-    setImgSrc(imageSrc);
     // Here you can save the image to a directory using backend logic
     // For demonstration purpose, you can log the base64 image data
     console.log(imageSrc);
@@ -48,11 +54,10 @@ function App() {
       body: JSON.stringify({ image: imageSrc, filePath: fileLocation })
     })
       .then(response => response.json())
-      .then(data => { console.log(data); alert(JSON.stringify(data)) })
+      //.then(data => { console.log(data); alert(JSON.stringify(data)) })
       .catch(error => console.log(error)
       )
-
-
+    
   };
 
   const choosePath = () => {
@@ -85,13 +90,14 @@ function App() {
       clearInterval(flashingInterval);
       setFlashing(false);
       setAutoCapture(false);
+      count_idx = 0;
+      setCountdown(null);
       return;
     }
-
+    setCountdown(count_array[count_idx]);
     // Start auto-capture mode
     const intervalId = setInterval(() => {
       const imageSrc = webcamRef.current.getScreenshot();
-      setImgSrc(imageSrc);
 
       // Send the captured image to the backend
       fetch('http://127.0.0.1:5000/upload', {
@@ -102,12 +108,21 @@ function App() {
         body: JSON.stringify({ image: imageSrc, filePath: fileLocation })
       })
         .then(response => response.json())
-        .then(data => { console.log(data); alert(JSON.stringify(data)) })
+        //.then(data => { console.log(data); alert(JSON.stringify(data)) })
         .catch(error => console.log(error));
     }, 5000); // Capture an image every 5 seconds
 
-     //set red button to flas
+     //set red button to flash
     const flashIntervalId = setInterval(() => {
+      if(count_idx<=9) {
+        //setScreenFlash(false);
+        count_idx++;
+      }
+      else {
+        //setScreenFlash(true);
+        count_idx = 1;
+      }
+      setCountdown(count_array[count_idx]);
       setFlashing(prevFlashing => !prevFlashing);
     }, 500);
     setFlashingInterval(flashIntervalId);
@@ -117,23 +132,6 @@ function App() {
     setAutoCaptureInterval(intervalId);
   };
 
-  const fetchData = () => {
-    // Use the Fetch API to send a GET request to Flask backend
-    fetch('http://127.0.0.1:5000/test')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log(data); // Process and display the data as needed
-        alert(JSON.stringify(data)); // Displaying the data in an alert for demonstration
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
-  };
   return (
     <div className="container">
       <header className="Floc App">
@@ -148,6 +146,7 @@ function App() {
                 width={640}
                 height={480}
               />
+              {screenFlash && <div className="flash-overlay" />}
               <div
                 style={{
                   position: 'relative',
@@ -159,6 +158,7 @@ function App() {
                 <CameraDropdown />
                 <headerBox />
               </div>
+              <p className={flashing ? 'clear': 'countdown'} >{countdown}</p>
               <button className="pic"
                 style={{
                   position: 'absolute',
@@ -168,7 +168,7 @@ function App() {
                 }}
                 onClick={capture}
               >
-              <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className={flashing ? 'clear': 'solid'}/>
+              <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className='solid'/>
               </button>
 
               <button className="autoCaptureButton"
