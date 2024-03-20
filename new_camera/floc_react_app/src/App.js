@@ -120,7 +120,7 @@ function App(props) {
 
     //set red button to flash
     const flashIntervalId = setInterval(() => {
-      if(count_idx===9) {
+      if (count_idx === 9) {
         setScreenFlash(true);
       }
       else {
@@ -180,7 +180,7 @@ function App(props) {
                 }}
                 onClick={capture}
               >
-                <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className={flashing? 'clear':'solid'} />
+                <img alt='' src='https://www.pngall.com/wp-content/uploads/13/Red-Button-PNG.png' width={30} height={30} className={flashing ? 'clear' : 'solid'} />
               </button>
 
               <button className="autoCaptureButton"
@@ -198,9 +198,11 @@ function App(props) {
           </div>
           <div className="controlsBox">
             <button className="button" onClick={choosePath}>Set File Location</button>
-            <button className="button">
-              Get Floc Size Data
-            </button>
+            <div>
+              <button className="deleteButton" onClick={deleteImages}>
+                <img src="https://cdn-icons-png.flaticon.com/512/3515/3515498.png" alt="Delete All Images" width={30} height={30} />
+              </button>
+            </div>
           </div>
         </div>
       </header>
