@@ -137,24 +137,12 @@ function App(props) {
     setAutoCapture(true);
     setAutoCaptureInterval(intervalId);
   };
-  const captureOff = () => {
-    if (autoCapture) {
-      clearInterval(autoCaptureInterval);
-      clearInterval(flashingInterval);
-      setFlashing(false);
-      setAutoCapture(false);
-      return;
-    }
-  };
 
   return (
     <div className="container">
       <header className="Floc App">
         <HeaderBox />
         <div className="contentContainer">
-          <Link to="/Setting" className='settingButton' style={{ textDecoration: 'none' }} onClick={captureOff}>
-            <img alt='' src='https://www.freeiconspng.com/uploads/gear-icon-png-12.png' width={30} height={30} />
-          </Link>
           <div className="cameraBox">
             <div style={{ position: 'relative', width: 640, height: 480 }}>
               <Webcam className='video'
@@ -207,9 +195,6 @@ function App(props) {
             <button className="button">
               Get Floc Size Data
             </button>
-            <div style={{ textAlign: 'center', margin: 25 }}>
-              <Link to="/new" className="button" style={{ textDecoration: 'none' }} >Go to New Page</Link>
-            </div>
           </div>
         </div>
       </header>

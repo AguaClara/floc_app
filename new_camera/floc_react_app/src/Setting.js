@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import HeaderBox from './headerBox.jsx';
+import './App.css';
 
 const Setting = (props) => {
   const [inputValue, setInputValue] = useState(props.countdownSecond);
@@ -13,6 +15,7 @@ const Setting = (props) => {
   };
   return (
     <div>
+      <HeaderBox/>
       <h1>Settings</h1>
       <p>This is the content of the settings page</p>
       <input
