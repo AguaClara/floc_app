@@ -245,3 +245,9 @@ body {
   right: 20px;
   z-index: 100;
 }
+
+.fileErrMsg {
+  text-align: center;
+  color: red;
+  font-style: italic;
+}

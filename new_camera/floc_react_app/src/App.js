@@ -16,6 +16,7 @@ function App(props) {
   const [countdownSeconds, setCountdownSeconds] = useState(props.countdownSecond || 5);
   const [screenFlash, setScreenFlash] = useState(false);
   const [countdown, setCountdown] = useState(false);
+  const [fileError, setFileError] = useState(false);
   const count_array = [null, null, null, null, 3, 3, 2, 2, 1, 1, null];
   let count_idx = 0;
 
@@ -27,6 +28,7 @@ function App(props) {
 
       // Update the state with the selected path or perform other actions
       if (result) {
+        setFileError(false);
         setFileLocation(result);
       }
     });
@@ -38,10 +40,16 @@ function App(props) {
   }, []);
 
   const capture = () => {
-    setScreenFlash(true);
-    setTimeout(() => {
-      setScreenFlash(false);
-    }, 500);
+    if(fileLocation != null) {
+      setFileError(false);
+      setScreenFlash(true);
+      setTimeout(() => {
+        setScreenFlash(false);
+      }, 500);
+    }
+    else {
+      setFileError(true);
+    }
     const imageSrc = webcamRef.current.getScreenshot();
     // Here you can save the image to a directory using backend logic
     // For demonstration purpose, you can log the base64 image data
@@ -55,9 +63,8 @@ function App(props) {
       body: JSON.stringify({ image: imageSrc, filePath: fileLocation })
     })
       .then(response => response.json())
-      //.then(data => { console.log(data); alert(JSON.stringify(data)) })
-      .catch(error => console.log(error)
-      )
+      .then(data => { console.log(data)})
+      .catch(error => {console.log(error); setFileError(true)})
 
   };
 
@@ -95,50 +102,54 @@ function App(props) {
       setCountdown(null);
       return;
     }
-    capture();
+    if(fileLocation !=null) {
+      setFileError(false);
+      capture();
 
-    setCountdown(count_array[count_idx]);
-    // Start auto-capture mode
-    const intervalId = setInterval(() => {
-      const imageSrc = webcamRef.current.getScreenshot();
-
-      // Send the captured image to the backend
-      fetch('http://127.0.0.1:5000/upload', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ image: imageSrc, filePath: fileLocation })
-      })
-        .then(response => response.json())
-        //.then(data => { console.log(data); alert(JSON.stringify(data)) })
-        .catch(error => console.log(error));
-    }, countdownSeconds * 1000); // Capture an image every 5 seconds
-
-    //set red button to flash
-    const flashIntervalId = setInterval(() => {
-      if (count_idx === 9) {
-        setScreenFlash(true);
-      }
-      else {
-        setScreenFlash(false);
-      }
-      if (count_idx <= 9) {
-        //setScreenFlash(false);
-        count_idx++;
-      }
-      else {
-        //setScreenFlash(true);
-        count_idx = 1;
-      }
       setCountdown(count_array[count_idx]);
-      setFlashing(prevFlashing => !prevFlashing);
-    }, 500);
-    setFlashingInterval(flashIntervalId);
+      // Start auto-capture mode
+      const intervalId = setInterval(() => {
+        const imageSrc = webcamRef.current.getScreenshot();
 
-    // Set auto-capture mode to true
-    setAutoCapture(true);
-    setAutoCaptureInterval(intervalId);
+        // Send the captured image to the backend
+        fetch('http://127.0.0.1:5000/upload', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ image: imageSrc, filePath: fileLocation })
+        })
+          .then(response => response.json())
+          //.then(data => { console.log(data); alert(JSON.stringify(data)) })
+          .catch(error => console.log(error));
+      }, countdownSeconds * 1000); // Capture an image every 5 seconds
+
+      //set red button to flash
+      const flashIntervalId = setInterval(() => {
+        if (count_idx === 9) {
+          setScreenFlash(true);
+        }
+        else {
+          setScreenFlash(false);
+        }
+        if (count_idx <= 9) {
+          count_idx++;
+        }
+        else {
+          count_idx = 1;
+        }
+        setCountdown(count_array[count_idx]);
+        setFlashing(prevFlashing => !prevFlashing);
+      }, 500);
+      setFlashingInterval(flashIntervalId);
+
+      // Set auto-capture mode to true
+      setAutoCapture(true);
+      setAutoCaptureInterval(intervalId);
+    }
+    else {
+      setFileError(true);
+    }
   };
 
   return (
@@ -195,6 +206,9 @@ function App(props) {
           </div>
           <div className="controlsBox">
             <button className="button" onClick={choosePath}>Set File Location</button>
+            {(fileError) && (
+                <p className="fileErrMsg">Please select a file location.</p>
+            )}
             <div>
               <button className="deleteButton" onClick={deleteImages}>
                 <img src="https://cdn-icons-png.flaticon.com/512/3515/3515498.png" alt="Delete All Images" width={30} height={30} />
