@@ -1,16 +1,16 @@
-import React, { useState} from 'react';
+import React from 'react';
 import './App.css';
 import {Link, useNavigate} from 'react-router-dom';
 
-const HeaderBox = () => {
-    const [currTab,setCurrTab] = useState(1);
+const HeaderBox = (props) => {
+
+    const currTab = props.currentTab;
     const navigate = useNavigate();
 
     const handleTabClick = (event, tabIndex) => {
         //fixme: button appearance doesn't update
             //when first navigating to newpage
         event.preventDefault();
-        setCurrTab(tabIndex);
         console.log(currTab);
         let route;
         if (tabIndex === 0)
@@ -20,7 +20,6 @@ const HeaderBox = () => {
         else if (tabIndex === 2)
             route = '/Setting';
         navigate(route);
-        setCurrTab(tabIndex);
     };
 
     return (

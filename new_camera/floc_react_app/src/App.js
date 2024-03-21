@@ -14,9 +14,6 @@ function App(props) {
   const [flashing, setFlashing] = useState(false);
   const [flashingInterval, setFlashingInterval] = useState(null);
   const [countdownSeconds, setCountdownSeconds] = useState(props.countdownSecond || 5);
-
-
-
   const [screenFlash, setScreenFlash] = useState(false);
   const [countdown, setCountdown] = useState(false);
   const count_array = [null, null, null, null, 3, 3, 2, 2, 1, 1, null];
@@ -147,7 +144,7 @@ function App(props) {
   return (
     <div className="container">
       <header className="Floc App">
-        <HeaderBox />
+        <HeaderBox currentTab={1}/>
         <div className="contentContainer">
           <div className="cameraBox">
             <div style={{ position: 'relative', width: 640, height: 480 }}>

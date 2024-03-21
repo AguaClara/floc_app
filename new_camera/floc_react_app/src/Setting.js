@@ -14,18 +14,20 @@ const Setting = (props) => {
     props.setCountdownSeconds(inputValue);
   };
   return (
-    <div>
-      <HeaderBox/>
-      <h1>Settings</h1>
-      <p>This is the content of the settings page</p>
-      <input
-        type="text"
-        value={inputValue} // Input value is controlled by state
-        onChange={handleInputChange} // Event handler for input changes
-      />
-      <p>Autocapture Interval: {inputValue}</p>
-      <div style={{ textAlign: 'center' }}>
-        <Link to={{ pathname: "/", state: { countdownSeconds: inputValue } }} className="button" style={{ textDecoration: 'none' }} onClick={updateCountdownSeconds}>Go to App</Link>
+    <div >
+      <HeaderBox currentTab={2}/>
+      <div className="contentContainer">
+        <h1>Settings</h1>
+        <p>This is the content of the settings page</p>
+        <input
+          type="text"
+          value={inputValue} // Input value is controlled by state
+          onChange={handleInputChange} // Event handler for input changes
+        />
+        <p>Autocapture Interval: {inputValue}</p>
+        <div style={{ textAlign: 'center' }}>
+          <Link to={{ pathname: "/", state: { countdownSeconds: inputValue } }} className="button" style={{ textDecoration: 'none' }} onClick={updateCountdownSeconds}>Go to App</Link>
+        </div>
       </div>
     </div>
   );
