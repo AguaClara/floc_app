@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from db import Image, Floc, DatabaseOperations, start
 import base64
 import os
+import random
 
 
 # from electron import app, dialog, ipcMain
@@ -179,6 +180,12 @@ def get_last_n_images():
 #     print("Selected Path (main process):", selected_path)
 #     return selected_path
 
+@app.route("/images/", methods = ["GET"])
+def dev_image_tester():
+    #randomly take an image from the images folder
+    #check if image is not already in the set of processed images 
+    #run sizing script on image and save in db 
+    return None
 
 @app.route("/images/<int:image_id>/", methods=["DELETE"])
 def delete_image(image_id):
@@ -216,7 +223,6 @@ def delete_all_images():
 
     db_ops.close()
     return jsonify({"message": "All images deleted successfully"}), 200
-
 
 if __name__ == "__main__":
     app.run(debug=True)
