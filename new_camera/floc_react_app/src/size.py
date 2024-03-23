@@ -6,10 +6,7 @@ import db
 MODEL_FILE_PATH = "model.pt"
 model = YOLO(MODEL_FILE_PATH)
 
-session = db.start()
-db_ops = db.DatabaseOperations(session)
-
-def size_image(img_path):
+def size_image(img_path, session, db_ops):
   #img_id is 1 more than the last img id, or 0 if the database is empty 
   img_id = db_ops.get_current_image_id()
   img_id = 0 if img_id == -1 else img_id + 1

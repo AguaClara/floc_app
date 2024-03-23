@@ -6,6 +6,7 @@ from db import Image, Floc, DatabaseOperations, start
 import base64
 import os
 import random
+import size
 
 
 # from electron import app, dialog, ipcMain
@@ -182,10 +183,29 @@ def get_last_n_images():
 
 @app.route("/images/", methods = ["GET"])
 def dev_image_tester():
-    #randomly take an image from the images folder
-    #check if image is not already in the set of processed images 
-    #run sizing script on image and save in db 
-    return None
+    # randomly take an image from the images folder
+    image_folder = "../images"
+    image_files = os.listdir(image_folder)
+    random_image = random.choice(image_files)
+
+    # check if image is not already in the set of processed images
+    session = start()
+    db_ops = DatabaseOperations(session)
+    processed_images = db_ops.session.query(Image).all()
+    processed_image_names = [image.name for image in processed_images]
+    if random_image in processed_image_names:
+        return jsonify({"message": "Image already processed"}), 200
+
+    # run sizing script (size.py) on image and save in db
+    image_path = os.path.join(image_folder, random_image)
+    # Run the sizing script on the image and get the size
+    size.size_image(image_path, session, db_ops)
+    # Save the image and its size in the database
+    new_image = db_ops.add_image(random_image, size)
+    session.commit()
+    db_ops.close()
+
+    return jsonify({"message": "Image processed and saved in database", "image_id": new_image.id}), 200
 
 @app.route("/images/<int:image_id>/", methods=["DELETE"])
 def delete_image(image_id):
