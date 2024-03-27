@@ -1,5 +1,3 @@
-
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -239,15 +237,159 @@ body {
   top:20%;
 }
 
-.deleteButton {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 100;
-}
-
 .fileErrMsg {
   text-align: center;
   color: red;
   font-style: italic;
+}
+
+.settingsContainer {
+  background-color: #f0f0f0;
+  position: fixed;
+  top: 8%;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.settingsHeader {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 15%;
+}
+
+.infoHeader {
+  position: absolute;
+  top: 39%;
+  width: 100%;
+  height: 15%;
+}
+
+.settingsIcon {
+  position: absolute;
+  left: 26%;
+  top: 55%;
+  transform: translateY(-50%);
+}
+
+.infoIcon {
+  position: absolute;
+  left: 17%;
+  top: 55%;
+  transform: translateY(-50%);
+}
+
+.settingsLabel {
+  position: absolute;
+  left: 5%;
+  top:25%;
+  transform: translateY(-25%);
+}
+
+.infoBoxWrapper {
+  position: absolute;
+  top:53%;
+  left: 5%;
+  width: 86%;
+  height: 17%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.infoBox {
+  position: absolute;
+  left: 5%;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.infoButton {
+  width: 45%;
+  height:27%;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  background-color:white;
+  border-radius: 5px;
+  margin-top: auto;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.infoButton:hover {
+  background-color:#f7f7f7
+}
+
+.infoButton:active {
+  background-color:#f1f1f1
+}
+
+.deleteButton {
+  color: red;
+  width: 45%;
+  height:27%;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  background-color:white;
+  border-radius: 5px;
+  margin-top: auto;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.deleteButton:hover {
+  background-color:#f7f7f7
+}
+
+.deleteButton:active {
+  background-color:#f1f1f1
+}
+
+.settingsComponentBoxWrapper {
+  position: absolute;
+  top:14%;
+  left: 5%;
+  width: 86%;
+  height: 20%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+.settingsComponentBox {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.inputBox {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.buttonContainer {
+  position: fixed;
+  margin-top: 20px;
+  bottom: 20px;
+  right: 20px;
+}
+.appButton {
+  padding: 5px 10px;
+  margin: 0 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e9e9e9;
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }

@@ -209,11 +209,6 @@ function App(props) {
             {(fileError) && (
                 <p className="fileErrMsg">Please select a file location.</p>
             )}
-            <div>
-              <button className="deleteButton" onClick={deleteImages}>
-                <img src="https://cdn-icons-png.flaticon.com/512/3515/3515498.png" alt="Delete All Images" width={30} height={30} />
-              </button>
-            </div>
           </div>
         </div>
       </header>
