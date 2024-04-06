@@ -25,7 +25,7 @@ const HeaderBox = (props) => {
     return (
     <div className = "headerBox">
         <div className = "logoBox">
-            <img className = "logo" src="https://res.cloudinary.com/scalefunder/image/fetch/s--7ZiRgq59--/f_auto,fl_lossy,q_auto/https://github.com/AguaClara/public_relations/blob/master/AguaClara%2520Official%2520Logo/FINAL%2520LOGO%25202.0.png%3Fraw%3Dtrue" alt="" width={200} height={60} />
+            <img className = "logo" src="https://res.cloudinary.com/scalefunder/image/fetch/s--7ZiRgq59--/f_auto,fl_lossy,q_auto/https://github.com/AguaClara/public_relations/blob/master/AguaClara%2520Official%2520Logo/FINAL%2520LOGO%25202.0.png%3Fraw%3Dtrue" alt="" width={193} height={60} />
         </div>
         <div className = "tabsBox">
             <Link className={currTab === 0 ? 'dataPageButton active' : 'dataPageButton'} onClick={(e) => handleTabClick(e,0)} style={{ textDecoration: 'none'}} >Dashboard</Link>
