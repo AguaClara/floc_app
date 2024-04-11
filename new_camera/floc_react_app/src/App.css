@@ -394,6 +394,28 @@ body {
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
 
+/* Style for Dashboard */
+
+.dashboardIcon {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.dashboardBoxWrapper {
+  position: absolute;
+  top: 14%;
+  left: 5%;
+  width: 87%;
+  height: 73%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  overflow-x: 'scroll';
+  white-space: 'nowrap';
+  margin-bottom: 0px;
+}
+
 .popupWrapper {
   position: absolute;
   width: 100%;
