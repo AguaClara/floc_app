@@ -26,26 +26,26 @@ def hello_world():
     return {"message": "Hello, World from Flask!"}
 
 
-@app.route("/images/", methods=["GET"])
-def get_images_data():
-    """
-    Gets all image data in database
-    """
-    session = start()
-    db_ops = DatabaseOperations(session)
-    images = db_ops.session.query(Image).all()
-    image_list = []
-    for image in images:
-        image_dict = {
-            "id": image.id,
-            "name": image.name,
-            "image": image.base64_data,
-            "flocs": [{"id": floc.id, "size": floc.size} for floc in image.flocs],
-        }
-        image_list.append(image_dict)
+# @app.route("/images/", methods=["GET"])
+# def get_images_data():
+#     """
+#     Gets all image data in database
+#     """
+#     session = start()
+#     db_ops = DatabaseOperations(session)
+#     images = db_ops.session.query(Image).all()
+#     image_list = []
+#     for image in images:
+#         image_dict = {
+#             "id": image.id,
+#             "name": image.name,
+#             "image": image.base64_data,
+#             "flocs": [{"id": floc.id, "size": floc.size} for floc in image.flocs],
+#         }
+#         image_list.append(image_dict)
 
-    db_ops.close()
-    return jsonify(image_list), 200
+#     db_ops.close()
+#     return jsonify(image_list), 200
 
 
 @app.route("/images/<int:image_id>/data/", methods=["GET"])
@@ -195,13 +195,21 @@ def dev_image_tester():
     processed_image_names = [image.name for image in processed_images]
     if random_image in processed_image_names:
         return jsonify({"message": "Image already processed"}), 200
-
     # run sizing script (size.py) on image and save in db
     image_path = os.path.join(image_folder, random_image)
+
+    # Read image file from disk
+    with open(image_path, "rb") as f:
+        image_data = f.read()
+    
+    # Encode image data to base64
+    image_base64 = base64.b64encode(image_data).decode("utf-8")
+    new_image = db_ops.add_image(random_image, image_base64)
+
     # Run the sizing script on the image and get the size
     size.size_image(image_path, session, db_ops)
     # Save the image and its size in the database
-    new_image = db_ops.add_image(random_image, size)
+    
     session.commit()
     db_ops.close()
 

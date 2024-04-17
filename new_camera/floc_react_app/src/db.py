@@ -51,7 +51,11 @@ class DatabaseOperations:
     def __init__(self, session):
         self.session = session
 
+    
     def add_image(self, image_name, image_base64):
+        existing_image = self.session.query(Image).filter_by(base64_data=image_base64).first()
+        if existing_image:
+            return existing_image
         new_image = Image(name=image_name, base64_data=image_base64)
         self.session.add(new_image)
         self.session.commit()
@@ -68,6 +72,12 @@ class DatabaseOperations:
         if result:
             return result[0]
         return -1
+    
+    def get_image_base64_data(self, id):
+        image = self.session.query(Image).filter_by(id=id).first()
+        if image:
+            return image.base64_data
+        return ""
 
     def get_flocs_by_image_name(self, image_name):
         return self.session.query(Floc).join(Image).filter(Image.name == image_name).all()
