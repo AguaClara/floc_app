@@ -2,7 +2,6 @@ import React from 'react';
 import HeaderBox from './headerBox.jsx';
 import './App.css';
 import { useState, useEffect } from 'react';
-import './app_instructions.txt'
 
 const Setting = (props) => {
   const [inputValue, setInputValue] = useState(props.countdownSecond);

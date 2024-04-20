@@ -7,6 +7,8 @@ import base64
 import os
 import random
 import size
+from ultralytics import YOLO
+import numpy as np
 
 
 # from electron import app, dialog, ipcMain
@@ -207,9 +209,11 @@ def dev_image_tester():
     new_image = db_ops.add_image(random_image, image_base64)
 
     # Run the sizing script on the image and get the size
-    size.size_image(image_path, session, db_ops)
+    flocs = size.size_image(image_path)
     # Save the image and its size in the database
-    
+    for floc in flocs:
+        db_ops.add_floc(new_image.id, floc)
+
     session.commit()
     db_ops.close()
 
