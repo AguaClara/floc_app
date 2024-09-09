@@ -2,29 +2,27 @@
 
 ### Team Members:
 
-Shreehari Srinivasan(lead),
-Jacqueline Hui,
-Sahil Hosalli,
-Becca Jeffries,
+Sahil Hosalli(lead),
 Caleb Kim,
-Alvaro Deras
+Alvaro Deras, 
+Patrick Egan
 
-### Goals for Spring 2024:
+### Goals for Fall 2024:
 
 1. Train new members on Github, OpenCV and Python.
-2. Get familiar with scripts written fall semester.
-3. Run the algorithm on these images and adjust filters based on which ones minimize the error with the test data set calculations
-4. Obtain a new camera, run tests on images with the camera
+2. Migrate to new Github repo to host revamped app.
+3. Get familiar with scripts written spring semester.
+4. Continue running tests with the new camera. 
 
 ### Calendar:
 
-Lab times/meetings assigned to Wednesday @ 5:00-6:00 PM and Saturday @ 1:30-3:00 PM along with time put in outside of lab.
+Lab times/meetings assigned to Monday @ 5:00-6:00 PM and Saturday @ 2:00-3:30 PM along with time put in outside of lab.
 
 Week 1: Familiarizing ourselves with the codebase and onboarding new members.
 
-Week 2: Researching React and frontend.
+Week 2: TBD
 
-Week 3-5: Continue our research and start working on writing scripts
+Week 3-5: TBD
 
 Week 6: TBD
 
