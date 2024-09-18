@@ -5,7 +5,7 @@
 Sahil Hosalli(lead),
 Caleb Kim,
 Alvaro Deras, 
-Patrick Egan
+Aasha Yeluri
 
 ### Goals for Fall 2024:
 
