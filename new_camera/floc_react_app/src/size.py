@@ -3,7 +3,7 @@ from ultralytics import YOLO
 import numpy as np
 import db
 
-MODEL_FILE_PATH = "model.pt"
+MODEL_FILE_PATH = "src/model.pt"
 model = YOLO(MODEL_FILE_PATH)
 
 def size_image(img_path, session, db_ops):
